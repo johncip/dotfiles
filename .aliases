@@ -1,0 +1,38 @@
+#!/usr/bin/env zsh
+
+# bundle
+alias br='bundle exec rake'
+alias be='bundle exec'
+
+# git
+alias g='git st'
+alias gd='git diff'
+alias nw='numberwang'
+
+# vagrant
+alias vup='vagrant up'
+alias vsh='vagrant ssh'
+alias vsync='vagrant gatling-rsync-auto'
+alias vhalt='vagrant halt && exit'
+alias waitsh='sleep 25 && vagrant ssh'
+alias vshrc="vsh -- -t 'cd /app && bin/rails c'"
+alias vshrs="vsh -- -t 'cd /app && bin/rails s'"
+
+# pure laziness
+alias q='exit'
+
+# options
+alias ll='ls -l'
+alias ls='ls -G'
+alias ghi='ghi --no-pager'
+
+# tools
+alias json='python -m json.tool'
+alias serve='python -m SimpleHTTPServer 8000'
+alias todo='grep -rn "# TODO" .'
+alias showpath='echo $PATH | tr ":" "\n"'
+alias speedtest='curl -o /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip'
+
+# homebrew
+alias vi='vim'
+alias ctags="`brew --prefix`/bin/ctags"
