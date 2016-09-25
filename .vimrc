@@ -73,11 +73,8 @@ set backspace=2      " erase characters not entered during this insert mode sess
 
 autocmd FileType applescript setlocal sw=4 ts=4 sts=4 et
 
-" Set thin cursor in iTerm
-if $TERM_PROGRAM =~ "iTerm"
-  let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
-  let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
-endif
+" Strip whitespace on save
+autocmd BufWritePre * StripWhitespace
 
 " Use ag over grep
 if executable('ag')
@@ -85,6 +82,7 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 
+" Plugin settings
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -99,6 +97,23 @@ let g:syntastic_quiet_messages = { 'regex': 'fixme' }
 let g:syntastic_loc_list_height = 3
 let g:rspec_command = "! vagrant ssh -c 'cd /app && bin/rspec {spec} '"
 
+" iTerm: use thin cursor
+if $TERM_PROGRAM =~ "iTerm"
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
+endif
+
+" MacVim settings
+if has('gui_running')
+  set colorcolumn=100
+  set lines=40
+  set columns=100
+  set guifont=Monaco:h14
+
+  " start in project
+  let g:ctrlp_working_path_mode = 0
+  cd /Users/John/Developer/Gradescope/gradescope-app
+endif
 
 "----------------------------------------------------------------------------------------
 " Functions
