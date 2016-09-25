@@ -32,9 +32,12 @@ call vundle#begin()
   " Languages
   Plugin 'dearrrfish/vim-applescript'         " applescript
   Plugin 'mtscout6/vim-cjsx'                  " cjsx
+  Plugin 'kchmck/vim-coffee-script'           " coffeescript
   Plugin 'tpope/vim-haml'                     " haml
+  Plugin 'pangloss/vim-javascript'            " javascript
   Plugin 'elzr/vim-json'                      " json
   Plugin 'plasticboy/vim-markdown'            " markdown
+  Plugin 'hdima/python-syntax'                " python (better)
   Plugin 'vim-ruby/vim-ruby'                  " ruby
   Plugin 'slim-template/vim-slim'             " slim
 
@@ -90,6 +93,8 @@ if executable('ag')
 endif
 
 " Plugin settings
+let g:python_version_2 = 1
+let g:python_highlight_all = 1
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
