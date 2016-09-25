@@ -1,0 +1,50 @@
+[user]
+  email = johnmikecip@gmail.com
+  name = John Cipriano
+[core]
+  editor = vim
+  pager = less -S
+	excludesfile = /Users/John/.gitignore_global
+[color]
+  ui = true
+[filter "lfs"]
+  clean = git-lfs clean %f
+  smudge = git-lfs smudge %f
+  required = true
+[alias]
+  ck = checkout
+  ci = config
+  st = -c color.status=always status
+  ids = log --format='%C(yellow)%h   %C(blue)%<(13,trunc)%an   %Creset%s %C(red)%d' --date=short --graph
+  rids = log --format='%C(yellow)%h   %C(blue)%<(13,trunc)%an   %Creset%s %C(red)%d' --date=short --reverse -20
+  last = show --name-status
+  branches = branch -vv --color
+  grandpa = merge-base HEAD origin/master
+  branch-name = rev-parse --abbrev-ref HEAD
+  shallow = clone --depth 1
+  upstream = push -u origin HEAD
+  new-files = diff --name-only --diff-filter=A origin/master
+  unstage = reset HEAD
+  rebasei = "!git rebase -i `git grandpa`"
+  prune-all = "!git prune && git remote prune origin && git remote prune team"
+  gone = "!git branches | grep gone | cut -d ' ' -f 3"
+  cont = rebase --continue
+[push]
+  default = simple
+[diff]
+  algorithm = histogram
+  compactionHeuristic = true
+[pager]
+  branch = true
+[rerere]
+  enabled = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[github]
+	user = johncip
+[ghi]
+	token = !security find-internet-password -a johncip -s github.com -l 'ghi token' -w
