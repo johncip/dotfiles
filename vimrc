@@ -30,15 +30,15 @@ call vundle#begin()
   Plugin 'tpope/vim-surround'                 " add / remove / change quotes & brackets
 
   " Languages
-  Plugin 'dearrrfish/vim-applescript'
-  Plugin 'elzr/vim-json'
-  Plugin 'mtscout6/vim-cjsx'
-  Plugin 'plasticboy/vim-markdown'
-  Plugin 'slim-template/vim-slim'
-  Plugin 'tpope/vim-haml'
-  Plugin 'vim-ruby/vim-ruby'
-
   " Ruby / Rails tools
+  Plugin 'dearrrfish/vim-applescript'         " applescript
+  Plugin 'mtscout6/vim-cjsx'                  " cjsx
+  Plugin 'tpope/vim-haml'                     " haml
+  Plugin 'elzr/vim-json'                      " json
+  Plugin 'plasticboy/vim-markdown'            " markdown
+  Plugin 'vim-ruby/vim-ruby'                  " ruby
+  Plugin 'slim-template/vim-slim'             " slim
+
   Plugin 'ecomba/vim-ruby-refactoring'
     Plugin 'tmhedberg/matchit'
   Plugin 'jgdavey/vim-blockle'
