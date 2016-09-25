@@ -30,7 +30,6 @@ call vundle#begin()
   Plugin 'tpope/vim-surround'                 " add / remove / change quotes & brackets
 
   " Languages
-  " Ruby / Rails tools
   Plugin 'dearrrfish/vim-applescript'         " applescript
   Plugin 'mtscout6/vim-cjsx'                  " cjsx
   Plugin 'tpope/vim-haml'                     " haml
@@ -39,6 +38,7 @@ call vundle#begin()
   Plugin 'vim-ruby/vim-ruby'                  " ruby
   Plugin 'slim-template/vim-slim'             " slim
 
+  " Ruby & rails tools
   Plugin 'ecomba/vim-ruby-refactoring'
     Plugin 'tmhedberg/matchit'
   Plugin 'jgdavey/vim-blockle'
@@ -57,13 +57,13 @@ filetype plugin indent on  " required
 syntax on
 colorscheme molokai
 let mapleader = ","
+
 set number           " show line numbers
 set ruler            " show the ruler
 set nowrap           " don't wrap long lines
 set ignorecase       " search is case-insensitive
 set smartcase        " search is case-sensitive when uppercase present
 set t_Co=256         " 256-color term
-set laststatus=2     " always show the status line
 set showmatch        " highlight matching brackets
 set expandtab        " use spaces instead of tabs
 set shiftwidth=2     " use indents of 2 spaces
@@ -71,10 +71,17 @@ set tabstop=2        " show 2 spaces per tab
 set softtabstop=2    " insert 2 spaces on tab / delete 2 spaces on backspace
 set backspace=2      " erase characters not entered during this insert mode session
 
-autocmd FileType applescript setlocal sw=4 ts=4 sts=4 et
+if has('statusline')
+  set laststatus=2   " always show the status line
+endif
 
 " Strip whitespace on save
 autocmd BufWritePre * StripWhitespace
+
+" Filetype-specific settings
+autocmd FileType applescript setlocal sw=4 ts=4 sts=4 et
+autocmd FileType make set noexpandtab
+autocmd FileType python setlocal sw=4 ts=4 sts=4 et
 
 " Use ag over grep
 if executable('ag')
@@ -188,8 +195,12 @@ noremap  <Down>     <NOP>
 noremap  <Left>     <NOP>
 noremap  <Right>    <NOP>
 
-" Quick normal mode
+" Return to normal mode from home row
 inoremap jk <Esc>
+
+" Easier horizontal movement
+nnoremap zl zL
+nnoremap zh zH
 
 " Move through location list entries
 nnoremap [l :lprev<CR>
@@ -203,9 +214,6 @@ nnoremap ˚ :m .-2<CR>==
 nnoremap <silent> <leader>l :call ToggleList("Location List", 'l')<CR>
 nnoremap <silent> <leader>c :call ToggleList("Quickfix List", 'c')<CR>
 
-" Easier horizontal movement
-nnoremap zl zL
-nnoremap zh zH
 
 " Plugins
 nmap \               <Plug>(easymotion-sn)
