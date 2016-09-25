@@ -198,6 +198,9 @@ noremap  <Right>    <NOP>
 " Return to normal mode from home row
 inoremap jk <Esc>
 
+" Yank to the end of the line, like C and D.
+nnoremap Y y$
+
 " Easier horizontal movement
 nnoremap zl zL
 nnoremap zh zH
@@ -214,6 +217,8 @@ nnoremap ˚ :m .-2<CR>==
 nnoremap <silent> <leader>l :call ToggleList("Location List", 'l')<CR>
 nnoremap <silent> <leader>c :call ToggleList("Quickfix List", 'c')<CR>
 
+" Find merge conflict markers
+map <leader>fc /\v^[<\|=>]{7}( .*\|$)<CR>
 
 " Plugins
 nmap \               <Plug>(easymotion-sn)
@@ -229,3 +234,6 @@ nnoremap <leader>t   :CtrlP<CR>
 
 " makes <leader>w move by word within snake & camelcase
 call camelcasemotion#CreateMotionMappings('<leader>')
+
+" For when you forget to sudo... really write the file.
+cmap w!! w !sudo tee % >/dev/null
