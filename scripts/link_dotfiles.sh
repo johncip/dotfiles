@@ -5,15 +5,15 @@ IFS=$'\n\t'
 REPO_DIR="$HOME/Developer/Dotfiles"
 
 dotfiles=(
-  .aliases
-  .gemrc
-  .gitconfig
-  .railsrc
-  .vimrc
-  .zshrc
+  aliases
+  gemrc
+  gitconfig
+  railsrc
+  vimrc
+  zshrc
 )
 
 for dotfile in ${dotfiles[@]}
 do
-    ln -s "$REPO_DIR/$dotfile" "$HOME/$dotfile"
+    ln -s "$REPO_DIR/$dotfile" "$HOME/.$dotfile"
 done
