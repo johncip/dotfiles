@@ -12,6 +12,7 @@
   smudge = git-lfs smudge %f
   required = true
 [alias]
+  cam = commit -am
   ck = checkout
   ci = config
   st = -c color.status=always status
@@ -40,7 +41,7 @@
   enabled = true
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
