@@ -92,21 +92,27 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 
-" Plugin settings
-let g:python_version_2 = 1
-let g:python_highlight_all = 1
+" Syntastic settings
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_coffee_checkers = ['coffeelint']
+let g:syntastic_coffee_coffeelint_exec = '/Users/John/.rbenv/shims/coffeelint.rb'
 let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 let g:syntastic_ruby_rubocop_exec = '/Users/John/.rbenv/shims/rubocop'
 let g:syntastic_scss_checkers = ['scss_lint']
 let g:syntastic_scss_scss_lint_exec = '/Users/John/.rbenv/shims/scss-lint'
+let g:syntastic_slim_checkers = ['slim_lint']
+let g:syntastic_slim_slim_lint_exec = '/Users/John/.rbenv/shims/slim-lint'
 let g:syntastic_python_checkers = ['python', 'pylint']
 let g:syntastic_python_pylint_exec = '/usr/local/bin/pylint'
 let g:syntastic_quiet_messages = { 'regex': 'fixme' }
 let g:syntastic_loc_list_height = 3
+
+" Other plugin settings
+let g:python_version_2 = 1
+let g:python_highlight_all = 1
 let g:rspec_command = "! vagrant ssh -c 'cd /app && bin/rspec {spec} '"
 
 " iTerm: use thin cursor
