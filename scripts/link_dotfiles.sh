@@ -9,6 +9,7 @@ dotfiles=(
   gemrc
   gitconfig
   railsrc
+  rspec
   vimrc
   zshrc
 )
