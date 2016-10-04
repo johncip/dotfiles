@@ -10,6 +10,7 @@ call vundle#begin()
   Plugin 'airblade/vim-gitgutter'             " per-line git status
   Plugin 'bkad/CamelCaseMotion'               " move within words
   Plugin 'ctrlpvim/ctrlp.vim'                 " fuzzy file finder
+    Plugin 'jasoncodes/ctrlp-modified.vim'    " adds :CtrlPModified & :CtrlPBranch
   Plugin 'easymotion/vim-easymotion'          " jump to search results
   Plugin 'ervandew/supertab'                  " tab completion
   Plugin 'flazz/vim-colorschemes'             " colorscheme pack
@@ -29,7 +30,7 @@ call vundle#begin()
   Plugin 'tpope/vim-fugitive'                 " :Ggrep, :Gblame, etc
   Plugin 'tpope/vim-surround'                 " add / remove / change quotes & brackets
 
-  " Languages
+  " Language support
   Plugin 'dearrrfish/vim-applescript'         " applescript
   Plugin 'mtscout6/vim-cjsx'                  " cjsx
   Plugin 'kchmck/vim-coffee-script'           " coffeescript
@@ -40,15 +41,16 @@ call vundle#begin()
   Plugin 'hdima/python-syntax'                " python (better)
   Plugin 'vim-ruby/vim-ruby'                  " ruby
   Plugin 'slim-template/vim-slim'             " slim
+  Plugin 'jlong/sass-convert.vim'             " convert sass <=> scss
 
   " Ruby & rails tools
-  Plugin 'ecomba/vim-ruby-refactoring'
-    Plugin 'tmhedberg/matchit'
-  Plugin 'jgdavey/vim-blockle'
-  Plugin 'ngmy/vim-rubocop'
-  Plugin 'thoughtbot/vim-rspec'
-  Plugin 'tpope/vim-endwise'
-  Plugin 'tpope/vim-rails'
+  Plugin 'ecomba/vim-ruby-refactoring'        " refactoring support
+    Plugin 'tmhedberg/matchit'                " percent-matching for do/end etc
+  Plugin 'jgdavey/vim-blockle'                " toggle ruby block types
+  Plugin 'ngmy/vim-rubocop'                   " :RuboCop
+  Plugin 'thoughtbot/vim-rspec'               " :RSpec
+  Plugin 'tpope/vim-endwise'                  " auto-fill 'end' statements
+  Plugin 'tpope/vim-rails'                    " rails project navigation
 
 call vundle#end()
 filetype plugin indent on  " required
@@ -64,6 +66,7 @@ let mapleader = ","
 set number           " show line numbers
 set ruler            " show the ruler
 set nowrap           " don't wrap long lines
+set noswapfile       " live on the edge
 set ignorecase       " search is case-insensitive
 set smartcase        " search is case-sensitive when uppercase present
 set t_Co=256         " 256-color term
@@ -72,7 +75,7 @@ set expandtab        " use spaces instead of tabs
 set shiftwidth=2     " use indents of 2 spaces
 set tabstop=2        " show 2 spaces per tab
 set softtabstop=2    " insert 2 spaces on tab / delete 2 spaces on backspace
-set backspace=2      " erase characters not entered during this insert mode session
+set backspace=2      " erase characters not entered during insert mode
 
 if has('statusline')
   set laststatus=2   " always show the status line
@@ -234,14 +237,22 @@ map <leader>fc /\v^[<\|=>]{7}( .*\|$)<CR>
 " Plugins
 nmap \               <Plug>(easymotion-sn)
 omap \               <Plug>(easymotion-tn)
-nnoremap <leader>a   {v}:Tabularize /
-vnoremap <leader>a   :Tabularize /
-nnoremap <leader>g   :Gstatus<CR>
-nnoremap <leader>m   :CtrlPMRU<CR>
-nnoremap <leader>n   :NERDTreeFind<CR>
-nnoremap <leader>rca :RuboCop -a<CR>
+
+nnoremap <leader>a     {v}:Tabularize /
+vnoremap <leader>a     :Tabularize /
+nnoremap <leader><Tab> {v}:Tabularize /
+vnoremap <leader><Tab> :Tabularize /
+
+nnoremap <leader>m     :CtrlPModified<CR>
+nnoremap <leader>B     :CtrlPBranch<CR>
+nnoremap <leader>M     :CtrlPMRU<CR>
+nnoremap <leader>n     :NERDTreeFind<CR>
+nnoremap <leader>rca   :RuboCop -a<CR>
+nnoremap <leader>t     :CtrlP<CR>
+
 inoremap <leader>t   <Esc>:CtrlP<CR>
-nnoremap <leader>t   :CtrlP<CR>
+inoremap <leader>m   <Esc>:CtrlPModified<CR>
+inoremap <leader>B   <Esc>:CtrlPBranch<CR>
 
 " makes <leader>w move by word within snake & camelcase
 call camelcasemotion#CreateMotionMappings('<leader>')
