@@ -37,6 +37,7 @@ call vundle#begin()
   Plugin 'tpope/vim-haml'                     " haml
   Plugin 'pangloss/vim-javascript'            " javascript
   Plugin 'elzr/vim-json'                      " json
+  Plugin 'mxw/vim-jsx'                        " jsx
   Plugin 'plasticboy/vim-markdown'            " markdown
   Plugin 'hdima/python-syntax'                " python (better)
   Plugin 'vim-ruby/vim-ruby'                  " ruby
@@ -100,6 +101,8 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_coffee_checkers = ['coffeelint']
 let g:syntastic_coffee_coffeelint_exec = '/Users/John/.rbenv/shims/coffeelint.rb'
 let g:syntastic_ruby_checkers = ['mri', 'rubocop']
