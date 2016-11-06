@@ -18,10 +18,11 @@
   st = -c color.status=always status
   ids = log --format='%C(yellow)%h   %C(blue)%<(13,trunc)%an   %Creset%s %C(red)%d' --date=short --graph
   rids = log --format='%C(yellow)%h   %C(blue)%<(13,trunc)%an   %Creset%s %C(red)%d' --date=short --reverse -20
+  branch-name = rev-parse --abbrev-ref HEAD
+  since = "!git rids origin/`git branch-name`..`git branch-name`"
   last = show --name-status
   branches = branch -vv --color
   grandpa = merge-base HEAD origin/master
-  branch-name = rev-parse --abbrev-ref HEAD
   shallow = clone --depth 1
   upstream = push -u origin HEAD
   new-files = diff --name-only --diff-filter=A origin/master
