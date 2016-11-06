@@ -216,6 +216,9 @@ noremap  <Down>     <NOP>
 noremap  <Left>     <NOP>
 noremap  <Right>    <NOP>
 
+" Use space to find next space in line
+noremap  <Space> f<Space>
+
 " Return to normal mode from home row
 inoremap jk <Esc>
 
@@ -246,19 +249,19 @@ vnoremap <leader>a     :Tabularize /
 nnoremap <leader><Tab> {v}:Tabularize /
 vnoremap <leader><Tab> :Tabularize /
 
+nnoremap <leader>n     :NERDTreeFind<CR>
 nnoremap <leader>s     :SyntasticCheck<CR>
 
 nnoremap <leader>m     :CtrlPModified<CR>
+inoremap <leader>m     <Esc>:CtrlPModified<CR>
 nnoremap <leader>B     :CtrlPBranch<CR>
-nnoremap <leader>M     :CtrlPMRU<CR>
-nnoremap <leader>n     :NERDTreeFind<CR>
+inoremap <leader>B     <Esc>:CtrlPBranch<CR>
+inoremap <leader>t     <Esc>:CtrlP<CR>
 nnoremap <leader>t     :CtrlP<CR>
+nnoremap <leader>M     :CtrlPMRU<CR>
 
-inoremap <leader>t   <Esc>:CtrlP<CR>
-inoremap <leader>m   <Esc>:CtrlPModified<CR>
-inoremap <leader>B   <Esc>:CtrlPBranch<CR>
 
-" makes <leader>w move by word within snake & camelcase
+" makes <leader>w/b/e/ge move by word within snake & camelcase (& ignore punctuation)
 call camelcasemotion#CreateMotionMappings('<leader>')
 
 " For when you forget to sudo... really write the file.
