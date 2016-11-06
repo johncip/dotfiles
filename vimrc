@@ -226,10 +226,6 @@ nnoremap Y y$
 nnoremap zl zL
 nnoremap zh zH
 
-" Move through location list entries
-nnoremap [l :lprev<CR>
-nnoremap ]l :lnext<CR>
-
 " Move line under cursor with Alt-j or Alt-k
 nnoremap ∆ :m .+1<CR>==
 nnoremap ˚ :m .-2<CR>==
