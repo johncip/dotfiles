@@ -33,6 +33,7 @@
 ##  Other stuff
 ##    AudioMonitor (MTCoreAudio)
 ##    Retina DisplayMenu -- https://dl.dropbox.com/u/87351306/RDM.tar.gz
+##    -- or DisableMonitor -- https://github.com/Eun/DisableMonitor
 ##    Finale
 ##    Adobe
 ##    Printer
@@ -84,15 +85,16 @@ applications=(
   front
   github-desktop
   gitx
-  icecat
   iterm2
   java
   karabiner
   libreoffice
   little-snitch
+  lunchy
   macdown
   macvim
   menubar-countdown
+  ngrok
   nosleep
   nvalt
   omnioutliner
@@ -103,7 +105,6 @@ applications=(
   steam
   sublime-text
   things
-  tiled
   transmission
   transmit
   vagrant
@@ -136,6 +137,8 @@ benched=(
   file-juicer
   google-chrome     # updates too frequently
   handbrake
+  heroku-toolbelt
+  inkscape
   kaleidoscope      # time-limited trial
   mactex            # too big
   mysqlworkbench
@@ -145,6 +148,7 @@ benched=(
   pycharm-pro
   silverlight
   the-unarchiver
+  tiled
 )
 
 ruby_gems=(
@@ -168,7 +172,6 @@ brew tap caskroom/fonts
 ## NOTE: add eval "$(rbenv init -)" to profile once zsh is installed
 brew install rbenv ruby-build
 rbenv install 2.2.3
-gem install rails
 
 ## Install libraries & tools
 brew install ${formulas[@]}
@@ -193,6 +196,10 @@ vagrant plugin install vagrant-gatling-rsync
 
 ## Download Chalkboard color (for adding to iTerm manually)
 wget https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/Chalkboard.itermcolors -P ~/Downloads
+
+## -- install node packages (eslint, eslint-babel, airbnb style, etc)
+## -- install pure-prompt: https://github.com/sindresorhus/pure
+
 
 ## Clean everything
 gem cleanup
