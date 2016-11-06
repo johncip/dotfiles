@@ -62,7 +62,8 @@ filetype plugin indent on  " required
 " Settings
 "----------------------------------------------------------------------------------------
 syntax on
-colorscheme molokai
+" colorscheme molokai
+colorscheme GRB256
 let mapleader = ","
 
 set number           " show line numbers
@@ -131,9 +132,9 @@ endif
 " MacVim settings
 if has('gui_running')
   set colorcolumn=100
-  set lines=40
-  set columns=100
-  set guifont=Monaco:h14
+  set guifont=Input:h15
+  set macligatures
+  highlight ColorColumn guibg=Gray10
 
   " start in project
   let g:ctrlp_working_path_mode = 0
