@@ -20,15 +20,17 @@ call vundle#begin()
   Plugin 'itchyny/lightline.vim'              " better status line
   Plugin 'jacoborus/tender'                   " colorscheme
   Plugin 'michaeljsmith/vim-indent-object'    " text objects based on indent level
-  Plugin 'nathanaelkane/vim-indent-guides'    " show indent with vertical lines
+  Plugin 'nathanaelkane/vim-indent-guides'    " show indent with vertical lines (toggle: <L>ig)
   Plugin 'ntpeters/vim-better-whitespace'     " show / trim trailing whitespace
   Plugin 'scrooloose/nerdtree'                " tree file explorer
     Plugin 'Xuyuanp/nerdtree-git-plugin'      " show git status in NERDtree
   Plugin 'scrooloose/syntastic'               " linter integration
-  Plugin 'tomtom/tcomment_vim'                " easy comment & uncomment
+  Plugin 'terryma/vim-multiple-cursors'       " sublime-style multi select
+  Plugin 'tomtom/tcomment_vim'                " easy [un]comment. supports blocks ,unlike commentary
   Plugin 'tpope/vim-eunuch'                   " :Move, :Rename, :Chmod, etc
   Plugin 'tpope/vim-fugitive'                 " :Ggrep, :Gblame, etc
   Plugin 'tpope/vim-surround'                 " add / remove / change quotes & brackets
+  Plugin 'tpope/vim-unimpaired'               " lots more pairwise bracket mappings
 
   " Language support
   Plugin 'dearrrfish/vim-applescript'         " applescript
@@ -42,14 +44,13 @@ call vundle#begin()
   Plugin 'hdima/python-syntax'                " python (better)
   Plugin 'vim-ruby/vim-ruby'                  " ruby
   Plugin 'slim-template/vim-slim'             " slim
+  Plugin 'hashivim/vim-terraform'             " terraform
   Plugin 'jlong/sass-convert.vim'             " convert sass <=> scss
 
   " Ruby & rails tools
   Plugin 'ecomba/vim-ruby-refactoring'        " refactoring support
     Plugin 'tmhedberg/matchit'                " percent-matching for do/end etc
   Plugin 'jgdavey/vim-blockle'                " toggle ruby block types
-  Plugin 'ngmy/vim-rubocop'                   " :RuboCop
-  Plugin 'thoughtbot/vim-rspec'               " :RSpec
   Plugin 'tpope/vim-endwise'                  " auto-fill 'end' statements
   Plugin 'tpope/vim-rails'                    " rails project navigation
 
@@ -250,7 +251,6 @@ nnoremap <leader>m     :CtrlPModified<CR>
 nnoremap <leader>B     :CtrlPBranch<CR>
 nnoremap <leader>M     :CtrlPMRU<CR>
 nnoremap <leader>n     :NERDTreeFind<CR>
-nnoremap <leader>rca   :RuboCop -a<CR>
 nnoremap <leader>t     :CtrlP<CR>
 
 inoremap <leader>t   <Esc>:CtrlP<CR>
