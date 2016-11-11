@@ -20,6 +20,7 @@ call vundle#begin()
   Plugin 'itchyny/lightline.vim'              " better status line
   Plugin 'jacoborus/tender'                   " colorscheme
   Plugin 'michaeljsmith/vim-indent-object'    " text objects based on indent level
+  Plugin 'mileszs/ack.vim'                    " use ack to search code
   Plugin 'nathanaelkane/vim-indent-guides'    " show indent with vertical lines (toggle: <L>ig)
   Plugin 'ntpeters/vim-better-whitespace'     " show / trim trailing whitespace
   Plugin 'scrooloose/nerdtree'                " tree file explorer
