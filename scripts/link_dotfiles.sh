@@ -8,7 +8,6 @@ dotfiles=(
   aliases
   gemrc
   gitconfig
-  inputrc
   railsrc
   rspec
   vimrc
