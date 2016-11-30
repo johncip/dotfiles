@@ -136,13 +136,13 @@ endif
 " MacVim settings
 if has('gui_running')
   set colorcolumn=100
-  set guifont=Input:h15
-  set macligatures
+  " set guifont=Input:h15
+  " set macligatures
   highlight ColorColumn guibg=Gray10
 
   " start in project
   let g:ctrlp_working_path_mode = 0
-  cd /Users/John/Developer/Gradescope/gradescope-app
+  cd ~/Developer/Gradescope/gradescope-app
 endif
 
 "----------------------------------------------------------------------------------------
