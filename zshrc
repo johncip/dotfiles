@@ -14,7 +14,7 @@ setopt auto_pushd
 
 # Command completion, with arrow key menu
 autoload compinit
-compinit
+compinit -u # -u skips permission security check (for shared systems)
 zstyle ':completion:*' menu select
 
 # Edit command in editor (emacs-style)
