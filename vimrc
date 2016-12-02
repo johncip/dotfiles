@@ -239,9 +239,6 @@ nnoremap ˚ :m .-2<CR>==
 nnoremap <silent> <leader>l :call ToggleList("Location List", 'l')<CR>
 nnoremap <silent> <leader>c :call ToggleList("Quickfix List", 'c')<CR>
 
-" Find merge conflict markers
-map <leader>fc /\v^[<\|=>]{7}( .*\|$)<CR>
-
 " Plugins
 nmap \               <Plug>(easymotion-sn)
 omap \               <Plug>(easymotion-tn)
