@@ -27,6 +27,8 @@ bindkey '\e[A' history-search-backward
 bindkey '\e[B' history-search-forward
 
 # Move words with ctrl+arrow
+# (make sure to uncheck corresponding shortcuts in
+#    System Preferences → Keyboard → Shortcuts → Mission Control)
 bindkey -e
 bindkey '\e[1;5D' backward-word
 bindkey '\e[1;5C' forward-word
