@@ -141,8 +141,11 @@ if has('gui_running')
   highlight ColorColumn guibg=Gray10
 
   " start in project
-  let g:ctrlp_working_path_mode = 0
   cd ~/Developer/Gradescope/gradescope-app
+  let g:ctrlp_working_path_mode = 0
+
+  let g:ctrlp_custom_ignore = { 'dir': '\v/node_modules$' }
+  set wildignore+=node_modules
 endif
 
 "----------------------------------------------------------------------------------------
@@ -259,6 +262,8 @@ inoremap <leader>t     <Esc>:CtrlP<CR>
 nnoremap <leader>t     :CtrlP<CR>
 nnoremap <leader>M     :CtrlPMRU<CR>
 
+" makes Alt-w move forward by word within snake & camelcase (& ignore punctuation)
+nnoremap ∑ <Plug>CamelCaseMotion_w
 
 " makes <leader>w/b/e/ge move by word within snake & camelcase (& ignore punctuation)
 call camelcasemotion#CreateMotionMappings('<leader>')

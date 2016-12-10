@@ -40,7 +40,7 @@
 [pager]
   branch = true
 [rerere]
-  enabled = true
+  enabled = false
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path =
