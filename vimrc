@@ -32,6 +32,8 @@ call vundle#begin()
   Plugin 'tpope/vim-fugitive'                 " :Ggrep, :Gblame, etc
   Plugin 'tpope/vim-surround'                 " add / remove / change quotes & brackets
   Plugin 'tpope/vim-unimpaired'               " lots more pairwise bracket mappings
+  Plugin 'xolox/vim-notes'                    " note-taking
+    Plugin 'xolox/vim-misc'                   " xolox's standard lib
 
   " Language support
   Plugin 'dearrrfish/vim-applescript'         " applescript
@@ -126,6 +128,9 @@ let g:syntastic_loc_list_height = 3
 let g:python_version_2 = 1
 let g:python_highlight_all = 1
 let g:rspec_command = "! vagrant ssh -c 'cd /app && bin/rspec {spec} '"
+let g:notes_directories = ['~/Documents/Notes']
+let g:notes_suffix = '.txt'
+let g:notes_smart_quotes = 0
 
 " iTerm: use thin cursor
 if $TERM_PROGRAM =~ "iTerm"
