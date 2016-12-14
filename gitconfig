@@ -28,8 +28,8 @@
   new-files = diff --name-only --diff-filter=A origin/master
   unstage = reset HEAD
   rebasei = "!git rebase -i `git grandpa`"
-  prune-all = "!git prune && git remote prune origin && git remote prune team"
-  gone = "!git branches | grep gone | cut -d ' ' -f 3"
+  prune-all = "!git prune && git remote prune origin"
+  gone = "!git fetch --prune && git branches | grep ': gone' | awk '{print $1}'"
   cont = rebase --continue
   publish = "!git push -u origin HEAD && hub pull-request"
 [push]
