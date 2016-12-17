@@ -25,19 +25,19 @@
 formulas=(
   ansible
   coreutils
+  chruby
   curl
   findutils
   git
   htop-osx
   hub
   imagemagick
-  openssh
-  openssl
   node
   parallel
   postgresql
   readline
   rename
+  ruby-install
   sqlite
   the_silver_searcher
   tig
@@ -46,7 +46,6 @@ formulas=(
   unrar
   vim
   wget
-  youtube-dl
   z
   zsh
   zsh-completions
@@ -55,33 +54,38 @@ formulas=(
 applications=(
   1password
   alfred
-  audacity
+# audacity
   colors
-  cord
-  dosbox
+# cord
+  docker
+# dosbox
   dropbox
-  eclipse-java
-  flash
+# eclipse-java
+  fantastical
+# flash
   flux
   front
   github-desktop
-  gitx
+  google-chrome
   iterm2
   java
-  karabiner
-  libreoffice
+# karabiner
+# libreoffice
   little-snitch
-  lunchy
+# lunchy
   macdown
   macvim
-  menubar-countdown
-  ngrok
+# menubar-countdown
+# ngrok
   nosleep
   nvalt
-  omnioutliner
+# omnioutliner
+  postbox
   recordit
-  seil
+  rowanj-gitx
+# seil
   skype
+  slack
   spotify
   steam
   sublime-text
@@ -95,9 +99,10 @@ applications=(
 )
 
 fonts=(
+  font-fira-code
+  font-input
   font-lato
   font-lobster
-  font-fira-code
 )
 
 quicklook_plugins=(
@@ -116,7 +121,6 @@ benched=(
   ccleaner
   ffmpegx
   file-juicer
-  google-chrome     # updates too frequently
   handbrake
   heroku-toolbelt
   inkscape
@@ -125,7 +129,6 @@ benched=(
   mysqlworkbench
   perian
   pgadmin3
-  postbox           # auto-updates
   pycharm-pro
   silverlight
   the-unarchiver
@@ -133,9 +136,8 @@ benched=(
 )
 
 ruby_gems=(
-  rails
   rubocop
-  listen            # (for work)
+  listen
 )
 
 
@@ -144,29 +146,20 @@ xcode-select --install
 
 ## Install homebrew & homebrew cask (using system ruby)
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew analytics off
 brew update
-brew install caskroom/cask/brew-cask
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 brew tap caskroom/fonts
-
-## Install ruby (use rbenv to manage versions)
-## NOTE: add eval "$(rbenv init -)" to profile once zsh is installed
-brew install rbenv ruby-build
-rbenv install 2.2.3
 
 ## Install libraries & tools
 brew install ${formulas[@]}
 ##   to enable zsh:
 ##   1. add /usr/local/bin/zsh to /etc/shells
 ##   2. run chsh -s $(which zsh)
-##
-##   to enable zsh-completions:
-##   1. add fpath=(/usr/local/share/zsh-completions $fpath) to ~/.zshrc
-##   2. run rm -f ~/.zcompdump; compinit
 
 ## Install apps, fonts, quicklook plugins
 brew cask install ${applications[@]}
 brew cask install ${fonts[@]}
+cp /Applications/Utilities/Terminal.app/Contents/Resources/Fonts/SFMono* ~/Library/Fonts
 brew cask install ${quicklook_plugins[@]}
 
 ## Install gems
@@ -175,11 +168,8 @@ gem install ${ruby_gems[@]}
 ## Install gatling rsync plugin (for work)
 vagrant plugin install vagrant-gatling-rsync
 
-## Download Chalkboard color (for adding to iTerm manually)
-wget https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/Chalkboard.itermcolors -P ~/Downloads
-
-## -- install node packages (eslint, eslint-babel, airbnb style, etc)
-## -- install pure-prompt: https://github.com/sindresorhus/pure
+npm install -g eslint
+npm install -g pure-prompt
 
 
 ## Clean everything
