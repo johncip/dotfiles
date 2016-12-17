@@ -1,44 +1,25 @@
 #!/usr/bin/env bash
 
-## ==== BEFORE ================================================================================
-##
-##  Back up
-##    Messages
-##    iBooks
-##    Dotfiles & SSH keys
-##    Little Snitch   (export from app)
-##    Chrome          (export from app)
-##    Keychain        ~/Library/Keychains
-##    Fonts           ~/Library/Fonts ~/Library/FontCollections
-##    NValt notes     ~/Library/Application\ Support/Notational\ Data
-##
-##  Skip
-##    Transmit (to restore: copy sqlite from dropbox & remove any xml)
-##    Things (Things Cloud)
-##    Sublime Text (license in Gmail)
-##    OmniOutliner (license in 1Password)
-##    GoToAssist (license in Napoli mail?)
-##    Safari (bookmarks in iCloud)
-##
-## ==== AFTER ================================================================================
-##
-##  App Store
-##    Coda
-##    DaisyDisk
-##    Disk Diet
-##    Growl
-##    Slack
-##    YemuZip
-##
-##  Other stuff
-##    AudioMonitor (MTCoreAudio)
-##    Retina DisplayMenu -- https://dl.dropbox.com/u/87351306/RDM.tar.gz
-##    -- or DisableMonitor -- https://github.com/Eun/DisableMonitor
-##    Finale
-##    Adobe
-##    Printer
-##
-## ================================================================================================
+#  Back up
+#    Messages
+#    iBooks
+#    SSH keys
+#    Little Snitch   (export from app)
+#    Chrome          (export from app)
+#    Keychain        ~/Library/Keychains
+#    Fonts           ~/Library/Fonts ~/Library/FontCollections
+#    NValt notes     ~/Library/Application\ Support/Notational\ Data
+#
+#  Skip
+#    Transmit (to restore: copy sqlite from dropbox & remove any xml)
+#    Things (Things Cloud)
+#    Sublime Text (license in Gmail)
+#    OmniOutliner (license in 1Password)
+#    GoToAssist (license in Napoli mail?)
+#
+#  Other stuff
+#    AudioMonitor (MTCoreAudio)
+#    DisableMonitor -- https://github.com/Eun/DisableMonitor
 
 
 formulas=(
