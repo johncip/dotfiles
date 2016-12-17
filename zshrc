@@ -87,7 +87,6 @@ if [ -n "$PATH" ]; then
   unset old_PATH x
 fi
 
-
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+export HOMEBREW_NO_ANALYTICS=1
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
