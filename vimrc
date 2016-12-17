@@ -141,7 +141,8 @@ endif
 " MacVim settings
 if has('gui_running')
   set colorcolumn=100
-  set guifont=Input:h15
+  set guifont=SFMono-Light:h15
+  " set guifont=Input:h15
   " set macligatures
   highlight ColorColumn guibg=Gray10
 
