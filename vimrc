@@ -212,6 +212,8 @@ endfunction
 command! Configure :edit $MYVIMRC
 command! Source    :source $MYVIMRC
 command! Wd        write | bdelete
+command! Bd        bdelete
+command! BBD       bufdo bdelete
 
 " :Shell -- Run shell command and show output in a new window
 command! -complete=shellcmd -nargs=+ Shell call s:RunShellCommand(<q-args>)
