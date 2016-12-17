@@ -1,0 +1,2 @@
+:PluginInstall
+:qa

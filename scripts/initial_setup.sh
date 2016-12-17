@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+set -euo pipefail
+
+# note: run directly from Dotfiles/scripts.
 
 formulas=(
   ansible
@@ -32,42 +35,45 @@ formulas=(
 applications=(
   1password
   alfred
-# audacity
+  # audacity
   colors
-# cord
+  # cord
   docker
-# dosbox
+  # dosbox
   dropbox
-# eclipse-java
+  # eclipse-java
   fantastical
-# flash
+  # flash
   flux
   front
   github-desktop
   google-chrome
   iterm2
   java
-# karabiner
-# libreoffice
+  # karabiner
+  # libreoffice
   little-snitch
-# lunchy
+  # lunchy
   macdown
   macvim
-# menubar-countdown
-# ngrok
+  # mactex
+  # menubar-countdown
+  # ngrok
   nosleep
   nvalt
-# omnioutliner
+  # omnioutliner
   postbox
+  # pycharm-pro
   recordit
   rowanj-gitx
-# seil
+  # seil
   skype
   slack
   spotify
   steam
   sublime-text
   things
+  # tiled
   transmission
   transmit
   vagrant
@@ -92,65 +98,65 @@ quicklook_plugins=(
   quicklook-json    # json
 )
 
-# Casks to keep in mind but not auto-install
-benched=(
-  avidemux
-  broomstick
-  ccleaner
-  ffmpegx
-  file-juicer
-  handbrake
-  heroku-toolbelt
-  inkscape
-  kaleidoscope      # time-limited trial
-  mactex            # too big
-  mysqlworkbench
-  perian
-  pgadmin3
-  pycharm-pro
-  silverlight
-  the-unarchiver
-  tiled
-)
-
 ruby_gems=(
   rubocop
   listen
 )
 
+node_modules=(
+  eslint
+  pure-prompt
+)
 
-## Install XCode tools
+
+# Install XCode command-line tools
 xcode-select --install
 
-## Install homebrew & homebrew cask (using system ruby)
+
+# Install and link dot files
+devdir=~/Developer
+mkdir $devdir
+pushd $devdir
+git clone git@github.com:johncip/Dotfiles
+sh $devdir/Dotfiles/scripts/link_dotfiles.sh
+popd
+
+
+# Install homebrew & homebrew cask (using system ruby)
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew analytics off
 brew update
 brew tap caskroom/fonts
 
-## Install libraries & tools
+
+# Install libraries & CLI apps (+ set shell to zsh)
 brew install ${formulas[@]}
-##   to enable zsh:
-##   1. add /usr/local/bin/zsh to /etc/shells
-##   2. run chsh -s $(which zsh)
+echo $(which zsh) | sudo tee -a /etc/shells
+chsh -s $(which zsh)
 
-## Install apps, fonts, quicklook plugins
-brew cask install ${applications[@]}
-brew cask install ${fonts[@]}
-cp /Applications/Utilities/Terminal.app/Contents/Resources/Fonts/SFMono* ~/Library/Fonts
+
+# Install applications (+ vagrant-gatling-rsync)
 brew cask install ${quicklook_plugins[@]}
-
-## Install gems
-gem install ${ruby_gems[@]}
-
-## Install gatling rsync plugin (for work)
+brew cask install ${applications[@]}
 vagrant plugin install vagrant-gatling-rsync
 
-npm install -g eslint
-npm install -g pure-prompt
+
+# Install Vim plugins
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim -s ./commands.vim
 
 
-## Clean everything
+# Install fonts
+brew cask install ${fonts[@]}
+cp /Applications/Utilities/Terminal.app/Contents/Resources/Fonts/SFMono* ~/Library/Fonts
+
+
+# Install gems & node modules
+gem install ${ruby_gems[@]}
+npm install ${node_modules[@]}
+
+
+# Clean everything
 gem cleanup
 brew cleanup
 brew cask cleanup
