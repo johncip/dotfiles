@@ -4,7 +4,7 @@
 [core]
   editor = vim
   pager = less -S
-	excludesfile = /Users/John/.gitignore_global
+  excludesfile = /Users/John/.gitignore_global
 [color]
   ui = true
 [filter "lfs"]
