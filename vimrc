@@ -105,20 +105,20 @@ endif
 " Syntastic settings
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_mode_map = { 'mode': 'active' }
 
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_coffee_checkers = ['coffeelint']
-let g:syntastic_coffee_coffeelint_exec = '~/.rbenv/shims/coffeelint.rb'
+let g:syntastic_coffee_coffeelint_exec = '/usr/local/lib/ruby/gems/2.3.0/gems/coffeelint-1.14.0/bin/coffeelint.rb'
 let g:syntastic_ruby_checkers = ['mri', 'rubocop', 'reek']
-let g:syntastic_ruby_rubocop_exec = '~/.rbenv/shims/rubocop'
-let g:syntastic_ruby_reek_exec = '~/.rbenv/shims/reek'
+let g:syntastic_ruby_rubocop_exec = '/usr/local/bin/rubocop'
+let g:syntastic_ruby_reek_exec = '/usr/local/bin/reek'
 let g:syntastic_scss_checkers = ['scss_lint']
-let g:syntastic_scss_scss_lint_exec = '~/.rbenv/shims/scss-lint'
+let g:syntastic_scss_scss_lint_exec = '/usr/local/bin/scss-lint'
 let g:syntastic_slim_checkers = ['slim_lint']
-let g:syntastic_slim_slim_lint_exec = '~/.rbenv/shims/slim-lint'
+let g:syntastic_slim_slim_lint_exec = '/usr/local/bin/slim-lint'
 let g:syntastic_python_checkers = ['python', 'pylint']
 let g:syntastic_python_pylint_exec = '/usr/local/bin/pylint'
 let g:syntastic_quiet_messages = { 'regex': 'fixme' }
