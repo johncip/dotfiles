@@ -38,6 +38,8 @@ setopt APPEND_HISTORY
 setopt HIST_IGNORE_DUPS
 setopt EXTENDED_HISTORY
 setopt SHARE_HISTORY
+HISTFILE=~/.zsh_history
+SAVEHIST=1000
 
 # Autojump
 . `brew --prefix`/etc/profile.d/z.sh
