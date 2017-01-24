@@ -9,6 +9,7 @@ formulas=(
   chruby
   curl
   findutils
+  ghi
   git
   htop-osx
   hub
@@ -38,6 +39,7 @@ applications=(
   # audacity
   colors
   # cord
+  disablemonitor
   docker
   # dosbox
   dropbox
