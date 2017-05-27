@@ -34,12 +34,14 @@ bindkey '\e[1;5D' backward-word
 bindkey '\e[1;5C' forward-word
 
 # History
-setopt APPEND_HISTORY
-setopt HIST_IGNORE_DUPS
-setopt EXTENDED_HISTORY
-setopt SHARE_HISTORY
 HISTFILE=~/.zsh_history
-SAVEHIST=1000
+HISTSIZE=1000
+SAVEHIST=$HISTSIZE
+setopt append_history
+setopt hist_ignore_dups
+setopt share_history
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
 
 # Autojump
 . `brew --prefix`/etc/profile.d/z.sh
