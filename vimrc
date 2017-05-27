@@ -74,19 +74,19 @@ syntax on " see also ~/.vim/after/syntax/python.vim
 colorscheme base16-default-dark
 let mapleader = ","
 
+set backspace=2      " erase characters not entered during insert mode
+set expandtab        " use spaces instead of tabs
+set ignorecase       " search is case-insensitive
+set noswapfile       " live on the edge
+set nowrap           " don't wrap long lines
 set number           " show line numbers
 set ruler            " show the ruler
-set nowrap           " don't wrap long lines
-set noswapfile       " live on the edge
-set ignorecase       " search is case-insensitive
-set smartcase        " search is case-sensitive when uppercase present
-set t_Co=256         " 256-color term
-set showmatch        " highlight matching brackets
-set expandtab        " use spaces instead of tabs
 set shiftwidth=2     " use indents of 2 spaces
-set tabstop=2        " show 2 spaces per tab
+set showmatch        " highlight matching brackets
+set smartcase        " search is case-sensitive when uppercase present
 set softtabstop=2    " insert 2 spaces on tab / delete 2 spaces on backspace
-set backspace=2      " erase characters not entered during insert mode
+set t_Co=256         " 256-color term
+set tabstop=2        " show 2 spaces per tab
 
 if has('statusline')
   set laststatus=2   " always show the status line
