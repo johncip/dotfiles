@@ -1,0 +1,2 @@
+"\033[1;5C": forward-word
+"\033[1;5D": backward-word
