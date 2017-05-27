@@ -21,6 +21,7 @@ formulas=(
   rename
   ruby-install
   sqlite
+  terraform
   the_silver_searcher
   tig
   trash
@@ -38,15 +39,12 @@ applications=(
   alfred
   # audacity
   colors
-  # cord
   disablemonitor
   docker
   # dosbox
   dropbox
   # eclipse-java
   fantastical
-  # flash
-  flux
   front
   github-desktop
   google-chrome
