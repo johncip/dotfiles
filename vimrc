@@ -108,12 +108,12 @@ if executable('ag')
 endif
 
 " Syntastic settings
+let g:syntastic_aggregate_errors = 1
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_mode_map = { 'mode': 'active' }
-
+let g:syntastic_mode_map = { 'mode': 'passive' }
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_ruby_checkers = ['mri', 'rubocop', 'reek']
 let g:syntastic_ruby_rubocop_exec = '/usr/local/bin/rubocop'
@@ -128,6 +128,8 @@ let g:syntastic_quiet_messages = { 'regex': 'fixme' }
 let g:syntastic_loc_list_height = 3
 
 " Other plugin settings
+let g:NERDTreeRespectWildIgnore = 1
+let g:NERDTreeWinPos = "right"
 let g:notes_directories = ['~/Documents/Notes']
 let g:notes_smart_quotes = 0
 let g:notes_suffix = '.txt'
