@@ -274,6 +274,8 @@ inoremap <leader>t     <Esc>:CtrlP<CR>
 nnoremap <leader>t     :CtrlP<CR>
 nnoremap <leader>M     :CtrlPMRU<CR>
 
+nnoremap <leader>p     :Pytest file<CR>
+
 " makes Alt-w move forward by word within snake & camelcase (& ignore punctuation)
 nnoremap ∑ <Plug>CamelCaseMotion_w
 
