@@ -5,8 +5,9 @@ alias br='bundle exec rake'
 alias be='bundle exec'
 
 # git
-alias g='git st'
+alias g='git status'
 alias gd='git diff'
+alias gdc='git diff --cached'
 alias nw='numberwang'
 
 # vagrant
