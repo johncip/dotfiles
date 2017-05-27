@@ -26,6 +26,7 @@ call vundle#begin()
   Plugin 'scrooloose/nerdtree'                " tree file explorer
     Plugin 'Xuyuanp/nerdtree-git-plugin'      " show git status in NERDtree
   Plugin 'scrooloose/syntastic'               " linter integration
+  Plugin 'sstallion/vim-wildignore'           " read wildignore from a file
   Plugin 'terryma/vim-multiple-cursors'       " sublime-style multi select
   Plugin 'tomtom/tcomment_vim'                " easy [un]comment. supports blocks ,unlike commentary
   Plugin 'tpope/vim-eunuch'                   " :Move, :Rename, :Chmod, etc
@@ -149,10 +150,8 @@ if has('gui_running')
   " start in project
   cd ~/Developer/Gradescope/gradescope-app
   let g:ctrlp_working_path_mode = 0
-
-  let g:ctrlp_custom_ignore = { 'dir': '\v/node_modules$' }
-  set wildignore+=node_modules
 endif
+
 
 "----------------------------------------------------------------------------------------
 " Functions
@@ -210,11 +209,12 @@ endfunction
 "----------------------------------------------------------------------------------------
 " Commands
 "----------------------------------------------------------------------------------------
-command! Configure :edit $MYVIMRC
-command! Source    :source $MYVIMRC
-command! Wd        write | bdelete
-command! Bd        bdelete
-command! BBD       bufdo bdelete
+command! Configure  :edit $MYVIMRC
+command! Source     :source $MYVIMRC
+command! WildIgnore :edit ~/.vim/wildignore
+command! Wd         write | bdelete
+command! Bd         bdelete
+command! BBD        bufdo bdelete
 
 " :Shell -- Run shell command and show output in a new window
 command! -complete=shellcmd -nargs=+ Shell call s:RunShellCommand(<q-args>)
