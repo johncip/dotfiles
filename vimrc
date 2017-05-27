@@ -115,8 +115,6 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_mode_map = { 'mode': 'active' }
 
 let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_coffee_checkers = ['coffeelint']
-let g:syntastic_coffee_coffeelint_exec = '/usr/local/lib/ruby/gems/2.3.0/gems/coffeelint-1.14.0/bin/coffeelint.rb'
 let g:syntastic_ruby_checkers = ['mri', 'rubocop', 'reek']
 let g:syntastic_ruby_rubocop_exec = '/usr/local/bin/rubocop'
 let g:syntastic_ruby_reek_exec = '/usr/local/bin/reek'
