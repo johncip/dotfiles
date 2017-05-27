@@ -130,12 +130,12 @@ let g:syntastic_quiet_messages = { 'regex': 'fixme' }
 let g:syntastic_loc_list_height = 3
 
 " Other plugin settings
-let g:rspec_command = "! vagrant ssh -c 'cd /app && bin/rspec {spec} '"
 let g:notes_directories = ['~/Documents/Notes']
-let g:notes_suffix = '.txt'
 let g:notes_smart_quotes = 0
+let g:notes_suffix = '.txt'
 let g:python_highlight_all = 1
 let g:python_version_2 = 1
+let g:rspec_command = "! vagrant ssh -c 'cd /app && bin/rspec {spec} '"
 
 " iTerm: use thin cursor
 if $TERM_PROGRAM =~ "iTerm"
@@ -277,7 +277,8 @@ nnoremap <leader>M     :CtrlPMRU<CR>
 nnoremap <leader>p     :Pytest file<CR>
 
 " makes Alt-w move forward by word within snake & camelcase (& ignore punctuation)
-nnoremap ∑ <Plug>CamelCaseMotion_w
+" TODO: figure out why this doesn't work
+" nnoremap ∑ <Plug>CamelCaseMotion_w
 
 " makes <leader>w/b/e/ge move by word within snake & camelcase (& ignore punctuation)
 call camelcasemotion#CreateMotionMappings('<leader>')
