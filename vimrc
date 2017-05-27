@@ -10,6 +10,7 @@ call vundle#begin()
   Plugin 'airblade/vim-gitgutter'             " per-line git status
   Plugin 'alfredodeza/pytest.vim'             " run pytest
   Plugin 'bkad/CamelCaseMotion'               " move within words
+  Plugin 'chriskempson/base16-vim'            " base16 color scheme
   Plugin 'ctrlpvim/ctrlp.vim'                 " fuzzy file finder
     Plugin 'jasoncodes/ctrlp-modified.vim'    " adds :CtrlPModified & :CtrlPBranch
   Plugin 'easymotion/vim-easymotion'          " jump to search results
@@ -69,7 +70,8 @@ filetype plugin indent on  " required
 syntax on " see also ~/.vim/after/syntax/python.vim
 
 " colorscheme molokai
-colorscheme GRB256
+" colorscheme GRB256
+colorscheme base16-default-dark
 let mapleader = ","
 
 set number           " show line numbers
