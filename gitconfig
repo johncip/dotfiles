@@ -12,26 +12,29 @@
   smudge = git-lfs smudge %f
   required = true
 [alias]
-  cam = commit -am
-  ck = checkout
-  ci = config
-  st = -c color.status=always status
-  ids = log --format='%C(yellow)%h   %C(blue)%<(13,trunc)%an   %Creset%s %C(red)%d' --date=short --graph
-  rids = log --format='%C(yellow)%h   %C(blue)%<(13,trunc)%an   %Creset%s %C(red)%d' --date=short --reverse -20
   branch-name = rev-parse --abbrev-ref HEAD
-  since = "!git rids origin/`git branch-name`..`git branch-name`"
-  last = show --name-status
   branches = branch -vv --color
-  grandpa = merge-base HEAD origin/master
-  shallow = clone --depth 1
-  upstream = push -u origin HEAD
-  new-files = diff --name-only --diff-filter=A origin/master
-  unstage = reset HEAD
-  rebasei = "!git rebase -i `git grandpa`"
-  prune-all = "!git prune && git remote prune origin"
-  gone = "!git fetch --prune && git branches | grep ': gone' | awk '{print $1}'"
+  cam = commit -am
+  ci = config
+  ck = checkout
   cont = rebase --continue
+  gone = "!git fetch --prune && git branches | grep ': gone' | awk '{print $1}'"
+  grandpa = merge-base HEAD origin/master
+  ids = log --format='%C(yellow)%h   %C(blue)%<(13,trunc)%an   %Creset%s %C(red)%d' --date=short --graph
+  last = show --name-status
+  merge-master = "!git checkout master && git pull && git ck - && git merge master"
+  new-files = diff --name-only --diff-filter=A origin/master
+  prune-all = "!git prune && git remote prune origin"
   publish = "!git push -u origin HEAD && hub pull-request"
+  r = "!git rids"
+  rebasei = "!git rebase -i `git grandpa`"
+  rebase-master = "!git checkout master && git pull && git ck - && git rebase master"
+  rids = log --format='%C(yellow)%h   %C(blue)%<(13,trunc)%an   %Creset%s %C(red)%d' --date=short --reverse -20
+  shallow = clone --depth 1
+  since = "!git rids origin/`git branch-name`..`git branch-name`"
+  st = -c color.status=always status
+  unstage = reset HEAD
+  upstream = push -u origin HEAD
 [push]
   default = upstream
 [diff]
