@@ -8,6 +8,7 @@ call vundle#begin()
   Plugin 'VundleVim/Vundle.vim'               " required
 
   Plugin 'airblade/vim-gitgutter'             " per-line git status
+  Plugin 'alfredodeza/pytest.vim'             " run pytest
   Plugin 'bkad/CamelCaseMotion'               " move within words
   Plugin 'ctrlpvim/ctrlp.vim'                 " fuzzy file finder
     Plugin 'jasoncodes/ctrlp-modified.vim'    " adds :CtrlPModified & :CtrlPBranch
@@ -65,7 +66,8 @@ filetype plugin indent on  " required
 "----------------------------------------------------------------------------------------
 " Settings
 "----------------------------------------------------------------------------------------
-syntax on
+syntax on " see also ~/.vim/after/syntax/python.vim
+
 " colorscheme molokai
 colorscheme GRB256
 let mapleader = ","
@@ -126,12 +128,12 @@ let g:syntastic_quiet_messages = { 'regex': 'fixme' }
 let g:syntastic_loc_list_height = 3
 
 " Other plugin settings
-let g:python_version_2 = 1
-let g:python_highlight_all = 1
 let g:rspec_command = "! vagrant ssh -c 'cd /app && bin/rspec {spec} '"
 let g:notes_directories = ['~/Documents/Notes']
 let g:notes_suffix = '.txt'
 let g:notes_smart_quotes = 0
+let g:python_highlight_all = 1
+let g:python_version_2 = 1
 
 " iTerm: use thin cursor
 if $TERM_PROGRAM =~ "iTerm"
