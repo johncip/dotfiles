@@ -33,7 +33,7 @@
   cont = rebase --continue
   publish = "!git push -u origin HEAD && hub pull-request"
 [push]
-  default = simple
+  default = upstream
 [diff]
   algorithm = histogram
   compactionHeuristic = true
