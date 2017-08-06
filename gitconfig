@@ -35,6 +35,7 @@
   st = -c color.status=always status
   unstage = reset HEAD
   upstream = push -u origin HEAD
+  merge-and-destroy = "!git checkout master && lastBranch=`git rev-parse --abbrev-ref @{-1}` && git merge $lastBranch && git push && git push origin :$lastBranch && git branch -D $lastBranch"
 [push]
   default = upstream
 [diff]
