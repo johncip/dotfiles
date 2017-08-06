@@ -20,6 +20,7 @@ call vundle#begin()
   Plugin 'haya14busa/incsearch.vim'           " for easymotion
   Plugin 'itchyny/lightline.vim'              " better status line
   Plugin 'jacoborus/tender'                   " colorscheme
+  Plugin 'jkramer/vim-checkbox'               " toggle checkboxes with <leader>tt
   Plugin 'michaeljsmith/vim-indent-object'    " text objects based on indent level
   Plugin 'mileszs/ack.vim'                    " use ack to search code
   Plugin 'nathanaelkane/vim-indent-guides'    " show indent with vertical lines (toggle: <L>ig)
@@ -29,7 +30,7 @@ call vundle#begin()
   Plugin 'scrooloose/syntastic'               " linter integration
   Plugin 'sstallion/vim-wildignore'           " read wildignore from a file
   Plugin 'terryma/vim-multiple-cursors'       " sublime-style multi select
-  Plugin 'tomtom/tcomment_vim'                " easy [un]comment. supports blocks ,unlike commentary
+  Plugin 'tomtom/tcomment_vim'                " easy [un]comment. supports blocks, unlike commentary
   Plugin 'tpope/vim-eunuch'                   " :Move, :Rename, :Chmod, etc
   Plugin 'tpope/vim-fugitive'                 " :Ggrep, :Gblame, etc
   Plugin 'tpope/vim-surround'                 " add / remove / change quotes & brackets
@@ -217,9 +218,9 @@ endfunction
 "----------------------------------------------------------------------------------------
 " Commands
 "----------------------------------------------------------------------------------------
-command! Configure  :edit $MYVIMRC
-command! Source     :source $MYVIMRC
-command! WildIgnore :edit ~/.vim/wildignore
+command! Configure  edit $MYVIMRC
+command! Source     source $MYVIMRC
+command! WildIgnore edit ~/.vim/wildignore
 command! Wd         write | bdelete
 command! Bd         bdelete
 command! BBD        bufdo bdelete
@@ -279,6 +280,10 @@ nnoremap <leader>t     :CtrlP<CR>
 nnoremap <leader>M     :CtrlPMRU<CR>
 
 nnoremap <leader>p     :Pytest file<CR>
+
+" Don't use <leader>tt for vim-checkbox
+silent! nunmap <silent> <leader>tt
+nnoremap <silent> <leader>x :ToggleCB<cr>
 
 " makes Alt-w move forward by word within snake & camelcase (& ignore punctuation)
 " TODO: figure out why this doesn't work
