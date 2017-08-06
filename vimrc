@@ -74,9 +74,7 @@ filetype plugin indent on  " required
 "----------------------------------------------------------------------------------------
 syntax on " see also ~/.vim/after/syntax/python.vim
 
-" colorscheme molokai
-" colorscheme GRB256
-colorscheme base16-default-dark
+colorscheme moody    " previous: molokai, GRB256, base16-default-dark, sialoquent
 let mapleader = ","
 
 set backspace=2      " erase characters not entered during insert mode
@@ -151,9 +149,10 @@ endif
 " MacVim settings
 if has('gui_running')
   set colorcolumn=100
-  set guifont=SFMono-Light:h15
-  " set guifont=Input:h15
-  " set macligatures
+  set guifont=SFMono-Light:h16  " Range\ Mono\ Medium, Input, Monaco, Menlo
+  set linespace=2
+  set columnspace=-1
+  set transparency=16
   highlight ColorColumn guibg=Gray10
 
   " start in project
@@ -224,6 +223,10 @@ command! WildIgnore edit ~/.vim/wildignore
 command! Wd         write | bdelete
 command! Bd         bdelete
 command! BBD        bufdo bdelete
+command! Switch     cd ../../Liftbook/liftbook-app
+command! Status     edit ~/Desktop/work/status.txt
+command! Trans      set transparency=16
+command! Solid      set transparency=2
 
 " :Shell -- Run shell command and show output in a new window
 command! -complete=shellcmd -nargs=+ Shell call s:RunShellCommand(<q-args>)
@@ -294,3 +297,9 @@ call camelcasemotion#CreateMotionMappings('<leader>')
 
 " For when you forget to sudo... really write the file.
 cmap w!! w !sudo tee % >/dev/null
+
+" make sure TODO etc are gray
+hi clear Todo
+hi Todo guifg=#888888 guibg=#1a1a1a
+hi clear PreProc
+hi PreProc guifg=#888888 guibg=#1a1a1a
