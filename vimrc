@@ -10,7 +10,6 @@ call vundle#begin()
   Plugin 'airblade/vim-gitgutter'             " per-line git status
   Plugin 'alfredodeza/pytest.vim'             " run pytest
   Plugin 'bkad/CamelCaseMotion'               " move within words
-  Plugin 'chriskempson/base16-vim'            " base16 color scheme
   Plugin 'ctrlpvim/ctrlp.vim'                 " fuzzy file finder
     Plugin 'jasoncodes/ctrlp-modified.vim'    " adds :CtrlPModified & :CtrlPBranch
   Plugin 'easymotion/vim-easymotion'          " jump to search results
@@ -37,6 +36,11 @@ call vundle#begin()
   Plugin 'tpope/vim-unimpaired'               " lots more pairwise bracket mappings
   Plugin 'xolox/vim-notes'                    " note-taking
     Plugin 'xolox/vim-misc'                   " xolox's standard lib
+
+  " Color schemes
+  Plugin 'chriskempson/base16-vim'            " base16
+  Plugin 'davidklsn/vim-sialoquent'           " sialoquent
+  Plugin 'jakwings/vim-colors'                " moody
 
   " Language support
   Plugin 'dearrrfish/vim-applescript'         " applescript
