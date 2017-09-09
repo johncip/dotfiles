@@ -70,6 +70,7 @@ call plug#end()
 
 
 " Settings {{{
+filetype plugin indent on  " load filetype plugins
 syntax on " see also ~/.vim/after/syntax/python.vim
 
 colorscheme moody    " previous: molokai, GRB256, base16-default-dark, sialoquent
