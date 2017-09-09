@@ -73,22 +73,28 @@ call plug#end()
 filetype plugin indent on  " load filetype plugins
 syntax on " see also ~/.vim/after/syntax/python.vim
 
-colorscheme moody    " previous: molokai, GRB256, base16-default-dark, sialoquent
-let mapleader = ","
+colorscheme moody      " previous: molokai, GRB256, base16-default-dark, sialoquent
+let mapleader = ","    " use , for <leader>
 
-set backspace=2      " erase characters not entered during insert mode
-set expandtab        " use spaces instead of tabs
-set ignorecase       " search is case-insensitive
-set noswapfile       " live on the edge
-set nowrap           " don't wrap long lines
-set number           " show line numbers
-set ruler            " show the ruler
-set shiftwidth=2     " use indents of 2 spaces
-set showmatch        " highlight matching brackets
-set smartcase        " search is case-sensitive when uppercase present
-set softtabstop=2    " insert 2 spaces on tab / delete 2 spaces on backspace
-set t_Co=256         " 256-color term
-set tabstop=2        " show 2 spaces per tab
+set backspace=2        " erase characters not entered during insert mode
+set expandtab          " use spaces instead of tabs
+set ignorecase         " search is case-insensitive
+set noswapfile         " live on the edge
+set nowrap             " don't wrap long lines
+set number             " show line numbers
+set ruler              " show the ruler
+set shiftwidth=2       " use indents of 2 spaces
+set showmatch          " highlight matching brackets
+set smartcase          " search is case-sensitive when uppercase present
+set softtabstop=2      " insert 2 spaces on tab / delete 2 spaces on backspace
+set t_Co=256           " 256-color term
+set tabstop=2          " show 2 spaces per tab
+set diffopt+=vertical  " vertical :Gdiff
+set wrapscan           " searches wrap
+
+set ttyfast
+set lazyredraw
+set cursorline
 
 if has('statusline')
   set laststatus=2   " always show the status line
