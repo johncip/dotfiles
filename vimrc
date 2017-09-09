@@ -191,16 +191,14 @@ function! ToggleList(bufname, pfx) " Toggle the location or quickfix list
   endif
 endfunction
 
-" Needed for ToggleList
-function! GetBufferList()
+function! GetBufferList() " Needed for ToggleList
   redir =>buflist
   silent! ls!
   redir END
   return buflist
 endfunction
 
-" Used by :Shell
-function! s:RunShellCommand(cmdline)
+function! s:RunShellCommand(cmdline) " Used by :Shell
   echo a:cmdline
   let expanded_cmdline = a:cmdline
   for part in split(a:cmdline, ' ')
@@ -233,7 +231,7 @@ command! Status     edit ~/Desktop/work/status.txt
 command! Trans      set transparency=16
 command! Solid      set transparency=2
 
-" :Shell -- Run shell command and show output in a new window
+" runs a shell command in a new window
 command! -complete=shellcmd -nargs=+ Shell call s:RunShellCommand(<q-args>)
 
 cmap w!!            w !sudo tee % >/dev/null
@@ -259,7 +257,7 @@ nnoremap Y y$
 nnoremap zl zL
 nnoremap zh zH
 
-" Move line under cursor with Alt-j or Alt-k
+" Move line under cursor with Alt-j or Alt-k (mac-specific)
 nnoremap ∆ :m .+1<CR>==
 nnoremap ˚ :m .-2<CR>==
 
@@ -292,7 +290,7 @@ nnoremap <leader>M     :CtrlPMRU<CR>
 
 nnoremap <leader>p     :Pytest file<CR>
 
-" Don't use <leader>tt for vim-checkbox
+" vim-checkbox: use <leader>x instead of <leader>tt
 silent! nunmap <silent> <leader>tt
 nnoremap <silent> <leader>x :ToggleCB<cr>
 
