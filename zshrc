@@ -73,6 +73,10 @@ function remove-dsstore() {
   find . -d -name ".DS_Store" -exec rm -v {} \;
 }
 
+function print-conflicts() {
+  ag -r '(>{7})|(<{7})'
+}
+
 # Add completions to fpath
 fpath=(/usr/local/share/zsh-completions $fpath)
 
