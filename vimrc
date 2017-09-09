@@ -145,6 +145,8 @@ let g:notes_suffix = '.txt'
 let g:python_highlight_all = 1
 let g:python_version_2 = 1
 let g:rspec_command = "! vagrant ssh -c 'cd /app && bin/rspec {spec} '"
+let g:startify_bookmarks = [{'b': '~/Desktop/work/status.txt'}, {'a': '~/Desktop/today.md'}]
+let g:startify_change_to_dir = 0
 
 " iTerm: use thin cursor
 if $TERM_PROGRAM =~ "iTerm"
