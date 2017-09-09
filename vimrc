@@ -279,14 +279,11 @@ nnoremap <leader>n     :NERDTreeFind<CR>
 nnoremap <leader>s     :SyntasticCheck<CR>
 
 nnoremap <leader>m     :CtrlPModified<CR>
-inoremap <leader>m     <Esc>:CtrlPModified<CR>
 nnoremap <leader>B     :CtrlPBranch<CR>
-inoremap <leader>B     <Esc>:CtrlPBranch<CR>
-inoremap <leader>t     <Esc>:CtrlP<CR>
 nnoremap <leader>t     :CtrlP<CR>
 nnoremap <leader>M     :CtrlPMRU<CR>
 
-nnoremap <leader>p     :Pytest file<CR>
+" nnoremap <leader>p     :Pytest file<CR>
 
 " vim-checkbox: use <leader>x instead of <leader>tt
 silent! nunmap <silent> <leader>tt
