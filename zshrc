@@ -33,6 +33,12 @@ bindkey -e
 bindkey '\e[1;5D' backward-word
 bindkey '\e[1;5C' forward-word
 
+# turn off control flow stealing Ctrl-S
+stty -ixoff
+stty stop undef
+stty start undef
+
+
 # History
 HISTFILE=~/.zsh_history
 HISTSIZE=1000
