@@ -151,13 +151,13 @@ if $TERM_PROGRAM =~ "iTerm"
   let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
 endif
 
-" MacVim settings
+" GUI vim settings
 if has('gui_running')
   set colorcolumn=100
-  set guifont=SFMono-Light:h16  " Range\ Mono\ Medium, Input, Monaco, Menlo
+  set guifont=SFMono-Light:h14  " Range\ Mono\ Medium, Input, Monaco, Menlo
   set linespace=2
   set columnspace=-1
-  set transparency=16
+  set transparency=2
   highlight ColorColumn guibg=Gray10
 
   " start in project
