@@ -134,6 +134,7 @@ let g:syntastic_python_checkers = ['python', 'pylint']
 let g:syntastic_python_pylint_exec = '/usr/local/bin/pylint'
 let g:syntastic_quiet_messages = { 'regex': 'fixme' }
 let g:syntastic_loc_list_height = 3
+let g:vim_markdown_folding_disabled = 1
 
 " Other plugin settings
 let g:NERDTreeRespectWildIgnore = 1
