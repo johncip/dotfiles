@@ -263,6 +263,14 @@ nnoremap ˚ :m .-2<CR>==
 nnoremap <silent> <leader>l :call ToggleList("Location List", 'l')<CR>
 nnoremap <silent> <leader>c :call ToggleList("Quickfix List", 'c')<CR>
 
+" Keep the current indentation level, even if the previous line is blank
+inoremap <CR> <CR>x<BS>
+
+nnoremap <leader>dg2   :diffget //2<CR>
+nnoremap <leader>dg3   :diffget //3<CR>
+nnoremap <leader>du    :diffupdate<CR>
+
+nnoremap <leader>i     i_<Esc>r
 " }}}
 
 
@@ -279,6 +287,7 @@ nnoremap <leader>n     :NERDTreeFind<CR>
 nnoremap <leader>s     :SyntasticCheck<CR>
 
 nnoremap <leader>m     :CtrlPModified<CR>
+nnoremap <leader>r     :CtrlPMRUFiles<CR>
 nnoremap <leader>B     :CtrlPBranch<CR>
 nnoremap <leader>t     :CtrlP<CR>
 nnoremap <leader>M     :CtrlPMRU<CR>
