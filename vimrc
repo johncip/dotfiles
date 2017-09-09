@@ -244,9 +244,6 @@ noremap  <Down>     <NOP>
 noremap  <Left>     <NOP>
 noremap  <Right>    <NOP>
 
-" Use space to find next space in line
-noremap  <Space> f<Space>
-
 " Return to normal mode from home row
 inoremap jk <Esc>
 
