@@ -244,8 +244,9 @@ noremap  <Down>     <NOP>
 noremap  <Left>     <NOP>
 noremap  <Right>    <NOP>
 
-" Return to normal mode from home row
+" Return to normal mode from home row. Disabling Esc to build the habit
 inoremap jk <Esc>
+inoremap <Esc> <Nop>
 
 " Yank to the end of the line, like C and D.
 nnoremap Y y$
