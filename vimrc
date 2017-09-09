@@ -3,70 +3,71 @@
 "----------------------------------------------------------------------------------------
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-  Plugin 'VundleVim/Vundle.vim'               " required
+call plug#begin('~/.vim/plugged')
 
-  Plugin 'airblade/vim-gitgutter'             " per-line git status
-  Plugin 'alfredodeza/pytest.vim'             " run pytest
-  Plugin 'bkad/CamelCaseMotion'               " move within words
-  Plugin 'ctrlpvim/ctrlp.vim'                 " fuzzy file finder
-    Plugin 'jasoncodes/ctrlp-modified.vim'    " adds :CtrlPModified & :CtrlPBranch
-  Plugin 'easymotion/vim-easymotion'          " jump to search results
-  Plugin 'ervandew/supertab'                  " tab completion
-  Plugin 'flazz/vim-colorschemes'             " colorscheme pack
-  Plugin 'gcmt/wildfire.vim'                  " select increasing scopes
-  Plugin 'godlygeek/tabular'                  " column alignment
-  Plugin 'haya14busa/incsearch.vim'           " for easymotion
-  Plugin 'itchyny/lightline.vim'              " better status line
-  Plugin 'jacoborus/tender'                   " colorscheme
-  Plugin 'jkramer/vim-checkbox'               " toggle checkboxes with <leader>tt
-  Plugin 'michaeljsmith/vim-indent-object'    " text objects based on indent level
-  Plugin 'mileszs/ack.vim'                    " use ack to search code
-  Plugin 'nathanaelkane/vim-indent-guides'    " show indent with vertical lines (toggle: <L>ig)
-  Plugin 'ntpeters/vim-better-whitespace'     " show / trim trailing whitespace
-  Plugin 'scrooloose/nerdtree'                " tree file explorer
-    Plugin 'Xuyuanp/nerdtree-git-plugin'      " show git status in NERDtree
-  Plugin 'scrooloose/syntastic'               " linter integration
-  Plugin 'sstallion/vim-wildignore'           " read wildignore from a file
-  Plugin 'terryma/vim-multiple-cursors'       " sublime-style multi select
-  Plugin 'tomtom/tcomment_vim'                " easy [un]comment. supports blocks, unlike commentary
-  Plugin 'tpope/vim-eunuch'                   " :Move, :Rename, :Chmod, etc
-  Plugin 'tpope/vim-fugitive'                 " :Ggrep, :Gblame, etc
-  Plugin 'tpope/vim-surround'                 " add / remove / change quotes & brackets
-  Plugin 'tpope/vim-unimpaired'               " lots more pairwise bracket mappings
-  Plugin 'xolox/vim-notes'                    " note-taking
-    Plugin 'xolox/vim-misc'                   " xolox's standard lib
+  Plug 'airblade/vim-gitgutter'             " per-line git status
+  Plug 'AndrewRadev/splitjoin.vim'          " split and join lines (gS, sJ)
+  " Plug 'alfredodeza/pytest.vim'           " run pytest
+  Plug 'bkad/CamelCaseMotion'               " move within words
+  Plug 'ctrlpvim/ctrlp.vim'                 " fuzzy file finder
+   Plug 'jasoncodes/ctrlp-modified.vim'     " adds :CtrlPModified & :CtrlPBranch
+  Plug 'ervandew/supertab'                  " tab completion
+  " Plug 'gcmt/wildfire.vim'                " select increasing scopes
+  Plug 'godlygeek/tabular'                  " column alignment
+  Plug 'itchyny/lightline.vim'              " better status line
+  Plug 'jceb/vim-orgmode'
+  Plug 'jkramer/vim-checkbox'               " toggle checkboxes with <leader>tt
+  Plug 'majutsushi/tagbar'                  " in-memory ctags view in a sidebar
+  Plug 'mbbill/undotree'                    " visualize the undo tree
+  Plug 'mhinz/vim-sayonara'                 " close window and buffer together
+  Plug 'mhinz/vim-startify'                 " customize the start screen
+  Plug 'michaeljsmith/vim-indent-object'    " text objects based on indent level
+  " Plug 'nathanaelkane/vim-indent-guides'  " show indent with vertical lines (toggle: <leader>ig)
+  Plug 'ntpeters/vim-better-whitespace'     " show / trim trailing whitespace
+  Plug 'scrooloose/nerdtree'                " tree file explorer
+  Plug 'scrooloose/syntastic'               " linter integration
+  Plug 'sstallion/vim-wildignore'           " read wildignore from a file
+  Plug 'terryma/vim-multiple-cursors'       " sublime-style multi select
+  Plug 'tomtom/tcomment_vim'                " easy [un]comment. supports blocks, unlike commentary
+  Plug 'tpope/tpope-vim-abolish'            " replace words and their variants
+  Plug 'tpope/vim-eunuch'                   " :Move, :Rename, :Chmod, etc
+  Plug 'tpope/vim-fugitive'                 " :Ggrep, :Gblame, etc
+  Plug 'tpope/vim-surround'                 " add / remove / change quotes & brackets
+  Plug 'tpope/vim-unimpaired'               " lots more pairwise bracket mappings
+  " Plug 'vimoutliner/vimoutliner'          " outliner
+  Plug 'xolox/vim-misc'                     " required by vim-notes
+  Plug 'xolox/vim-notes'                    " note-taking
+  " Plug 'Xuyuanp/nerdtree-git-plugin'      " show git status in NERDtree
 
   " Color schemes
-  Plugin 'chriskempson/base16-vim'            " base16
-  Plugin 'davidklsn/vim-sialoquent'           " sialoquent
-  Plugin 'jakwings/vim-colors'                " moody
+  " Plug 'chriskempson/base16-vim'          " base16
+  " Plug 'davidklsn/vim-sialoquent'         " sialoquent
+  " Plug 'jacoborus/tender'                 " tender
+  Plug 'jakwings/vim-colors'                " moody
 
   " Language support
-  Plugin 'dearrrfish/vim-applescript'         " applescript
-  Plugin 'mtscout6/vim-cjsx'                  " cjsx
-  Plugin 'kchmck/vim-coffee-script'           " coffeescript
-  Plugin 'tpope/vim-haml'                     " haml
-  Plugin 'pangloss/vim-javascript'            " javascript
-  Plugin 'elzr/vim-json'                      " json
-  Plugin 'mxw/vim-jsx'                        " jsx
-  Plugin 'plasticboy/vim-markdown'            " markdown
-  Plugin 'hdima/python-syntax'                " python (better)
-  Plugin 'vim-ruby/vim-ruby'                  " ruby
-  Plugin 'slim-template/vim-slim'             " slim
-  Plugin 'hashivim/vim-terraform'             " terraform
-  Plugin 'jlong/sass-convert.vim'             " convert sass <=> scss
+  Plug 'dearrrfish/vim-applescript'         " applescript
+  Plug 'mtscout6/vim-cjsx'                  " cjsx
+  Plug 'kchmck/vim-coffee-script'           " coffeescript
+  Plug 'tpope/vim-haml'                     " haml
+  Plug 'pangloss/vim-javascript'            " javascript
+  Plug 'elzr/vim-json'                      " json
+  Plug 'mxw/vim-jsx'                        " jsx
+  Plug 'plasticboy/vim-markdown'            " markdown
+  Plug 'hdima/python-syntax'                " python (better)
+  Plug 'vim-ruby/vim-ruby'                  " ruby
+  Plug 'slim-template/vim-slim'             " slim
+  Plug 'hashivim/vim-terraform'             " terraform
+  Plug 'jlong/sass-convert.vim'             " convert sass <=> scss
 
   " Ruby & rails tools
-  Plugin 'ecomba/vim-ruby-refactoring'        " refactoring support
-    Plugin 'tmhedberg/matchit'                " percent-matching for do/end etc
-  Plugin 'jgdavey/vim-blockle'                " toggle ruby block types
-  Plugin 'tpope/vim-endwise'                  " auto-fill 'end' statements
-  Plugin 'tpope/vim-rails'                    " rails project navigation
+  Plug 'ecomba/vim-ruby-refactoring'        " refactoring support
+    Plug 'tmhedberg/matchit'                " percent-matching for do/end etc
+  Plug 'jgdavey/vim-blockle'                " toggle ruby block types
+  Plug 'tpope/vim-endwise'                  " auto-fill 'end' statements
+  Plug 'tpope/vim-rails'                    " rails project navigation
 
-call vundle#end()
-filetype plugin indent on  " required
+call plug#end()
 
 
 "----------------------------------------------------------------------------------------
