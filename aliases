@@ -5,9 +5,9 @@ alias br='bundle exec rake'
 alias be='bundle exec'
 
 # git
-alias g='git status'
-alias gd='git diff'
-alias gdc='git diff --cached'
+alias g='/usr/local/bin/git'
+alias git='echo "nope"'
+alias s='/usr/local/bin/git status'
 alias nw='numberwang'
 
 # vagrant
@@ -16,6 +16,7 @@ alias vsh='vagrant ssh'
 alias vsync='vagrant gatling-rsync-auto | ruby ~/Developer/Gradescope/trim_vsync.rb'
 alias vhalt='vagrant halt && exit'
 alias waitsh='sleep 25 && vagrant ssh'
+alias wsh='waitsh'
 alias vshrc="vsh -- -t 'cd /app && bin/rails c'"
 alias vshrs="vsh -- -t 'cd /app && bin/rails s'"
 
@@ -27,6 +28,7 @@ alias annotate='bundle exec annotate'
 alias ll='ls -l'
 alias ls='ls -G'
 alias ghi='ghi --no-pager'
+alias bc='bc -l -q'
 
 # tools
 alias json='python -m json.tool'

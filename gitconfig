@@ -12,30 +12,40 @@
   smudge = git-lfs smudge %f
   required = true
 [alias]
-  branch-name = rev-parse --abbrev-ref HEAD
-  branches = branch -vv --color
+  a = add
+  c = commit
   cam = commit -am
-  ci = config
-  ck = checkout
-  cont = rebase --continue
+  cm = commit -m
+  d = diff
+  dc = diff --cached
+  k = checkout
+  kb = checkout -b
+  p = pull
+  pom = pull origin master
+  pick = cherry-pick
+  r = reset
+  rh = reset head^
+  s = status
+  su = submodule update
+
+  home = checkout master
+  branches = branch -vv --color
+  mybranches = "!git branches | grep john"
   gone = "!git fetch --prune && git branches | grep ': gone' | awk '{print $1}'"
   grandpa = merge-base HEAD origin/master
-  ids = log --format='%C(yellow)%h   %C(blue)%<(13,trunc)%an   %Creset%s %C(red)%d' --date=short --graph
-  last = show --name-status
-  merge-master = "!git checkout master && git pull && git ck - && git merge master"
-  new-files = diff --name-only --diff-filter=A origin/master
   prune-all = "!git prune && git remote prune origin"
   publish = "!git push -u origin HEAD && hub pull-request"
-  r = "!git rids"
-  rebasei = "!git rebase -i `git grandpa`"
-  rebase-master = "!git checkout master && git pull && git ck - && git rebase master"
   rids = log --format='%C(yellow)%h   %C(blue)%<(13,trunc)%an   %Creset%s %C(red)%d' --date=short --reverse -20
+  upstream = push -u origin HEAD
+
+  branch-name = rev-parse --abbrev-ref HEAD
+  new-files = diff --name-only --diff-filter=A origin/master
+  rebase-master = "!git checkout master && git pull && git ck - && git rebase master"
+  rebasei = "!git rebase -i `git grandpa`"
   shallow = clone --depth 1
   since = "!git rids origin/`git branch-name`..`git branch-name`"
-  st = -c color.status=always status
   unstage = reset HEAD
-  upstream = push -u origin HEAD
-  merge-and-destroy = "!git checkout master && lastBranch=`git rev-parse --abbrev-ref @{-1}` && git merge $lastBranch && git push && git push origin :$lastBranch && git branch -D $lastBranch"
+
 [push]
   default = upstream
 [diff]
