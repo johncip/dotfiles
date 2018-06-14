@@ -88,6 +88,8 @@ function list_instances() {
 # Add completions to fpath
 fpath=(/usr/local/share/zsh-completions $fpath)
 
+path=(~/Applications/Scripts $path)
+
 # Path: add /usr/local/sbin, put usr/local first
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 
