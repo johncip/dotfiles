@@ -37,7 +37,7 @@ call plug#begin('~/.vim/plugged')
   " Plug 'jacoborus/tender'                 " tender
   Plug 'jakwings/vim-colors'                " moody
 
-  " Language support
+  " Filetype Plugins
   Plug 'dearrrfish/vim-applescript'         " applescript
   Plug 'mtscout6/vim-cjsx'                  " cjsx
   Plug 'kchmck/vim-coffee-script'           " coffeescript
