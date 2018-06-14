@@ -62,6 +62,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-endwise'                  " auto-fill 'end' statements
   Plug 'tpope/vim-rails'                    " rails project navigation
 
+  Plug 'jreybert/vimagit'                   " git integration
+
 call plug#end()
 " }}}
 
