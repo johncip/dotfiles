@@ -91,6 +91,7 @@ set t_Co=256           " 256-color term
 set tabstop=2          " show 2 spaces per tab
 set diffopt+=vertical  " vertical :Gdiff
 set wrapscan           " searches wrap
+set modeline           " modelines on
 
 set ttyfast
 set lazyredraw
@@ -134,9 +135,13 @@ let g:syntastic_python_checkers = ['python', 'pylint']
 let g:syntastic_python_pylint_exec = '/usr/local/bin/pylint'
 let g:syntastic_quiet_messages = { 'regex': 'fixme' }
 let g:syntastic_loc_list_height = 3
-let g:vim_markdown_folding_disabled = 1
 
 " Other plugin settings
+let g:ctrlp_max_files = 0
+let g:ctrlp_show_hidden = 1
+let g:csv_highlight_column = 'y'
+let g:csv_no_conceal = 1
+let g:vim_markdown_folding_disabled = 1
 let g:NERDTreeRespectWildIgnore = 1
 let g:NERDTreeWinPos = "right"
 let g:notes_directories = ['~/Documents/Notes']
@@ -145,7 +150,7 @@ let g:notes_suffix = '.txt'
 let g:python_highlight_all = 1
 let g:python_version_2 = 1
 let g:rspec_command = "! vagrant ssh -c 'cd /app && bin/rspec {spec} '"
-let g:startify_bookmarks = [{'b': '~/Desktop/work/status.txt'}, {'a': '~/Desktop/today.md'}]
+let g:startify_bookmarks = [{'b': '~/Desktop/work/status.txt'}, {'a': '~/Desktop/work/today.md'}]
 let g:startify_change_to_dir = 0
 
 " iTerm: use thin cursor
@@ -246,7 +251,7 @@ noremap  <Right>    <NOP>
 
 " Return to normal mode from home row. Disabling Esc to build the habit
 inoremap jk <Esc>
-inoremap <Esc> <Nop>
+" inoremap <Esc> <Nop>
 
 " Yank to the end of the line, like C and D.
 nnoremap Y y$
