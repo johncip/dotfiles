@@ -5,12 +5,10 @@ call plug#begin('~/.vim/plugged')
 
   Plug 'airblade/vim-gitgutter'             " per-line git status
   Plug 'AndrewRadev/splitjoin.vim'          " split and join lines (gS, sJ)
-  " Plug 'alfredodeza/pytest.vim'           " run pytest
   Plug 'bkad/CamelCaseMotion'               " move within words
   Plug 'ctrlpvim/ctrlp.vim'                 " fuzzy file finder
    Plug 'jasoncodes/ctrlp-modified.vim'     " adds :CtrlPModified & :CtrlPBranch
   Plug 'ervandew/supertab'                  " tab completion
-  " Plug 'gcmt/wildfire.vim'                " select increasing scopes
   Plug 'godlygeek/tabular'                  " column alignment
   Plug 'itchyny/lightline.vim'              " better status line
   Plug 'jceb/vim-orgmode'
@@ -18,9 +16,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'majutsushi/tagbar'                  " in-memory ctags view in a sidebar
   Plug 'mbbill/undotree'                    " visualize the undo tree
   Plug 'mhinz/vim-sayonara'                 " close window and buffer together
-  Plug 'mhinz/vim-startify'                 " customize the start screen
   Plug 'michaeljsmith/vim-indent-object'    " text objects based on indent level
-  " Plug 'nathanaelkane/vim-indent-guides'  " show indent with vertical lines (toggle: <leader>ig)
   Plug 'ntpeters/vim-better-whitespace'     " show / trim trailing whitespace
   Plug 'scrooloose/nerdtree'                " tree file explorer
   Plug 'scrooloose/syntastic'               " linter integration
@@ -32,10 +28,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-fugitive'                 " :Ggrep, :Gblame, etc
   Plug 'tpope/vim-surround'                 " add / remove / change quotes & brackets
   Plug 'tpope/vim-unimpaired'               " lots more pairwise bracket mappings
-  " Plug 'vimoutliner/vimoutliner'          " outliner
   Plug 'xolox/vim-misc'                     " required by vim-notes
   Plug 'xolox/vim-notes'                    " note-taking
-  " Plug 'Xuyuanp/nerdtree-git-plugin'      " show git status in NERDtree
 
   " Color schemes
   " Plug 'chriskempson/base16-vim'          " base16
