@@ -53,11 +53,11 @@ setopt hist_ignore_all_dups
 . `brew --prefix`/etc/profile.d/z.sh
 
 # Functions
-function grep-ruby() {
+function grep_ruby() {
   find app lib -name '*.rb' | xargs grep $*
 }
 
-function brew-tree() {
+function brew_tree() {
   brew list | while read cask
   do echo -n $fg[blue] $cask $fg[white]
     brew deps $cask | awk '{printf(" %s ", $0)}'
@@ -65,16 +65,24 @@ function brew-tree() {
   done
 }
 
-function restart-sound() {
+function restart_sound() {
   sudo kill -9 `ps ax|grep 'coreaudio[a-z]' | awk '{print $2}'`
 }
 
-function remove-dsstore() {
+function remove_dsstore() {
   find . -d -name ".DS_Store" -exec rm -v {} \;
 }
 
-function print-conflicts() {
+function print_conflicts() {
   ag -r '(>{7})|(<{7})'
+}
+
+function list_instances() {
+  local region="$1"
+  aws ec2 describe-instances \
+    --region ${region:-`aws configure get region`} \
+    --query='Reservations[*].Instances[*].[PublicIpAddress, InstanceId, Tags[?Key==`Name`].Value | [0]]' \
+    --output table
 }
 
 # Add completions to fpath
