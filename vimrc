@@ -73,8 +73,7 @@ filetype plugin indent on  " load filetype plugins
 syntax on " see also ~/.vim/after/syntax/python.vim
 
 colorscheme moody      " previous: molokai, GRB256, base16-default-dark, sialoquent
-let mapleader = ","    " use , for <leader>
-nmap <Space> ,
+let mapleader = ','    " use comma for <leader>
 
 set backspace=2        " erase characters not entered during insert mode
 set expandtab          " use spaces instead of tabs
@@ -143,6 +142,8 @@ let g:csv_highlight_column = 'y'
 let g:csv_no_conceal = 1
 let g:vim_markdown_folding_disabled = 1
 let g:NERDTreeRespectWildIgnore = 1
+let g:NERDTreeMinimalUI = 1
+let g:NERDTreeDirArrows = 1
 let g:NERDTreeWinPos = "right"
 let g:notes_directories = ['~/Documents/Notes']
 let g:notes_smart_quotes = 0

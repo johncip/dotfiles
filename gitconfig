@@ -8,9 +8,10 @@
 [color]
   ui = true
 [filter "lfs"]
-  clean = git-lfs clean %f
-  smudge = git-lfs smudge %f
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
   required = true
+	process = git-lfs filter-process
 [alias]
   a = add
   c = commit
@@ -21,7 +22,7 @@
   k = checkout
   kb = checkout -b
   p = pull
-  pom = pull origin master
+  pom = pull --no-edit origin master
   pick = cherry-pick
   r = reset
   rh = reset head^
