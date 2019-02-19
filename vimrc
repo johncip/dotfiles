@@ -172,7 +172,8 @@ if has('gui_running')
   highlight ColorColumn guibg=Gray10
 
   " start in project
-  cd ~/Developer/Gradescope/gradescope-app
+  " cd ~/Developer/Gradescope/gradescope-app
+  cd ~/Developer/spur
   let g:ctrlp_working_path_mode = 0
 endif
 " }}}
