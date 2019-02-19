@@ -27,6 +27,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-fugitive'                 " :Ggrep, :Gblame, etc
   Plug 'tpope/vim-surround'                 " add / remove / change quotes & brackets
   Plug 'tpope/vim-unimpaired'               " lots more pairwise bracket mappings
+  Plug 'w0rp/ale'                           " linters
   Plug 'xolox/vim-misc'                     " required by vim-notes
   Plug 'xolox/vim-notes'                    " note-taking
 
@@ -112,6 +113,11 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g "" -p /Users/john/.ignore'
 endif
 
+" In ~/.vim/vimrc, or somewhere similar.
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'javascript': ['eslint'],
+\}
 
 " Other plugin settings
 let g:colorizer_auto_filetype='css,scss'
