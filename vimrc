@@ -6,6 +6,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'airblade/vim-gitgutter'             " per-line git status
   Plug 'AndrewRadev/splitjoin.vim'          " split and join lines (gS, sJ)
   Plug 'bkad/CamelCaseMotion'               " move within words
+  Plug 'chrisbra/Colorizer'                 " show css colors
   Plug 'ctrlpvim/ctrlp.vim'                 " fuzzy file finder
    Plug 'jasoncodes/ctrlp-modified.vim'     " adds :CtrlPModified & :CtrlPBranch
   Plug 'ervandew/supertab'                  " tab completion
@@ -135,6 +136,8 @@ let g:syntastic_quiet_messages = { 'regex': 'fixme' }
 let g:syntastic_loc_list_height = 3
 
 " Other plugin settings
+let g:colorizer_auto_filetype='css,scss'
+let g:colorizer_colornames_disable = 1
 let g:ctrlp_max_files = 0
 let g:ctrlp_show_hidden = 1
 let g:csv_highlight_column = 'y'
@@ -296,6 +299,8 @@ nnoremap <leader>r     :CtrlPMRUFiles<CR>
 nnoremap <leader>B     :CtrlPBranch<CR>
 nnoremap <leader>t     :CtrlP<CR>
 nnoremap <leader>M     :CtrlPMRU<CR>
+
+nnoremap <leader>o     :ColorHighlight<CR>
 
 " nnoremap <leader>p     :Pytest file<CR>
 
