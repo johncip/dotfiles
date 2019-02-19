@@ -116,7 +116,7 @@ export HOMEBREW_NO_ANALYTICS=1
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 eval "$(rbenv init -)"
-export PATH="/Users/john/miniconda3/bin:$PATH"
+# export PATH="/Users/john/miniconda3/bin:$PATH"
 
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
