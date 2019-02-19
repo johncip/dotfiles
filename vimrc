@@ -18,7 +18,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'mbbill/undotree'                    " visualize the undo tree
   Plug 'mhinz/vim-sayonara'                 " close window and buffer together
   Plug 'michaeljsmith/vim-indent-object'    " text objects based on indent level
-  Plug 'ntpeters/vim-better-whitespace'     " show / trim trailing whitespace
   Plug 'scrooloose/nerdtree'                " tree file explorer
   Plug 'sstallion/vim-wildignore'           " read wildignore from a file
   Plug 'terryma/vim-multiple-cursors'       " sublime-style multi select
@@ -100,9 +99,6 @@ set cursorline
 if has('statusline')
   set laststatus=2   " always show the status line
 endif
-
-" Strip whitespace on save
-autocmd BufWritePre * StripWhitespace
 
 " Filetype-specific settings
 autocmd FileType applescript setlocal sw=4 ts=4 sts=4 et
