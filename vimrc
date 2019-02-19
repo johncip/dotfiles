@@ -39,6 +39,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'jakwings/vim-colors'                " moody
 
   " Filetype Plugins
+  Plug 'ElmCast/elm-vim'
   Plug 'chrisbra/csv.vim'
   Plug 'elzr/vim-json'
   Plug 'hdima/python-syntax'
@@ -46,6 +47,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'neoclide/vim-jsx-improve'
   Plug 'plasticboy/vim-markdown'
   Plug 'vim-ruby/vim-ruby'
+
   " Plug 'Quramy/tsuquyomi' " typescript
   " Plug 'slim-template/vim-slim'
   " Plug 'tpope/vim-haml'
@@ -127,7 +129,6 @@ let g:syntastic_javascript_eslint_exe = 'npx eslint'
 let g:syntastic_javascript_eslint_exec = '/bin/ls'
 let g:syntastic_javascript_eslint_generic = 1
 let g:syntastic_javascript_eslint_args = '-f compact'
-
 let g:syntastic_ruby_checkers = ['mri', 'rubocop', 'reek']
 let g:syntastic_ruby_rubocop_exec = '/Users/john/.rbenv/shims/rubocop'
 let g:syntastic_ruby_reek_exec = '/Users/john/.rbenv/shims/reek'
@@ -139,6 +140,7 @@ let g:syntastic_python_checkers = ['python', 'pylint']
 let g:syntastic_python_pylint_exec = '/usr/local/bin/pylint'
 let g:syntastic_quiet_messages = { 'regex': 'fixme' }
 let g:syntastic_loc_list_height = 3
+let g:elm_syntastic_show_warnings = 1
 
 " Other plugin settings
 let g:colorizer_auto_filetype='css,scss'
@@ -147,6 +149,7 @@ let g:ctrlp_max_files = 0
 let g:ctrlp_show_hidden = 1
 let g:csv_highlight_column = 'y'
 let g:csv_no_conceal = 1
+let g:elm_setup_keybindings = 0
 let g:vim_markdown_folding_disabled = 1
 let g:NERDTreeRespectWildIgnore = 1
 let g:NERDTreeMinimalUI = 1
