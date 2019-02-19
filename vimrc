@@ -123,6 +123,11 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_mode_map = { 'mode': 'passive' }
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exe = 'npx eslint'
+let g:syntastic_javascript_eslint_exec = '/bin/ls'
+let g:syntastic_javascript_eslint_generic = 1
+let g:syntastic_javascript_eslint_args = '-f compact'
+
 let g:syntastic_ruby_checkers = ['mri', 'rubocop', 'reek']
 let g:syntastic_ruby_rubocop_exec = '/Users/john/.rbenv/shims/rubocop'
 let g:syntastic_ruby_reek_exec = '/Users/john/.rbenv/shims/reek'
