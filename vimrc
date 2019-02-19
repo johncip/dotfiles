@@ -38,22 +38,21 @@ call plug#begin('~/.vim/plugged')
   Plug 'jakwings/vim-colors'                " moody
 
   " Filetype Plugins
-  Plug 'dearrrfish/vim-applescript'         " applescript
-  Plug 'mtscout6/vim-cjsx'                  " cjsx
-  Plug 'kchmck/vim-coffee-script'           " coffeescript
-  Plug 'chrisbra/csv.vim'                   " csv
-  Plug 'tpope/vim-haml'                     " haml
-  Plug 'isRuslan/vim-es6'                   " es6
-  Plug 'elzr/vim-json'                      " json
-  Plug 'mxw/vim-jsx'                        " jsx
-  Plug 'plasticboy/vim-markdown'            " markdown
-  Plug 'hdima/python-syntax'                " python (better)
-  Plug 'vim-ruby/vim-ruby'                  " ruby
-  Plug 'slim-template/vim-slim'             " slim
-  Plug 'hashivim/vim-terraform'             " terraform
-  Plug 'leafgarland/typescript-vim'         " typescript
-  Plug 'Quramy/tsuquyomi'                   " typescript
-  Plug 'jlong/sass-convert.vim'             " convert sass <=> scss
+  Plug 'chrisbra/csv.vim'
+  Plug 'elzr/vim-json'
+  Plug 'hdima/python-syntax'
+  Plug 'isRuslan/vim-es6'
+  Plug 'neoclide/vim-jsx-improve'
+  Plug 'plasticboy/vim-markdown'
+  Plug 'vim-ruby/vim-ruby'
+  " Plug 'Quramy/tsuquyomi' " typescript
+  " Plug 'slim-template/vim-slim'
+  " Plug 'tpope/vim-haml'
+  " Plug 'hashivim/vim-terraform'
+  " Plug 'jlong/sass-convert.vim'
+  " Plug 'kchmck/vim-coffee-script'
+  " Plug 'leafgarland/typescript-vim'
+  " Plug 'mtscout6/vim-cjsx'
 
   " Ruby & rails tools
   Plug 'ecomba/vim-ruby-refactoring'        " refactoring support
