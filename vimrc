@@ -20,7 +20,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'michaeljsmith/vim-indent-object'    " text objects based on indent level
   Plug 'ntpeters/vim-better-whitespace'     " show / trim trailing whitespace
   Plug 'scrooloose/nerdtree'                " tree file explorer
-  Plug 'scrooloose/syntastic'               " linter integration
   Plug 'sstallion/vim-wildignore'           " read wildignore from a file
   Plug 'terryma/vim-multiple-cursors'       " sublime-style multi select
   Plug 'tomtom/tcomment_vim'                " easy [un]comment. supports blocks, unlike commentary
@@ -117,30 +116,6 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g "" -p /Users/john/.ignore'
 endif
 
-" Syntastic settings
-let g:syntastic_aggregate_errors = 1
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_mode_map = { 'mode': 'passive' }
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_eslint_exe = 'npx eslint'
-let g:syntastic_javascript_eslint_exec = '/bin/ls'
-let g:syntastic_javascript_eslint_generic = 1
-let g:syntastic_javascript_eslint_args = '-f compact'
-let g:syntastic_ruby_checkers = ['mri', 'rubocop', 'reek']
-let g:syntastic_ruby_rubocop_exec = '/Users/john/.rbenv/shims/rubocop'
-let g:syntastic_ruby_reek_exec = '/Users/john/.rbenv/shims/reek'
-let g:syntastic_scss_checkers = ['scss_lint']
-let g:syntastic_scss_scss_lint_exec = '/Users/john/.rbenv/shims/scss-lint'
-let g:syntastic_slim_checkers = ['slim_lint']
-let g:syntastic_slim_slim_lint_exec = '/Users/john/.rbenv/shims/slim-lint'
-let g:syntastic_python_checkers = ['python', 'pylint']
-let g:syntastic_python_pylint_exec = '/usr/local/bin/pylint'
-let g:syntastic_quiet_messages = { 'regex': 'fixme' }
-let g:syntastic_loc_list_height = 3
-let g:elm_syntastic_show_warnings = 1
 
 " Other plugin settings
 let g:colorizer_auto_filetype='css,scss'
@@ -301,7 +276,6 @@ nnoremap <leader><Tab> {v}:Tabularize /
 vnoremap <leader><Tab> :Tabularize /
 
 nnoremap <leader>n     :NERDTreeFind<CR>
-nnoremap <leader>s     :SyntasticCheck<CR>
 
 nnoremap <leader>m     :CtrlPModified<CR>
 nnoremap <leader>r     :CtrlPMRUFiles<CR>
