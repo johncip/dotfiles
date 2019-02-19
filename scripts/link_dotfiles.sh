@@ -17,5 +17,5 @@ dotfiles=(
 
 for dotfile in ${dotfiles[@]}
 do
-    ln -s "$REPO_DIR/$dotfile" "$HOME/.$dotfile"
+    ln -f -s "$REPO_DIR/$dotfile" "$HOME/.$dotfile"
 done
