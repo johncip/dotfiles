@@ -1,4 +1,4 @@
-" Plugins {{{
+" Plugins {
 set nocompatible
 filetype off
 call plug#begin('~/.vim/plugged')
@@ -64,10 +64,10 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-rails'                    " rails project navigation
 
 call plug#end()
-" }}}
+" }
 
 
-" Settings {{{
+" Settings {
 filetype plugin indent on  " load filetype plugins
 syntax on " see also ~/.vim/after/syntax/python.vim
 
@@ -160,10 +160,10 @@ if has('gui_running')
   cd ~/Developer/spur
   let g:ctrlp_working_path_mode = 0
 endif
-" }}}
+" }
 
 
-" Functions {{{
+" Functions {
 function! ToggleList(bufname, pfx) " Toggle the location or quickfix list
   let buflist = GetBufferList()
   for bufnum in map(filter(split(buflist, '\n'), 'v:val =~ "'.a:bufname.'"'), 'str2nr(matchstr(v:val, "\\d\\+"))')
@@ -209,10 +209,10 @@ function! s:RunShellCommand(cmdline) " Used by :Shell
   setlocal nomodifiable
   1
 endfunction
-" }}}
+" }
 
 
-" Commands {{{
+" Commands {
 command! Configure  edit $MYVIMRC
 command! Source     source $MYVIMRC
 command! WildIgnore edit ~/.vim/wildignore
@@ -228,10 +228,10 @@ command! Solid      set transparency=0
 command! -complete=shellcmd -nargs=+ Shell call s:RunShellCommand(<q-args>)
 
 cmap w!!            w !sudo tee % >/dev/null
-" }}}
+" }
 
 
-" Mappings {{{
+" Mappings {
 noremap  <Up>       <NOP>
 noremap  <Down>     <NOP>
 noremap  <Left>     <NOP>
@@ -264,10 +264,10 @@ nnoremap <leader>dg3   :diffget //3<CR>
 nnoremap <leader>du    :diffupdate<CR>
 
 nnoremap <leader>i     i_<Esc>r
-" }}}
+" }
 
 
-" Plugin Mappings {{{
+" Plugin Mappings {
 nmap \               <Plug>(easymotion-sn)
 omap \               <Plug>(easymotion-tn)
 
@@ -303,13 +303,13 @@ nnoremap <F8>          :TagbarToggle<CR>
 
 " makes <leader>w/b/e/ge move by word within snake & camelcase (& ignore punctuation)
 call camelcasemotion#CreateMotionMappings('<leader>')
-" }}}
+" }
 
 
-" Misc {{{
+" Misc {
 " make TODO, etc. gray instead of neon
 hi clear Todo
 hi Todo guifg=#888888 guibg=#1a1a1a
 hi clear PreProc
 hi PreProc guifg=#888888 guibg=#1a1a1a
-" }}}
+" }
