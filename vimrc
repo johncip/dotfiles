@@ -294,7 +294,6 @@ nnoremap <leader>z     :ALEDetail<CR>
 silent! nunmap <silent> <leader>tt
 nnoremap <silent> <leader>x :ToggleCB<cr>
 
-nnoremap <leader>g     :TagbarToggle<CR>
 nnoremap <F8>          :TagbarToggle<CR>
 
 " makes Alt-w move forward by word within snake & camelcase (& ignore punctuation)
