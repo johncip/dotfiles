@@ -46,7 +46,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'neoclide/vim-jsx-improve'
   Plug 'plasticboy/vim-markdown'
   Plug 'vim-ruby/vim-ruby'
-
+  Plug 'ternjs/tern_for_vim' " ctags for JS
   " Plug 'Quramy/tsuquyomi' " typescript
   " Plug 'slim-template/vim-slim'
   " Plug 'tpope/vim-haml'
