@@ -268,34 +268,24 @@ nnoremap <leader>i     i_<Esc>r
 
 
 " Plugin Mappings {
-nnoremap <leader>a     {v}:Tabularize /
-vnoremap <leader>a     :Tabularize /
 nnoremap <leader><Tab> {v}:Tabularize /
 vnoremap <leader><Tab> :Tabularize /
-
-nnoremap <leader>n     :NERDTreeFind<CR>
-
-nnoremap <leader>m     :CtrlPModified<CR>
-nnoremap <leader>r     :CtrlPMRUFiles<CR>
+nnoremap <leader>a     {v}:Tabularize /
+vnoremap <leader>a     :Tabularize /
 nnoremap <leader>B     :CtrlPBranch<CR>
-nnoremap <leader>t     :CtrlP<CR>
+nnoremap <leader>m     :CtrlPModified<CR>
 nnoremap <leader>M     :CtrlPMRU<CR>
-
+nnoremap <leader>n     :NERDTreeFind<CR>
 nnoremap <leader>o     :ColorHighlight<CR>
-
+nnoremap <leader>r     :CtrlPMRUFiles<CR>
+nnoremap <leader>t     :CtrlP<CR>
 nnoremap <leader>z     :ALEDetail<CR>
+nnoremap <F8>          :TagbarToggle<CR>
 
 " vim-checkbox: use <leader>x instead of <leader>tt
 silent! nunmap <silent> <leader>tt
 nnoremap <silent> <leader>x :ToggleCB<cr>
 
-nnoremap <F8>          :TagbarToggle<CR>
-
-" makes Alt-w move forward by word within snake & camelcase (& ignore punctuation)
-" TODO: figure out why this doesn't work
-" nnoremap ∑ <Plug>CamelCaseMotion_w
-
-" makes <leader>w/b/e/ge move by word within snake & camelcase (& ignore punctuation)
 call camelcasemotion#CreateMotionMappings('<leader>')
 " }
 
