@@ -90,6 +90,7 @@ set tabstop=2          " show 2 spaces per tab
 set diffopt+=vertical  " vertical :Gdiff
 set wrapscan           " searches wrap
 set modeline           " modelines on
+set updatetime=100     " faster updates (affects gitgutter)
 
 set ttyfast
 set lazyredraw
