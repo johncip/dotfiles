@@ -151,7 +151,6 @@ if has('gui_running')
   set guifont=SFMono-Light:h14  " Range\ Mono\ Medium, Input, Monaco, Menlo
   set linespace=2
   set columnspace=-1
-  set transparency=2
   highlight ColorColumn guibg=Gray10
 
   " start in project
@@ -221,7 +220,7 @@ command! BBD        bufdo bdelete
 command! Switch     cd ../../Liftbook/liftbook-app
 command! Status     edit ~/Desktop/work/status.txt
 command! Trans      set transparency=16
-command! Solid      set transparency=2
+command! Solid      set transparency=0
 
 " runs a shell command in a new window
 command! -complete=shellcmd -nargs=+ Shell call s:RunShellCommand(<q-args>)
