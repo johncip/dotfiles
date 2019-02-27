@@ -268,9 +268,6 @@ nnoremap <leader>i     i_<Esc>r
 
 
 " Plugin Mappings {
-nmap \               <Plug>(easymotion-sn)
-omap \               <Plug>(easymotion-tn)
-
 nnoremap <leader>a     {v}:Tabularize /
 vnoremap <leader>a     :Tabularize /
 nnoremap <leader><Tab> {v}:Tabularize /
@@ -287,8 +284,6 @@ nnoremap <leader>M     :CtrlPMRU<CR>
 nnoremap <leader>o     :ColorHighlight<CR>
 
 nnoremap <leader>z     :ALEDetail<CR>
-
-" nnoremap <leader>p     :Pytest file<CR>
 
 " vim-checkbox: use <leader>x instead of <leader>tt
 silent! nunmap <silent> <leader>tt
