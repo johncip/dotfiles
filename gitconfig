@@ -36,7 +36,7 @@
   grandpa = merge-base HEAD origin/master
   prune-all = "!git prune && git remote prune origin"
   publish = "!git push -u origin HEAD && hub pull-request"
-  rids = log --format='%C(yellow)%h   %C(blue)%<(13,trunc)%an   %Creset%s %C(red)%d' --date=short --reverse -20
+  ls = log --format='%C(yellow)%h   %C(blue)%<(13,trunc)%an   %Creset%s %C(red)%d' --date=short --reverse -20
   upstream = push -u origin HEAD
 
   branch-name = rev-parse --abbrev-ref HEAD
