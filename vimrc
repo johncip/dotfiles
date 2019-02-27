@@ -286,6 +286,8 @@ nnoremap <leader>M     :CtrlPMRU<CR>
 
 nnoremap <leader>o     :ColorHighlight<CR>
 
+nnoremap <leader>z     :ALEDetail<CR>
+
 " nnoremap <leader>p     :Pytest file<CR>
 
 " vim-checkbox: use <leader>x instead of <leader>tt
