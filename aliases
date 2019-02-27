@@ -5,8 +5,7 @@ alias br='bundle exec rake'
 alias be='bundle exec'
 
 # git
-alias g='/usr/local/bin/git'
-alias git='echo "nope"'
+alias g='git'
 alias s='/usr/local/bin/git status'
 alias nw='numberwang'
 
