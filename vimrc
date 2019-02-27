@@ -12,7 +12,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'ervandew/supertab'                  " tab completion
   Plug 'godlygeek/tabular'                  " column alignment
   Plug 'itchyny/lightline.vim'              " better status line
-  Plug 'jceb/vim-orgmode'
   Plug 'jkramer/vim-checkbox'               " toggle checkboxes with <leader>tt
   Plug 'majutsushi/tagbar'                  " in-memory ctags view in a sidebar
   Plug 'mbbill/undotree'                    " visualize the undo tree
