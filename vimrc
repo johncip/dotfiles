@@ -31,10 +31,11 @@ call plug#begin('~/.vim/plugged')
   Plug 'xolox/vim-notes'                    " note-taking
 
   " Color schemes
-  " Plug 'chriskempson/base16-vim'          " base16
-  " Plug 'davidklsn/vim-sialoquent'         " sialoquent
-  " Plug 'jacoborus/tender'                 " tender
-  Plug 'jakwings/vim-colors'                " moody
+  Plug 'jakwings/vim-colors' " moody
+  Plug 'chriskempson/base16-vim'
+  Plug 'davidklsn/vim-sialoquent'
+  Plug 'jacoborus/tender'
+  Plug 'tomasr/molokai'
 
   " Filetype Plugins
   Plug 'ElmCast/elm-vim'
