@@ -71,7 +71,7 @@ call plug#end()
 filetype plugin indent on  " load filetype plugins
 syntax on " see also ~/.vim/after/syntax/python.vim
 
-colorscheme moody      " previous: molokai, GRB256, base16-default-dark, sialoquent
+colorscheme molokai      " previous: molokai, GRB256, base16-default-dark, sialoquent, moody
 let mapleader = ','    " use comma for <leader>
 
 set backspace=2        " erase characters not entered during insert mode
@@ -148,9 +148,10 @@ endif
 " GUI vim settings
 if has('gui_running')
   set colorcolumn=100
-  set guifont=SFMono-Light:h14  " Range\ Mono\ Medium, Input, Monaco, Menlo
-  set linespace=2
-  set columnspace=-1
+
+  " previous: SF Mono, Range Mono, Input, Monaco, Menlo
+  set guifont=FiraCode-Retina:h15
+
   highlight ColorColumn guibg=Gray10
 
   " start in project
