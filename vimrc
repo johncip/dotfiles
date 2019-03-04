@@ -17,6 +17,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'mbbill/undotree'                    " visualize the undo tree
   Plug 'mhinz/vim-sayonara'                 " close window and buffer together
   Plug 'michaeljsmith/vim-indent-object'    " text objects based on indent level
+  Plug 'ntpeters/vim-better-whitespace'     " view / strip trailing whitespace
   Plug 'scrooloose/nerdtree'                " tree file explorer
   Plug 'sstallion/vim-wildignore'           " read wildignore from a file
   Plug 'terryma/vim-multiple-cursors'       " sublime-style multi select
@@ -139,6 +140,10 @@ let g:python_version_2 = 1
 let g:rspec_command = "! vagrant ssh -c 'cd /app && bin/rspec {spec} '"
 let g:startify_bookmarks = [{'b': '~/Desktop/work/status.txt'}, {'a': '~/Desktop/work/today.md'}]
 let g:startify_change_to_dir = 0
+
+let g:better_whitespace_enabled = 1
+let g:strip_whitespace_on_save = 1
+let g:strip_whitespace_confirm = 0
 
 " iTerm: use thin cursor
 if $TERM_PROGRAM =~ "iTerm"
