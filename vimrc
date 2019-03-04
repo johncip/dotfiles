@@ -285,6 +285,8 @@ nnoremap <leader>r     :CtrlPMRUFiles<CR>
 nnoremap <leader>t     :CtrlP<CR>
 nnoremap <leader>z     :ALEDetail<CR>
 nnoremap <F8>          :TagbarToggle<CR>
+nnoremap <D-S-{>       :tabp<cr>
+nnoremap <D-S-}>       :tabn<cr>
 
 " vim-checkbox: use <leader>x instead of <leader>tt
 silent! nunmap <silent> <leader>tt
