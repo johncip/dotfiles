@@ -151,18 +151,17 @@ if $TERM_PROGRAM =~ "iTerm"
   let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
 endif
 
-" GUI vim settings
 if has('gui_running')
+  set guifont=FiraCode-Light:h15 " previous: SF Mono, Range Mono, Input, Monaco, Menlo
+endif
+
+" GUI vim settings
+if has('gui_running') || has('nvim')
   set colorcolumn=100
-
-  " previous: SF Mono, Range Mono, Input, Monaco, Menlo
-  set guifont=FiraCode-Retina:h15
-
   highlight ColorColumn guibg=Gray10
 
   " start in project
-  " cd ~/Developer/Gradescope/gradescope-app
-  cd ~/Developer/spur
+  cd ~/Developer/chips-v2
   let g:ctrlp_working_path_mode = 0
 endif
 " }
