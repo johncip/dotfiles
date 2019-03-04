@@ -119,7 +119,7 @@ let g:ale_fixers = {
 \   'javascript': ['eslint'],
 \}
 
-" Other plugin settings
+" Plugin settings
 let g:colorizer_auto_filetype='css,scss'
 let g:colorizer_colornames_disable = 1
 let g:ctrlp_max_files = 0
