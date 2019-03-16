@@ -11,7 +11,7 @@ call plug#begin('~/.vim/plugged')
    Plug 'jasoncodes/ctrlp-modified.vim'     " adds :CtrlPModified & :CtrlPBranch
   Plug 'ervandew/supertab'                  " tab completion
   Plug 'godlygeek/tabular'                  " column alignment
-  Plug 'itchyny/lightline.vim'              " better status line
+  Plug 'vim-airline/vim-airline'
   Plug 'jkramer/vim-checkbox'               " toggle checkboxes with <leader>tt
   Plug 'majutsushi/tagbar'                  " in-memory ctags view in a sidebar
   Plug 'mbbill/undotree'                    " visualize the undo tree
@@ -28,15 +28,16 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-surround'                 " add / remove / change quotes & brackets
   Plug 'tpope/vim-unimpaired'               " lots more pairwise bracket mappings
   Plug 'w0rp/ale'                           " linters
-  Plug 'xolox/vim-misc'                     " required by vim-notes
-  Plug 'xolox/vim-notes'                    " note-taking
+  "
+  Plug 'prettier/vim-prettier'
 
   " Color schemes
   Plug 'jakwings/vim-colors' " moody
   Plug 'chriskempson/base16-vim'
-  Plug 'davidklsn/vim-sialoquent'
   Plug 'jacoborus/tender'
   Plug 'tomasr/molokai'
+  Plug 'maksimr/Lucius2'
+  Plug 'arcticicestudio/nord-vim'
 
   " Filetype Plugins
   Plug 'ElmCast/elm-vim'
@@ -44,10 +45,10 @@ call plug#begin('~/.vim/plugged')
   Plug 'elzr/vim-json'
   Plug 'hdima/python-syntax'
   Plug 'isRuslan/vim-es6'
-  Plug 'neoclide/vim-jsx-improve'
+  " Plug 'neoclide/vim-jsx-improve'
   Plug 'plasticboy/vim-markdown'
   Plug 'vim-ruby/vim-ruby'
-  Plug 'ternjs/tern_for_vim' " ctags for JS
+  " Plug 'ternjs/tern_for_vim' " ctags for JS
   " Plug 'Quramy/tsuquyomi' " typescript
   " Plug 'slim-template/vim-slim'
   " Plug 'tpope/vim-haml'
@@ -64,15 +65,17 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-endwise'                  " auto-fill 'end' statements
   Plug 'tpope/vim-rails'                    " rails project navigation
 
+  filetype plugin indent on " load filetype plugins
+  syntax on " see also ~/.vim/after/syntax/python.vim
+  Plug 'tpope/vim-sensible'
+
 call plug#end()
 " }
 
 
 " Settings {
-filetype plugin indent on  " load filetype plugins
-syntax on " see also ~/.vim/after/syntax/python.vim
 
-colorscheme molokai      " previous: molokai, GRB256, base16-default-dark, sialoquent, moody
+colorscheme nord       " lucius, molokai, GRB256, base16-default-dark, tender, nord
 let mapleader = ','    " use comma for <leader>
 
 set backspace=2        " erase characters not entered during insert mode
@@ -80,6 +83,8 @@ set expandtab          " use spaces instead of tabs
 set ignorecase         " search is case-insensitive
 set noswapfile         " live on the edge
 set nowrap             " don't wrap long lines
+set nohlsearch         " don't highlight search
+set noshowmode         " don't show mode (because we have lightline)
 set number             " show line numbers
 set ruler              " show the ruler
 set shiftwidth=2       " use indents of 2 spaces
@@ -116,7 +121,7 @@ endif
 " In ~/.vim/vimrc, or somewhere similar.
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'javascript': ['eslint'],
+\   'javascript': ['prettier', 'eslint'],
 \}
 
 " Plugin settings
@@ -135,6 +140,9 @@ let g:NERDTreeWinPos = "right"
 let g:notes_directories = ['~/Documents/Notes']
 let g:notes_smart_quotes = 0
 let g:notes_suffix = '.txt'
+let g:prettier#config#semi = 'false'
+let g:prettier#config#bracket_spacing = 'true'
+let g:prettier#config#trailing_comma = 'none'
 let g:python_highlight_all = 1
 let g:python_version_2 = 1
 let g:rspec_command = "! vagrant ssh -c 'cd /app && bin/rspec {spec} '"
@@ -158,10 +166,10 @@ endif
 " GUI vim settings
 if has('gui_running') || has('nvim')
   set colorcolumn=100
-  highlight ColorColumn guibg=Gray10
+  highlight ColorColumn guibg=Gray11
 
   " start in project
-  cd ~/Developer/chips-v2
+  cd ~/Developer/chips
   let g:ctrlp_working_path_mode = 0
 endif
 " }
@@ -218,15 +226,11 @@ endfunction
 
 " Commands {
 command! Configure  edit $MYVIMRC
-command! Source     source $MYVIMRC
 command! WildIgnore edit ~/.vim/wildignore
 command! Wd         write | bdelete
 command! Bd         bdelete
 command! BBD        bufdo bdelete
-command! Switch     cd ../../Liftbook/liftbook-app
-command! Status     edit ~/Desktop/work/status.txt
-command! Trans      set transparency=16
-command! Solid      set transparency=0
+command! -nargs=1 Grep silent! grep! <f-args> | :call ToggleList('Quickfix List', 'c')
 
 " runs a shell command in a new window
 command! -complete=shellcmd -nargs=+ Shell call s:RunShellCommand(<q-args>)
@@ -236,10 +240,13 @@ cmap w!!            w !sudo tee % >/dev/null
 
 
 " Mappings {
-noremap  <Up>       <NOP>
+
+" Force myself to use hjkl instead of arrows. Also frees up 4 keys.
+noremap  <Up>       :w<cr>
 noremap  <Down>     <NOP>
 noremap  <Left>     <NOP>
 noremap  <Right>    <NOP>
+
 
 " Return to normal mode from home row. Disabling Esc to build the habit
 inoremap jk <Esc>
@@ -274,8 +281,7 @@ nnoremap <leader>i     i_<Esc>r
 " Plugin Mappings {
 nnoremap <leader><Tab> {v}:Tabularize /
 vnoremap <leader><Tab> :Tabularize /
-nnoremap <leader>a     {v}:Tabularize /
-vnoremap <leader>a     :Tabularize /
+nnoremap <leader>a     :ALEFix<CR>
 nnoremap <leader>B     :CtrlPBranch<CR>
 nnoremap <leader>m     :CtrlPModified<CR>
 nnoremap <leader>M     :CtrlPMRU<CR>
@@ -287,6 +293,12 @@ nnoremap <leader>z     :ALEDetail<CR>
 nnoremap <F8>          :TagbarToggle<CR>
 nnoremap <D-S-{>       :tabp<cr>
 nnoremap <D-S-}>       :tabn<cr>
+
+" (some of?) these work in vimR but none in Oni.
+nnoremap <D-O>         :CtrlP<cr>
+nnoremap <D-s>         :w<cr>
+nnoremap <D-S-[>       :tabp<cr>
+nnoremap <D-S-]>       :tabn<cr>
 
 " vim-checkbox: use <leader>x instead of <leader>tt
 silent! nunmap <silent> <leader>tt
