@@ -39,3 +39,5 @@ alias speedtest='curl -o /dev/null http://speedtest.wdc01.softlayer.com/download
 # homebrew
 alias vi='vim'
 alias ctags="`brew --prefix`/bin/ctags"
+
+alias gvim='vimr'
