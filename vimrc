@@ -1,184 +1,148 @@
-" Plugins {
+" ===================================================================
+" Plugins
+" ===================================================================
+"
 set nocompatible
 filetype off
 call plug#begin('~/.vim/plugged')
 
-  Plug 'airblade/vim-gitgutter'             " per-line git status
-  Plug 'AndrewRadev/splitjoin.vim'          " split and join lines (gS, sJ)
-  Plug 'bkad/CamelCaseMotion'               " move within words
-  Plug 'chrisbra/Colorizer'                 " show css colors
-  Plug 'ctrlpvim/ctrlp.vim'                 " fuzzy file finder
-   Plug 'jasoncodes/ctrlp-modified.vim'     " adds :CtrlPModified & :CtrlPBranch
-  Plug 'ervandew/supertab'                  " tab completion
-  Plug 'godlygeek/tabular'                  " column alignment
-  Plug 'vim-airline/vim-airline'
-  Plug 'jkramer/vim-checkbox'               " toggle checkboxes with <leader>tt
-  Plug 'majutsushi/tagbar'                  " in-memory ctags view in a sidebar
-  Plug 'mbbill/undotree'                    " visualize the undo tree
-  Plug 'mhinz/vim-sayonara'                 " close window and buffer together
-  Plug 'michaeljsmith/vim-indent-object'    " text objects based on indent level
-  Plug 'ntpeters/vim-better-whitespace'     " view / strip trailing whitespace
-  Plug 'scrooloose/nerdtree'                " tree file explorer
-  Plug 'sstallion/vim-wildignore'           " read wildignore from a file
-  Plug 'terryma/vim-multiple-cursors'       " sublime-style multi select
-  Plug 'tomtom/tcomment_vim'                " easy [un]comment. supports blocks, unlike commentary
-  Plug 'tpope/tpope-vim-abolish'            " replace words and their variants
-  Plug 'tpope/vim-eunuch'                   " :Move, :Rename, :Chmod, etc
-  Plug 'tpope/vim-fugitive'                 " :Ggrep, :Gblame, etc
-  Plug 'tpope/vim-surround'                 " add / remove / change quotes & brackets
-  Plug 'tpope/vim-unimpaired'               " lots more pairwise bracket mappings
-  Plug 'w0rp/ale'                           " linters
-  "
-  Plug 'prettier/vim-prettier'
+Plug 'w0rp/ale'
+Plug 'bkad/CamelCaseMotion'
+Plug 'chrisbra/Colorizer'
+Plug 'jasoncodes/ctrlp-modified.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'ervandew/supertab'
+Plug 'godlygeek/tabular'
+Plug 'majutsushi/tagbar'
+Plug 'tomtom/tcomment_vim'
+Plug 'tpope/tpope-vim-abolish'
+Plug 'vim-airline/vim-airline'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'prettier/vim-prettier'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
 
-  " Color schemes
-  Plug 'jakwings/vim-colors' " moody
-  Plug 'chriskempson/base16-vim'
-  Plug 'jacoborus/tender'
-  Plug 'tomasr/molokai'
-  Plug 'maksimr/Lucius2'
-  Plug 'arcticicestudio/nord-vim'
+" filetypes
+Plug 'chrisbra/csv.vim'
+Plug 'ElmCast/elm-vim'
+Plug 'hdima/python-syntax'
+Plug 'isRuslan/vim-es6'
+Plug 'elzr/vim-json'
+Plug 'plasticboy/vim-markdown'
+Plug 'vim-ruby/vim-ruby'
 
-  " Filetype Plugins
-  Plug 'ElmCast/elm-vim'
-  Plug 'chrisbra/csv.vim'
-  Plug 'elzr/vim-json'
-  Plug 'hdima/python-syntax'
-  Plug 'isRuslan/vim-es6'
-  " Plug 'neoclide/vim-jsx-improve'
-  Plug 'plasticboy/vim-markdown'
-  Plug 'vim-ruby/vim-ruby'
-  " Plug 'ternjs/tern_for_vim' " ctags for JS
-  " Plug 'Quramy/tsuquyomi' " typescript
-  " Plug 'slim-template/vim-slim'
-  " Plug 'tpope/vim-haml'
-  " Plug 'hashivim/vim-terraform'
-  " Plug 'jlong/sass-convert.vim'
-  " Plug 'kchmck/vim-coffee-script'
-  " Plug 'leafgarland/typescript-vim'
-  " Plug 'mtscout6/vim-cjsx'
+" colorschemes
+Plug 'chriskempson/base16-vim'
+Plug 'maksimr/Lucius2'
+Plug 'tomasr/molokai'
+Plug 'johncip/nord-vim'
+Plug 'jacoborus/tender'
+Plug 'jakwings/vim-colors' " moody
+Plug 'promisedlandt/vim-colors-ir_black'
 
-  " Ruby & rails tools
-  Plug 'ecomba/vim-ruby-refactoring'        " refactoring support
-    Plug 'tmhedberg/matchit'                " percent-matching for do/end etc
-  Plug 'jgdavey/vim-blockle'                " toggle ruby block types
-  Plug 'tpope/vim-endwise'                  " auto-fill 'end' statements
-  Plug 'tpope/vim-rails'                    " rails project navigation
-
-  filetype plugin indent on " load filetype plugins
-  syntax on " see also ~/.vim/after/syntax/python.vim
-  Plug 'tpope/vim-sensible'
-
+filetype plugin indent on
+syntax on
 call plug#end()
-" }
 
 
-" Settings {
+" ===================================================================
+" Settings
+" ===================================================================
+"
+let mapleader = ','
 
-colorscheme nord       " lucius, molokai, GRB256, base16-default-dark, tender, nord
-let mapleader = ','    " use comma for <leader>
+colorscheme nord
+highlight Comment cterm=italic
 
-set backspace=2        " erase characters not entered during insert mode
-set expandtab          " use spaces instead of tabs
-set ignorecase         " search is case-insensitive
-set noswapfile         " live on the edge
-set nowrap             " don't wrap long lines
-set nohlsearch         " don't highlight search
-set noshowmode         " don't show mode (because we have lightline)
-set number             " show line numbers
-set ruler              " show the ruler
-set shiftwidth=2       " use indents of 2 spaces
-set showmatch          " highlight matching brackets
-set smartcase          " search is case-sensitive when uppercase present
-set softtabstop=2      " insert 2 spaces on tab / delete 2 spaces on backspace
-set t_Co=256           " 256-color term
-set tabstop=2          " show 2 spaces per tab
-set diffopt+=vertical  " vertical :Gdiff
-set wrapscan           " searches wrap
-set modeline           " modelines on
-set updatetime=100     " faster updates (affects gitgutter)
-
-set ttyfast
-set lazyredraw
+set colorcolumn=100
 set cursorline
+set cmdheight=1
+set expandtab
+set ignorecase
+set laststatus=2
+set lazyredraw
+set modeline
+set nohlsearch
+set noshowmode
+set noswapfile
+set nowrap
+set number
+set ruler
+set shiftwidth=2
+set showmatch
+set smartcase
+set softtabstop=2
+set t_Co=256
+set tabstop=2
+set termguicolors
+set ttyfast
+set updatetime=100
+set wildmenu
+set wrapscan
 
-if has('statusline')
-  set laststatus=2   " always show the status line
-endif
-
-" Filetype-specific settings
 autocmd FileType applescript setlocal sw=4 ts=4 sts=4 et
 autocmd FileType make set noexpandtab
 autocmd FileType python setlocal sw=4 ts=4 sts=4 et
 autocmd BufRead,BufWritePre *.html.slim setfiletype slim
 
-" Use ag over grep
-if executable('ag')
-  set grepprg=ag\ --nogroup\ --nocolor
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g "" -p /Users/john/.ignore'
-endif
-
-" In ~/.vim/vimrc, or somewhere similar.
-let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'javascript': ['prettier', 'eslint'],
-\}
-
-" Plugin settings
-let g:colorizer_auto_filetype='css,scss'
-let g:colorizer_colornames_disable = 1
-let g:ctrlp_max_files = 0
-let g:ctrlp_show_hidden = 1
-let g:csv_highlight_column = 'y'
-let g:csv_no_conceal = 1
-let g:elm_setup_keybindings = 0
-let g:vim_markdown_folding_disabled = 1
-let g:NERDTreeRespectWildIgnore = 1
-let g:NERDTreeMinimalUI = 1
-let g:NERDTreeDirArrows = 1
-let g:NERDTreeWinPos = "right"
-let g:notes_directories = ['~/Documents/Notes']
-let g:notes_smart_quotes = 0
-let g:notes_suffix = '.txt'
-let g:prettier#config#semi = 'false'
-let g:prettier#config#bracket_spacing = 'true'
-let g:prettier#config#trailing_comma = 'none'
-let g:python_highlight_all = 1
-let g:python_version_2 = 1
-let g:rspec_command = "! vagrant ssh -c 'cd /app && bin/rspec {spec} '"
-let g:startify_bookmarks = [{'b': '~/Desktop/work/status.txt'}, {'a': '~/Desktop/work/today.md'}]
-let g:startify_change_to_dir = 0
-
-let g:better_whitespace_enabled = 1
-let g:strip_whitespace_on_save = 1
-let g:strip_whitespace_confirm = 0
-
-" iTerm: use thin cursor
+" use thin cursor in iTerm
 if $TERM_PROGRAM =~ "iTerm"
   let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
   let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
 endif
 
+" grep using ag
+if executable('ag')
+  set grepprg=ag\ --nogroup\ --nocolor
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
+
 if has('gui_running')
-  set guifont=FiraCode-Light:h15 " previous: SF Mono, Range Mono, Input, Monaco, Menlo
+  set guifont=FiraCode-Light:h15
 endif
 
-" GUI vim settings
-if has('gui_running') || has('nvim')
-  set colorcolumn=100
-  highlight ColorColumn guibg=Gray11
+" Plugin settings
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'javascript': ['prettier', 'eslint'],
+\}
+let g:better_whitespace_enabled = 1
+let g:colorizer_auto_filetype='css,scss'
+let g:colorizer_colornames_disable = 1
+let g:csv_highlight_column = 'y'
+let g:csv_no_conceal = 1
+let g:ctrlp_max_files = 0
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_working_path_mode = 0
+let g:elm_setup_keybindings = 0
+let g:NERDTreeDirArrows = 1
+let g:NERDTreeMinimalUI = 1
+let g:NERDTreeWinPos = "right"
+let g:nord_italic = 1
+let g:nord_italic_comments = 1
+let g:nord_cursor_line_number_background = 1
+let g:prettier#config#bracket_spacing = 'true'
+let g:prettier#config#semi = 'false'
+let g:prettier#config#trailing_comma = 'none'
+let g:python_highlight_all = 1
+let g:strip_whitespace_confirm = 0
+let g:strip_whitespace_on_save = 1
+let g:vim_markdown_folding_disabled = 1
 
-  " start in project
-  cd ~/Developer/chips
-  let g:ctrlp_working_path_mode = 0
-endif
-" }
 
-
-" Functions {
+" ===================================================================
+" Functions
+" ===================================================================
+"
 function! ToggleList(bufname, pfx) " Toggle the location or quickfix list
   let buflist = GetBufferList()
-  for bufnum in map(filter(split(buflist, '\n'), 'v:val =~ "'.a:bufname.'"'), 'str2nr(matchstr(v:val, "\\d\\+"))')
+  for bufnum in map(filter(split(buflist, '\n'), 'v:val =~ "'.a:bufname.'"'),
+      \ 'str2nr(matchstr(v:val, "\\d\\+"))')
     if bufwinnr(bufnum) != -1
       exec(a:pfx.'close')
       return
@@ -203,115 +167,55 @@ function! GetBufferList() " Needed for ToggleList
   return buflist
 endfunction
 
-function! s:RunShellCommand(cmdline) " Used by :Shell
-  echo a:cmdline
-  let expanded_cmdline = a:cmdline
-  for part in split(a:cmdline, ' ')
-     if part[0] =~ '\v[%#<]'
-        let expanded_part = fnameescape(expand(part))
-        let expanded_cmdline = substitute(expanded_cmdline, part, expanded_part, '')
-     endif
-  endfor
-  botright new
-  setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile nowrap
-  call setline(1, 'You entered:    ' . a:cmdline)
-  call setline(2, 'Expanded Form:  ' .expanded_cmdline)
-  call setline(3,substitute(getline(2),'.','=','g'))
-  execute '$read !'. expanded_cmdline
-  setlocal nomodifiable
-  1
-endfunction
-" }
+
+" ===================================================================
+" Commands
+" ===================================================================
+"
+command! Bd             bdelete
+command! Config         edit $MYVIMRC
+command! -nargs=1 Grep  silent! grep! <f-args> | :call ToggleList('Quickfix List', 'c')
+command! Wd             write | bdelete
+cmap w!!                w !sudo tee % >/dev/null
 
 
-" Commands {
-command! Configure  edit $MYVIMRC
-command! WildIgnore edit ~/.vim/wildignore
-command! Wd         write | bdelete
-command! Bd         bdelete
-command! BBD        bufdo bdelete
-command! -nargs=1 Grep silent! grep! <f-args> | :call ToggleList('Quickfix List', 'c')
+" ===================================================================
+" Mappings
+" ===================================================================
+"
+inoremap jk         <Esc>
 
-" runs a shell command in a new window
-command! -complete=shellcmd -nargs=+ Shell call s:RunShellCommand(<q-args>)
+" keep current indentation level when previous line is blank
+inoremap <cr>       <cr>x<BS>
 
-cmap w!!            w !sudo tee % >/dev/null
-" }
+" move line with alt-j / alt-k
+nnoremap <m-j>      :m .+1<cr>==
+nnoremap <m-k>      :m .-2<cr>==
 
+" macvim tab shortcuts for vimR
+nnoremap <D-s>      :w<cr>
+nnoremap <D-S-[>    :tabp<cr>
+nnoremap <D-S-]>    :tabn<cr>
 
-" Mappings {
-
-" Force myself to use hjkl instead of arrows. Also frees up 4 keys.
-noremap  <Up>       :w<cr>
-noremap  <Down>     <NOP>
-noremap  <Left>     <NOP>
-noremap  <Right>    <NOP>
+nnoremap <silent> <leader>l :call ToggleList("Location List", 'l')<cr>
+nnoremap <silent> <leader>c :call ToggleList("Quickfix List", 'c')<cr>
 
 
-" Return to normal mode from home row. Disabling Esc to build the habit
-inoremap jk <Esc>
-" inoremap <Esc> <Nop>
+" ===================================================================
+" Plugin Mappings
+" ===================================================================
+"
+call camelcasemotion#CreateMotionMappings('<leader>')
 
-" Yank to the end of the line, like C and D.
-nnoremap Y y$
-
-" Easier horizontal movement
-nnoremap zl zL
-nnoremap zh zH
-
-" Move line under cursor with Alt-j or Alt-k (mac-specific)
-nnoremap ∆ :m .+1<CR>==
-nnoremap ˚ :m .-2<CR>==
-
-" Toggle location or quickfix list easily
-nnoremap <silent> <leader>l :call ToggleList("Location List", 'l')<CR>
-nnoremap <silent> <leader>c :call ToggleList("Quickfix List", 'c')<CR>
-
-" Keep the current indentation level, even if the previous line is blank
-inoremap <CR> <CR>x<BS>
-
-nnoremap <leader>dg2   :diffget //2<CR>
-nnoremap <leader>dg3   :diffget //3<CR>
-nnoremap <leader>du    :diffupdate<CR>
-
-nnoremap <leader>i     i_<Esc>r
-" }
-
-
-" Plugin Mappings {
 nnoremap <leader><Tab> {v}:Tabularize /
 vnoremap <leader><Tab> :Tabularize /
-nnoremap <leader>a     :ALEFix<CR>
-nnoremap <leader>B     :CtrlPBranch<CR>
-nnoremap <leader>m     :CtrlPModified<CR>
-nnoremap <leader>M     :CtrlPMRU<CR>
-nnoremap <leader>n     :NERDTreeFind<CR>
-nnoremap <leader>o     :ColorHighlight<CR>
-nnoremap <leader>r     :CtrlPMRUFiles<CR>
-nnoremap <leader>t     :CtrlP<CR>
-nnoremap <leader>z     :ALEDetail<CR>
-nnoremap <F8>          :TagbarToggle<CR>
+nnoremap <leader>a     :ALEFix<cr>
+nnoremap <leader>B     :CtrlPBranch<cr>
+nnoremap <leader>m     :CtrlPModified<cr>
+nnoremap <leader>n     :NERDTreeFind<cr>
+nnoremap <leader>o     :ColorHighlight<cr>
+nnoremap <leader>t     :CtrlP<cr>
+nnoremap <leader>z     :ALEDetail<cr>
+nnoremap <F8>          :TagbarToggle<cr>
 nnoremap <D-S-{>       :tabp<cr>
 nnoremap <D-S-}>       :tabn<cr>
-
-" (some of?) these work in vimR but none in Oni.
-nnoremap <D-O>         :CtrlP<cr>
-nnoremap <D-s>         :w<cr>
-nnoremap <D-S-[>       :tabp<cr>
-nnoremap <D-S-]>       :tabn<cr>
-
-" vim-checkbox: use <leader>x instead of <leader>tt
-silent! nunmap <silent> <leader>tt
-nnoremap <silent> <leader>x :ToggleCB<cr>
-
-call camelcasemotion#CreateMotionMappings('<leader>')
-" }
-
-
-" Misc {
-" make TODO, etc. gray instead of neon
-hi clear Todo
-hi Todo guifg=#888888 guibg=#1a1a1a
-hi clear PreProc
-hi PreProc guifg=#888888 guibg=#1a1a1a
-" }
