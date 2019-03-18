@@ -8,8 +8,6 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'w0rp/ale'
 Plug 'bkad/CamelCaseMotion'
-Plug 'jasoncodes/ctrlp-modified.vim'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'ervandew/supertab'
 Plug 'mkitt/tabline.vim'
@@ -26,6 +24,9 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'prettier/vim-prettier', { 'on': ['Prettier', 'PrettierAsync'] }
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
+
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
 
 " filetypes
 Plug 'chrisbra/csv.vim',        { 'for': 'csv'        }
@@ -102,7 +103,6 @@ endif
 " grep using ag
 if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 
 if has('gui_running')
@@ -118,9 +118,6 @@ let g:better_whitespace_enabled = 1
 let g:colorizer_colornames_disable = 1
 let g:csv_highlight_column = 'y'
 let g:csv_no_conceal = 1
-let g:ctrlp_max_files = 0
-let g:ctrlp_show_hidden = 1
-let g:ctrlp_working_path_mode = 0
 let g:elm_setup_keybindings = 0
 let g:NERDTreeDirArrows = 1
 let g:NERDTreeMinimalUI = 1
@@ -137,6 +134,8 @@ let g:strip_whitespace_confirm = 0
 let g:strip_whitespace_on_save = 1
 let g:vim_markdown_folding_disabled = 1
 
+" use ag in fzf even when opened outside of a terminal session
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
 " ===================================================================
 " Functions
@@ -204,7 +203,6 @@ nnoremap <D-S-]>    :tabn<cr>
 nnoremap <silent> <leader>l :call ToggleList("Location List", 'l')<cr>
 nnoremap <silent> <leader>c :call ToggleList("Quickfix List", 'c')<cr>
 
-
 " ===================================================================
 " Plugin Mappings
 " ===================================================================
@@ -214,11 +212,11 @@ call camelcasemotion#CreateMotionMappings('<leader>')
 nnoremap <leader><Tab> {v}:Tabularize /
 vnoremap <leader><Tab> :Tabularize /
 nnoremap <leader>a     :ALEFix<cr>
-nnoremap <leader>B     :CtrlPBranch<cr>
-nnoremap <leader>m     :CtrlPModified<cr>
+nnoremap <leader>L     :Lines<cr>
+nnoremap <leader>m     :GFiles?<cr>
 nnoremap <leader>n     :NERDTreeFind<cr>
 nnoremap <leader>o     :ColorHighlight<cr>
-nnoremap <leader>t     :CtrlP<cr>
+nnoremap <leader>t     :GFiles<cr>
 nnoremap <leader>z     :ALEDetail<cr>
 nnoremap <F8>          :TagbarToggle<cr>
 nnoremap <D-S-{>       :tabp<cr>
