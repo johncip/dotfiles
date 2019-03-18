@@ -10,7 +10,6 @@ Plug 'w0rp/ale'
 Plug 'bkad/CamelCaseMotion'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'ervandew/supertab'
-Plug 'mkitt/tabline.vim'
 Plug 'godlygeek/tabular', { 'on': 'Tabularize' }
 Plug 'majutsushi/tagbar'
 Plug 'tomtom/tcomment_vim'
@@ -182,17 +181,17 @@ cmap w!!                w !sudo tee % >/dev/null
 inoremap jk         <Esc>
 nnoremap Y          y$
 
+nnoremap <silent> <Up>    :GFiles<cr>
+nnoremap <silent> <Down>  :Buffers<cr>
+nnoremap <silent> <Left>  :bprev<cr>
+nnoremap <silent> <Right> :bnext<cr>
+
 " keep current indentation level when previous line is blank
 inoremap <cr>       <cr>x<BS>
 
 " move line with alt-j / alt-k
 nnoremap <m-j>      :m .+1<cr>==
 nnoremap <m-k>      :m .-2<cr>==
-
-" macvim tab shortcuts for vimR
-nnoremap <D-s>      :w<cr>
-nnoremap <D-S-[>    :tabp<cr>
-nnoremap <D-S-]>    :tabn<cr>
 
 nnoremap <silent> <leader>l :call ToggleList("Location List", 'l')<cr>
 nnoremap <silent> <leader>c :call ToggleList("Quickfix List", 'c')<cr>
@@ -213,5 +212,3 @@ nnoremap <leader>o     :ColorHighlight<cr>
 nnoremap <leader>t     :GFiles<cr>
 nnoremap <leader>z     :ALEDetail<cr>
 nnoremap <F8>          :TagbarToggle<cr>
-nnoremap <D-S-{>       :tabp<cr>
-nnoremap <D-S-}>       :tabn<cr>
