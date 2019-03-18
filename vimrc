@@ -62,7 +62,6 @@ highlight Comment cterm=italic
 set colorcolumn=100
 set cursorline
 set cmdheight=1
-set expandtab
 set ignorecase
 set laststatus=2
 set lazyredraw
@@ -73,17 +72,21 @@ set noswapfile
 set nowrap
 set number
 set ruler
-set shiftwidth=2
 set showmatch
 set smartcase
-set softtabstop=2
 set t_Co=256
-set tabstop=2
 set termguicolors
 set ttyfast
 set updatetime=100
 set wildmenu
 set wrapscan
+
+set expandtab
+set copyindent
+set preserveindent
+set softtabstop=2
+set shiftwidth=2
+set tabstop=2
 
 autocmd FileType applescript setlocal sw=4 ts=4 sts=4 et
 autocmd FileType make set noexpandtab
