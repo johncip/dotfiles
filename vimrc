@@ -10,10 +10,10 @@ Plug 'w0rp/ale'
 Plug 'bkad/CamelCaseMotion'
 Plug 'jasoncodes/ctrlp-modified.vim'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'ervandew/supertab'
 Plug 'mkitt/tabline.vim'
-Plug 'godlygeek/tabular'
+Plug 'godlygeek/tabular', { 'on': 'Tabularize' }
 Plug 'majutsushi/tagbar'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/tpope-vim-abolish'
@@ -23,27 +23,27 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'prettier/vim-prettier'
+Plug 'prettier/vim-prettier', { 'on': ['Prettier', 'PrettierAsync'] }
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 
 " filetypes
-Plug 'chrisbra/csv.vim'
-Plug 'ElmCast/elm-vim'
-Plug 'hdima/python-syntax'
-Plug 'isRuslan/vim-es6'
-Plug 'elzr/vim-json'
-Plug 'plasticboy/vim-markdown'
-Plug 'vim-ruby/vim-ruby'
+Plug 'chrisbra/csv.vim',        { 'for': 'csv'        }
+Plug 'ElmCast/elm-vim',         { 'for': 'elm'        }
+Plug 'hdima/python-syntax',     { 'for': 'python'     }
+Plug 'isRuslan/vim-es6',        { 'for': 'javascript' }
+Plug 'elzr/vim-json',           { 'for': 'json'       }
+Plug 'plasticboy/vim-markdown', { 'for': 'markdown'   }
+Plug 'vim-ruby/vim-ruby',       { 'for': 'ruby'       }
 
 " colorschemes
-Plug 'chriskempson/base16-vim'
-Plug 'maksimr/Lucius2'
-Plug 'tomasr/molokai'
 Plug 'johncip/nord-vim'
-Plug 'jacoborus/tender'
 Plug 'jakwings/vim-colors' " moody
-Plug 'promisedlandt/vim-colors-ir_black'
+" Plug 'chriskempson/base16-vim'
+" Plug 'maksimr/Lucius2'
+" Plug 'tomasr/molokai'
+" Plug 'jacoborus/tender'
+" Plug 'promisedlandt/vim-colors-ir_black'
 
 filetype plugin indent on
 syntax on
