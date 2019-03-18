@@ -186,6 +186,7 @@ cmap w!!                w !sudo tee % >/dev/null
 " ===================================================================
 "
 inoremap jk         <Esc>
+nnoremap Y          y$
 
 " keep current indentation level when previous line is blank
 inoremap <cr>       <cr>x<BS>
