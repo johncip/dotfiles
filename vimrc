@@ -30,13 +30,9 @@ Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 
 " filetypes
-Plug 'chrisbra/csv.vim',        { 'for': 'csv'        }
-Plug 'ElmCast/elm-vim',         { 'for': 'elm'        }
-Plug 'hdima/python-syntax',     { 'for': 'python'     }
-Plug 'isRuslan/vim-es6',        { 'for': 'javascript' }
-Plug 'elzr/vim-json',           { 'for': 'json'       }
-Plug 'plasticboy/vim-markdown', { 'for': 'markdown'   }
-Plug 'vim-ruby/vim-ruby',       { 'for': 'ruby'       }
+Plug 'sheerun/vim-polyglot'
+Plug 'chrisbra/csv.vim',        { 'for': 'csv' }
+Plug 'ElmCast/elm-vim',         { 'for': 'elm' }
 
 " colorschemes
 Plug 'johncip/nord-vim'
