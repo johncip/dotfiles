@@ -8,7 +8,6 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'w0rp/ale'
 Plug 'bkad/CamelCaseMotion'
-Plug 'chrisbra/Colorizer'
 Plug 'jasoncodes/ctrlp-modified.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
@@ -115,7 +114,6 @@ let g:ale_fixers = {
 \   'javascript': ['prettier', 'eslint'],
 \}
 let g:better_whitespace_enabled = 1
-let g:colorizer_auto_filetype='css,scss'
 let g:colorizer_colornames_disable = 1
 let g:csv_highlight_column = 'y'
 let g:csv_no_conceal = 1
