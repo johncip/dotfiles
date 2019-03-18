@@ -112,7 +112,6 @@ let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['prettier', 'eslint'],
 \}
-let g:better_whitespace_enabled = 1
 let g:colorizer_colornames_disable = 1
 let g:csv_highlight_column = 'y'
 let g:csv_no_conceal = 1
@@ -125,7 +124,6 @@ let g:prettier#config#bracket_spacing = 'true'
 let g:prettier#config#semi = 'false'
 let g:prettier#config#trailing_comma = 'none'
 let g:prettier#exec_cmd_async = 1
-let g:python_highlight_all = 1
 let g:strip_whitespace_confirm = 0
 let g:strip_whitespace_on_save = 1
 let g:vim_markdown_folding_disabled = 1
