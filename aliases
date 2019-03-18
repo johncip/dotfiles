@@ -37,7 +37,7 @@ alias showpath='echo $PATH | tr ":" "\n"'
 alias speedtest='curl -o /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip'
 
 # homebrew
-alias vi='vim'
-alias ctags="`brew --prefix`/bin/ctags"
-
+alias vi='nvim'
+alias vim='nvim'
 alias gvim='vimr'
+alias ctags="`brew --prefix`/bin/ctags"
