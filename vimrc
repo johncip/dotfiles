@@ -8,7 +8,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'w0rp/ale'
 Plug 'bkad/CamelCaseMotion'
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'ervandew/supertab'
 Plug 'godlygeek/tabular', { 'on': 'Tabularize' }
 Plug 'majutsushi/tagbar'
@@ -23,8 +23,19 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'prettier/vim-prettier', { 'on': ['Prettier', 'PrettierAsync'] }
 Plug 'tpope/vim-repeat'
+Plug 'thoughtbot/vim-rspec'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
+
+" clojure
+Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'guns/vim-sexp'
+Plug 'tpope/vim-sexp-mappings-for-regular-people'
+Plug 'tpope/vim-fireplace'
+" Plug 'bhurlow/vim-parinfer'
+Plug 'tpope/vim-salve'
+" Plug 'clojure-vim/clj-refactor.nvim'
+
 
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
@@ -37,11 +48,11 @@ Plug 'ElmCast/elm-vim',         { 'for': 'elm' }
 " colorschemes
 Plug 'johncip/nord-vim'
 Plug 'jakwings/vim-colors' " moody
-" Plug 'chriskempson/base16-vim'
-" Plug 'maksimr/Lucius2'
-" Plug 'tomasr/molokai'
-" Plug 'jacoborus/tender'
-" Plug 'promisedlandt/vim-colors-ir_black'
+Plug 'jacoborus/tender'
+Plug 'chriskempson/base16-vim'
+Plug 'maksimr/Lucius2'
+Plug 'tomasr/molokai'
+Plug 'promisedlandt/vim-colors-ir_black'
 
 filetype plugin indent on
 syntax on
@@ -55,17 +66,20 @@ call plug#end()
 let mapleader = ','
 
 colorscheme nord
-highlight Comment cterm=italic
+highlight Comment cterm=italic gui=italic
 
+set clipboard=unnamed
 set colorcolumn=100
 set cursorline
 set cmdheight=1
+set hidden
 set ignorecase
 set laststatus=2
 set lazyredraw
 set modeline
 set nohlsearch
 set noshowmode
+set nospell
 set noswapfile
 set nowrap
 set number
@@ -97,6 +111,12 @@ if $TERM_PROGRAM =~ "iTerm"
   let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
 endif
 
+" use mouse in iTerm
+set mouse=a
+if has("mouse_sgr")
+  set ttymouse=sgr
+end
+
 " grep using ag
 if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
@@ -111,6 +131,8 @@ let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['prettier', 'eslint'],
 \}
+let g:better_whitespace_ctermcolor='Black'
+let g:better_whitespace_guicolor='Black'
 let g:colorizer_colornames_disable = 1
 let g:csv_highlight_column = 'y'
 let g:csv_no_conceal = 1
@@ -119,6 +141,8 @@ let g:gutentags_file_list_command = 'ag -l'
 let g:NERDTreeDirArrows = 1
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeWinPos = "right"
+let g:nord_comment_brightness = 15
+let g:nord_italic = 1
 let g:prettier#config#bracket_spacing = 'true'
 let g:prettier#config#semi = 'false'
 let g:prettier#config#trailing_comma = 'none'
@@ -181,7 +205,7 @@ cmap w!!                w !sudo tee % >/dev/null
 inoremap jk         <Esc>
 nnoremap Y          y$
 
-nnoremap <silent> <Up>    :GFiles<cr>
+nnoremap <silent> <Up>    :Files<cr>
 nnoremap <silent> <Down>  :Buffers<cr>
 nnoremap <silent> <Left>  :bprev<cr>
 nnoremap <silent> <Right> :bnext<cr>
@@ -190,11 +214,15 @@ nnoremap <silent> <Right> :bnext<cr>
 inoremap <cr>       <cr>x<BS>
 
 " move line with alt-j / alt-k
-nnoremap <m-j>      :m .+1<cr>==
-nnoremap <m-k>      :m .-2<cr>==
+" nnoremap <m-j>      :m .+1<cr>==
+" nnoremap <m-k>      :m .-2<cr>==
 
 nnoremap <silent> <leader>l :call ToggleList("Location List", 'l')<cr>
 nnoremap <silent> <leader>c :call ToggleList("Quickfix List", 'c')<cr>
+
+nnoremap <silent> <F9> :write<cr>:Require<cr>:%Eval<cr>
+" nnoremap <F10> :%Eval
+
 
 " ===================================================================
 " Plugin Mappings
@@ -209,6 +237,7 @@ nnoremap <leader>L     :Lines<cr>
 nnoremap <leader>m     :GFiles?<cr>
 nnoremap <leader>n     :NERDTreeFind<cr>
 nnoremap <leader>o     :ColorHighlight<cr>
-nnoremap <leader>t     :GFiles<cr>
+nnoremap <Leader>s     :call RunCurrentSpecFile()<cr>
+nnoremap <leader>t     :Files<cr>
 nnoremap <leader>z     :ALEDetail<cr>
 nnoremap <F8>          :TagbarToggle<cr>
