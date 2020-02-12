@@ -52,6 +52,10 @@ setopt hist_ignore_all_dups
 # Autojump
 . `brew --prefix`/etc/profile.d/z.sh
 
+function mkcd() {
+  mkdir -p "$1" && cd "$1"
+}
+
 # Functions
 function grep_ruby() {
   find app lib -name '*.rb' | xargs grep $*
@@ -115,7 +119,7 @@ export HOMEBREW_NO_ANALYTICS=1
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-# eval "$(rbenv init -)"
+eval "$(rbenv init -)"
 # export PATH="/Users/john/miniconda3/bin:$PATH"
 
 # tabtab source for serverless package
@@ -128,3 +132,11 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 export FZF_DEFAULT_COMMAND='ag -l -p ""'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# . "/usr/local/opt/nvm/nvm.sh"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# -- NOTE: nvm is very slow to load. replacing with an alias to be called manually
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+alias loadnvm='[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"'

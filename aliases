@@ -1,43 +1,32 @@
 #!/usr/bin/env zsh
 
-# bundle
-alias br='bundle exec rake'
 alias be='bundle exec'
-
-# git
+alias dog='ccat'
 alias g='git'
-alias s='/usr/local/bin/git status'
-alias nw='numberwang'
-
-# vagrant
-alias vup='vagrant up'
-alias vsh='vagrant ssh'
-alias vsync='vagrant gatling-rsync-auto | ruby ~/Developer/Gradescope/trim_vsync.rb'
-alias vhalt='vagrant halt && exit'
-alias waitsh='sleep 25 && vagrant ssh'
-alias wsh='waitsh'
-alias vshrc="vsh -- -t 'cd /app && bin/rails c'"
-alias vshrs="vsh -- -t 'cd /app && bin/rails s'"
-
-# pure laziness
-alias q='exit'
-alias annotate='bundle exec annotate'
-
-# options
+alias gvim='vimr'
 alias ll='ls -l'
-alias ls='ls -G'
-alias ghi='ghi --no-pager'
-alias bc='bc -l -q'
+alias q='exit'
+alias v='nvim'
+alias vi='nvim'
+alias vim='nvim'
+
+# default args
+alias bc='bc --mathlib --quiet'
+alias ls='ls -FG'
+
+# homebrew
+alias ctags="`brew --prefix`/bin/ctags"
 
 # tools
 alias json='python -m json.tool'
-alias serve='python -m SimpleHTTPServer 8000'
-alias todo='grep -rn "# TODO" .'
 alias showpath='echo $PATH | tr ":" "\n"'
 alias speedtest='curl -o /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip'
+alias commit-and-submit='lein test && git add . && git commit && git push && exercism submit src/*'
 
-# homebrew
-alias vi='nvim'
-alias vim='nvim'
-alias gvim='vimr'
-alias ctags="`brew --prefix`/bin/ctags"
+# gradescope
+alias vup='vagrant up'
+alias vsh='vagrant ssh'
+alias vsync='vagrant gatling-rsync-auto'
+alias vhalt='vagrant halt && exit'
+alias waitsh='sleep 25 && vagrant ssh'
+alias annotate='bundle exec annotate'

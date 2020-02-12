@@ -1,6 +1,6 @@
 [user]
-  email = johnmikecip@gmail.com
-  name = John Cipriano
+	email = johnmikecip@gmail.com
+	name = John Cipriano
 [core]
   editor = vim
   pager = less -S
@@ -27,25 +27,24 @@
   r = reset
   rh = reset head^
   s = status
-  su = submodule update
-
-  home = checkout master
-  branches = branch -vv --color
-  mybranches = "!git branches | grep john"
-  gone = "!git fetch --prune && git branches | grep ': gone' | awk '{print $1}'"
-  grandpa = merge-base HEAD origin/master
-  prune-all = "!git prune && git remote prune origin"
-  publish = "!git push -u origin HEAD && hub pull-request"
-  ls = log --format='%C(yellow)%h   %C(blue)%<(13,trunc)%an   %Creset%s %C(red)%d' --date=short --reverse -20
-  upstream = push -u origin HEAD
+  su = status --untracked-files
 
   branch-name = rev-parse --abbrev-ref HEAD
-  new-files = diff --name-only --diff-filter=A origin/master
+  branches = branch -vv --color
+  grandpa = merge-base HEAD master
+  ls = log --format='%C(yellow)%h   %C(blue)%<(13,trunc)%an   %Creset%s %C(red)%d' --date=short --reverse -20
+  new = diff --name-only --diff-filter=A master
+  shallow = clone --depth 1
+  unstage = reset HEAD
+  upstream = push -u origin HEAD
+
+  gone = "!git fetch --prune && git branches | grep ': gone' | awk '{print $1}'"
+  prune-all = "!git prune && git remote prune origin"
+  publish = "!git push -u origin HEAD && hub pull-request"
   rebase-master = "!git checkout master && git pull && git ck - && git rebase master"
   rebasei = "!git rebase -i `git grandpa`"
-  shallow = clone --depth 1
   since = "!git rids origin/`git branch-name`..`git branch-name`"
-  unstage = reset HEAD
+  push-all = "!git remote | xargs -L1 git push --all"
 
 [push]
   default = upstream
