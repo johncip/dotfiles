@@ -24,9 +24,10 @@ alias speedtest='curl -o /dev/null http://speedtest.wdc01.softlayer.com/download
 alias commit-and-submit='lein test && git add . && git commit && git push && exercism submit src/*'
 
 # gradescope
-alias vup='vagrant up'
-alias vsh='vagrant ssh'
-alias vsync='vagrant gatling-rsync-auto'
-alias vhalt='vagrant halt && exit'
-alias waitsh='sleep 25 && vagrant ssh'
+# alias vup='vagrant up'
+# alias vsh='vagrant ssh'
+# alias vsync='vagrant gatling-rsync-auto'
+# alias vhalt='vagrant halt && exit'
+# alias waitsh='sleep 25 && vagrant ssh'
+# alias annotate='bundle exec annotate'
 alias annotate='bundle exec annotate'
