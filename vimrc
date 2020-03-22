@@ -131,8 +131,9 @@ let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['prettier', 'eslint'],
 \}
-let g:better_whitespace_ctermcolor='Black'
-let g:better_whitespace_guicolor='Black'
+let g:ale_ruby_rubocop_executable = 'bin/rubocop'
+let g:better_whitespace_ctermcolor = 'Black'
+let g:better_whitespace_guicolor = 'Black'
 let g:colorizer_colornames_disable = 1
 let g:csv_highlight_column = 'y'
 let g:csv_no_conceal = 1
