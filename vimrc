@@ -48,11 +48,11 @@ Plug 'ElmCast/elm-vim',         { 'for': 'elm' }
 " colorschemes
 Plug 'johncip/nord-vim'
 Plug 'jakwings/vim-colors' " moody
-Plug 'jacoborus/tender'
-Plug 'chriskempson/base16-vim'
-Plug 'maksimr/Lucius2'
+Plug 'chriskempson/base16-vim' " base16-classic-dark
 Plug 'tomasr/molokai'
-Plug 'promisedlandt/vim-colors-ir_black'
+" Plug 'promisedlandt/vim-colors-ir_black'
+" Plug 'jacoborus/tender'
+" Plug 'maksimr/Lucius2'
 
 filetype plugin indent on
 syntax on
