@@ -12,6 +12,11 @@ setopt correct
 # Make cd work like pushd
 setopt auto_pushd
 
+# add completion for homebrew
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+fi
+
 # Command completion, with arrow key menu
 autoload compinit
 compinit -u # -u skips permission security check (for shared systems)
