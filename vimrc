@@ -6,7 +6,7 @@ set nocompatible
 filetype off
 call plug#begin('~/.vim/plugged')
 
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 Plug 'bkad/CamelCaseMotion'
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'ervandew/supertab'
@@ -32,8 +32,8 @@ Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'guns/vim-sexp'
 Plug 'tpope/vim-sexp-mappings-for-regular-people'
 Plug 'tpope/vim-fireplace'
-" Plug 'bhurlow/vim-parinfer'
 Plug 'tpope/vim-salve'
+" Plug 'bhurlow/vim-parinfer'
 " Plug 'clojure-vim/clj-refactor.nvim'
 
 
@@ -58,15 +58,15 @@ filetype plugin indent on
 syntax on
 call plug#end()
 
-
 " ===================================================================
 " Settings
 " ===================================================================
 "
 let mapleader = ','
 
-colorscheme nord
+colorscheme base16-classic-dark
 highlight Comment cterm=italic gui=italic
+highlight Todo ctermbg=NONE ctermfg=yellow guibg=NONE guifg=orange
 
 set clipboard=unnamed
 set colorcolumn=100
@@ -192,6 +192,7 @@ endfunction
 " ===================================================================
 "
 command! Bd             bdelete
+command! Bda            bufdo | bd
 command! Config         edit $MYVIMRC
 command! -nargs=1 Grep  silent! grep! <f-args> | :call ToggleList('Quickfix List', 'c')
 command! Wd             write | bdelete
