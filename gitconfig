@@ -30,7 +30,7 @@
   su = status --untracked-files
 
   branch-name = rev-parse --abbrev-ref HEAD
-  branches = branch -vv --color
+  branches = branch -avv --color
   grandpa = merge-base HEAD master
   ls = log --format='%C(yellow)%h   %C(blue)%<(13,trunc)%an   %Creset%s %C(red)%d' --date=short --reverse -20
   new = diff --name-only --diff-filter=A master
