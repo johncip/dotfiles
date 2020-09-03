@@ -1,6 +1,6 @@
 [user]
-	email = johnmikecip@gmail.com
-	name = John Cipriano
+  email = johnmikecip@gmail.com
+  name = John Cipriano
 [core]
   editor = vim
   pager = less -S
@@ -8,10 +8,10 @@
 [color]
   ui = true
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
   required = true
-	process = git-lfs filter-process
+  process = git-lfs filter-process
 [alias]
   a = add
   c = commit
@@ -56,14 +56,14 @@
 [rerere]
   enabled = false
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
+  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+  path =
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+  cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+  trustExitCode = true
 [github]
-	user = johncip
+  user = johncip
 [ghi]
-	token = !security find-internet-password -a johncip -s github.com -l 'ghi token' -w
+  token = !security find-internet-password -a johncip -s github.com -l 'ghi token' -w
 [credential]
-	helper = osxkeychain
+  helper = osxkeychain
