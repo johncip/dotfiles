@@ -100,6 +100,8 @@ set softtabstop=2
 set shiftwidth=2
 set tabstop=2
 
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<,space:·
+
 autocmd FileType applescript setlocal sw=4 ts=4 sts=4 et
 autocmd FileType make set noexpandtab
 autocmd FileType python setlocal sw=4 ts=4 sts=4 et
@@ -242,4 +244,5 @@ nnoremap <leader>o     :ColorHighlight<cr>
 nnoremap <Leader>s     :call RunCurrentSpecFile()<cr>
 nnoremap <leader>t     :Files<cr>
 nnoremap <leader>z     :ALEDetail<cr>
+nnoremap <F5>          :set list!<cr>
 nnoremap <F8>          :TagbarToggle<cr>
