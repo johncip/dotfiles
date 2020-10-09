@@ -37,6 +37,7 @@ Plug 'tpope/vim-salve'
 " Plug 'clojure-vim/clj-refactor.nvim'
 
 
+" fzf
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 
@@ -194,7 +195,7 @@ endfunction
 " Commands
 " ===================================================================
 "
-command! Bd             bdelete
+command! Bd             bdelete " for fat-fingering
 command! Bda            bufdo | bd
 command! Config         edit $MYVIMRC
 command! -nargs=1 Grep  silent! grep! <f-args> | :call ToggleList('Quickfix List', 'c')
