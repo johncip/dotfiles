@@ -137,8 +137,10 @@ endif
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['prettier', 'eslint'],
+\   'ruby': ['rubocop', 'reek'],
 \}
 let g:ale_ruby_rubocop_executable = 'bin/rubocop'
+let g:ale_ruby_reek_executable = 'bin/reek'
 let g:better_whitespace_ctermcolor = 'Black'
 let g:better_whitespace_guicolor = 'Black'
 let g:colorizer_colornames_disable = 1
