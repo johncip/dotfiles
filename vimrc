@@ -222,15 +222,9 @@ nnoremap <silent> <Right> :bnext<cr>
 " keep current indentation level when previous line is blank
 inoremap <cr>       <cr>x<BS>
 
-" move line with alt-j / alt-k
-" nnoremap <m-j>      :m .+1<cr>==
-" nnoremap <m-k>      :m .-2<cr>==
-
 nnoremap <silent> <leader>l :call ToggleList("Location List", 'l')<cr>
 nnoremap <silent> <leader>c :call ToggleList("Quickfix List", 'c')<cr>
 
-nnoremap <silent> <F9> :write<cr>:Require<cr>:%Eval<cr>
-" nnoremap <F10> :%Eval
 " ===================================================================================
 " Plugin Mappings
 " ===================================================================================
@@ -243,7 +237,6 @@ nnoremap <leader>a     :ALEFix<cr>
 nnoremap <leader>L     :Lines<cr>
 nnoremap <leader>m     :GFiles?<cr>
 nnoremap <leader>n     :NERDTreeFind<cr>
-nnoremap <leader>o     :ColorHighlight<cr>
 nnoremap <Leader>s     :call RunCurrentSpecFile()<cr>
 nnoremap <leader>t     :Files<cr>
 nnoremap <leader>z     :ALEDetail<cr>
