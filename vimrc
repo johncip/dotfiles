@@ -88,6 +88,8 @@ set nowrap
 set number
 set ruler
 set showmatch
+set splitbelow
+set splitright
 set smartcase
 set t_Co=256
 set termguicolors
