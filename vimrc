@@ -201,8 +201,9 @@ endfunction
 " Commands
 " ===================================================================================
 
+command! Bw             bprevious | bdelete# " close buffer but leave window
 command! Bd             bdelete " for fat-fingering
-command! Bda            bufdo | bd
+command! Bda            silent! bufdo | bd
 command! Config         edit $MYVIMRC
 command! -nargs=1 Grep  silent! grep! <f-args> | :call ToggleList('Quickfix List', 'c')
 command! Wd             write | bdelete
@@ -235,7 +236,8 @@ call camelcasemotion#CreateMotionMappings('<leader>')
 
 nnoremap <leader><Tab> {v}:Tabularize /
 vnoremap <leader><Tab> :Tabularize /
-nnoremap <leader>a     :ALEFix<cr>
+nnoremap <leader>a     :ALEToggle<cr>
+nnoremap <leader>A     :ALEFix<cr>
 nnoremap <leader>L     :Lines<cr>
 nnoremap <leader>m     :GFiles?<cr>
 nnoremap <leader>n     :NERDTreeFind<cr>
