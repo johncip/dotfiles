@@ -165,7 +165,7 @@ let g:strip_whitespace_on_save = 1
 let g:vim_markdown_folding_disabled = 1
 
 " use ag in fzf even when opened outside of a terminal session
-let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
 
 " ===================================================================================
 " Functions
