@@ -63,10 +63,11 @@ call plug#end()
 " ===================================================================================
 " Settings
 " ===================================================================================
-"
+
 let mapleader = ','
 
 colorscheme base16-classic-dark
+
 highlight Comment cterm=italic gui=italic
 highlight Todo ctermbg=NONE ctermfg=yellow guibg=NONE guifg=orange
 
