@@ -66,7 +66,7 @@ call plug#end()
 
 let mapleader = ','
 
-colorscheme base16-classic-dark
+colorscheme molokai
 
 highlight Comment cterm=italic gui=italic
 highlight Todo ctermbg=NONE ctermfg=yellow guibg=NONE guifg=orange
@@ -128,7 +128,7 @@ if executable('ag')
 endif
 
 if has('gui_running')
-  set guifont=FiraCode-Light:h15
+  set guifont=Dank\ Mono:h16
 endif
 
 " ===================================================================================
