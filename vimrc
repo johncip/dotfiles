@@ -8,6 +8,8 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'dense-analysis/ale'
 Plug 'bkad/CamelCaseMotion'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'ervandew/supertab'
 Plug 'godlygeek/tabular', { 'on': 'Tabularize' }
@@ -23,37 +25,36 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'prettier/vim-prettier', { 'on': ['Prettier', 'PrettierAsync'] }
 Plug 'tpope/vim-repeat'
-Plug 'thoughtbot/vim-rspec'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
+" Plug 'fatih/vim-go'
+
+" filetype-specific
+Plug 'sheerun/vim-polyglot'
+Plug 'chrisbra/csv.vim',        { 'for': 'csv' }
+Plug 'ecomba/vim-ruby-refactoring'
+Plug 'thoughtbot/vim-rspec'
+" Plug 'ElmCast/elm-vim',         { 'for': 'elm' }
 
 " clojure
-Plug 'junegunn/rainbow_parentheses.vim'
-Plug 'guns/vim-sexp'
-Plug 'tpope/vim-sexp-mappings-for-regular-people'
-Plug 'tpope/vim-fireplace'
-Plug 'tpope/vim-salve'
+" Plug 'junegunn/rainbow_parentheses.vim'
+" Plug 'guns/vim-sexp'
+" Plug 'tpope/vim-sexp-mappings-for-regular-people'
+" Plug 'tpope/vim-fireplace'
+" Plug 'tpope/vim-salve'
 " Plug 'bhurlow/vim-parinfer'
 " Plug 'clojure-vim/clj-refactor.nvim'
 
-
-" fzf
-Plug '/usr/local/opt/fzf'
-Plug 'junegunn/fzf.vim'
-
-" filetypes
-Plug 'sheerun/vim-polyglot'
-Plug 'chrisbra/csv.vim',        { 'for': 'csv' }
-Plug 'ElmCast/elm-vim',         { 'for': 'elm' }
 
 " colorschemes
 Plug 'johncip/nord-vim'
 Plug 'jakwings/vim-colors' " moody
 Plug 'chriskempson/base16-vim' " base16-classic-dark
 Plug 'tomasr/molokai'
-" Plug 'promisedlandt/vim-colors-ir_black'
-" Plug 'jacoborus/tender'
-" Plug 'maksimr/Lucius2'
+Plug 'sickill/vim-monokai'
+Plug 'promisedlandt/vim-colors-ir_black'
+Plug 'jacoborus/tender'
+Plug 'maksimr/Lucius2'
 
 filetype plugin indent on
 syntax on
