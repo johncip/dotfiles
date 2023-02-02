@@ -137,6 +137,7 @@ endif
 
 " let g:airline_symbols_ascii = 1
 let g:airline_powerline_fonts = 1
+let g:ale_lint_delay = 100
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['prettier', 'eslint'],
