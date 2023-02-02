@@ -1,26 +1,20 @@
-# Colors
+# colors
 autoload -U colors
 colors
 
-# "Pure" Prompt
+# "pure" prompt
 autoload -U promptinit && promptinit
 prompt pure
 
-# Spelling correction for commands
-setopt correct
-
-# Make cd work like pushd
-setopt auto_pushd
-
-# add completion for homebrew
-if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
-fi
+setopt correct # spelling correction for commands
+setopt auto_pushd # make cd work like pushd
 
 # Command completion, with arrow key menu
 autoload compinit
 compinit -u # -u skips permission security check (for shared systems)
 zstyle ':completion:*' menu select
+
+# ---------------- KEYS ----------------
 
 # Edit command in editor (emacs-style)
 autoload -z edit-command-line
@@ -38,11 +32,12 @@ bindkey -e
 bindkey '\e[1;5D' backward-word
 bindkey '\e[1;5C' forward-word
 
+# ---------------- HISTORY ----------------
+
 # turn off control flow stealing Ctrl-S
 stty -ixoff
 stty stop undef
 stty start undef
-
 
 # History
 HISTFILE=~/.zsh_history
@@ -54,26 +49,13 @@ setopt share_history
 setopt hist_ignore_space
 setopt hist_ignore_all_dups
 
-# Autojump
-. `brew --prefix`/etc/profile.d/z.sh
+# ---------------- PATH ----------------
 
-
-
-# Add completions to fpath
-fpath=(/usr/local/share/zsh-completions $fpath)
-
+fpath=(/usr/local/share/zsh-completions $fpath) # add completions to fpath
+path=(/usr/local/bin /usr/local/sbin $path) # add /sbin, but keep /bin ahead of it
 path=(~/Applications/Scripts $path)
 
-# Path: add /usr/local/sbin, put usr/local first
-export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
-
-# Source aliases
-source ~/.aliases
-
-# Source functions
-source ~/.functions
-
-# Dedupe path
+# dedupe path
 if [ -n "$PATH" ]; then
   old_PATH=$PATH:; PATH=
   while [ -n "$old_PATH" ]; do
@@ -88,25 +70,36 @@ if [ -n "$PATH" ]; then
   unset old_PATH x
 fi
 
+# ---------------- HOMEBREW ----------------
+
 export HOMEBREW_NO_ANALYTICS=1
 
+# completion for homebrew
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+fi
+
+# ---------------- INTEGRATIONS ----------------
+
+# use autojump
+. `brew --prefix`/etc/profile.d/z.sh
+
+# use iterm2 shell integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+# use rbenv
 eval "$(rbenv init -)"
-# export PATH="/Users/john/miniconda3/bin:$PATH"
 
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
-
+# use fzf
 export FZF_DEFAULT_COMMAND='ag -l -p ""'
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# nvm
+# use nvm
 export NVM_LAZY_LOAD=true
 source ~/.zsh-nvm/zsh-nvm.plugin.zsh
 
+# source aliases & functions
+source ~/.aliases
+source ~/.functions
+
+cd ~/Developer/Ferraro/Commission/commission_app_ff
