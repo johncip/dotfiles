@@ -22,8 +22,6 @@
   k = checkout
   kb = checkout -b
   p = pull
-  pom = pull --no-edit origin master
-  pick = cherry-pick
   r = reset
   rh = reset head^
   s = status
