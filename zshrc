@@ -106,10 +106,8 @@ export FZF_DEFAULT_COMMAND='ag -l -p ""'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# . "/usr/local/opt/nvm/nvm.sh"
+# nvm stuff:
+# export NVM_DIR="$HOME/.nvm"
+#   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-# -- NOTE: nvm is very slow to load. replacing with an alias to be called manually
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-alias loadnvm='[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"'
