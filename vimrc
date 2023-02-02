@@ -73,7 +73,7 @@ highlight Comment cterm=italic gui=italic
 highlight Todo ctermbg=NONE ctermfg=yellow guibg=NONE guifg=orange
 
 set clipboard=unnamed
-set colorcolumn=100
+set colorcolumn=""
 set cursorline
 set cmdheight=1
 set hidden
