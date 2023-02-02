@@ -34,7 +34,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'sheerun/vim-polyglot'
 Plug 'chrisbra/csv.vim',        { 'for': 'csv' }
 Plug 'ecomba/vim-ruby-refactoring'
-Plug 'thoughtbot/vim-rspec'
+" Plug 'thoughtbot/vim-rspec'
 " Plug 'ElmCast/elm-vim',         { 'for': 'elm' }
 
 " clojure
@@ -45,7 +45,6 @@ Plug 'thoughtbot/vim-rspec'
 " Plug 'tpope/vim-salve'
 " Plug 'bhurlow/vim-parinfer'
 " Plug 'clojure-vim/clj-refactor.nvim'
-
 
 " colorschemes
 Plug 'johncip/nord-vim'
@@ -247,11 +246,17 @@ nnoremap <leader>A     :ALEFix<cr>
 nnoremap <leader>L     :Lines<cr>
 nnoremap <leader>m     :GFiles?<cr>
 nnoremap <leader>n     :NERDTreeFind<cr>
-nnoremap <Leader>s     :call RunCurrentSpecFile()<cr>
 nnoremap <leader>t     :Files<cr>
 nnoremap <leader>z     :ALEDetail<cr>
 nnoremap <F5>          :set list!<cr>
 nnoremap <F8>          :TagbarToggle<cr>
+
+" running rspec
+" nnoremap <leader>s     :call RunNearestSpec()<cr>
+" nnoremap <leader>S     :call RunCurrentSpecFile()<cr>
+nnoremap <leader>s     :vsplit \| terminal bin/rspec %<cr>
+nnoremap <leader>sa    :vsplit \| terminal bin/rspec<cr>
+nnoremap <leader>sf    :vsplit \| terminal bin/rspec --only-failures<cr>
 
 " ===================================================================================
 " Do Last
