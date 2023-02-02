@@ -9,6 +9,9 @@ alias v='nvim'
 alias vi='nvim'
 alias vim='nvim'
 
+# download youtube video or playlist (assumes URL is on the clipboard)
+alias yt='yt-dlp --no-mtime --format 22 -o "%(uploader)s • %(title)s.%(ext)s" "`pbpaste`"'
+
 # default args
 alias bc='bc --mathlib --quiet'
 alias ls='ls -FG'
