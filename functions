@@ -1,0 +1,39 @@
+# vi: ft=bash
+
+# creates a directory and immediately change to it
+function mkcd() {
+  mkdir -p "$1" && cd "$1"
+}
+
+# lists installed homebrew packages along with their dependencies
+function brew-tree() {
+  brew list | while read cask
+  do echo -n $fg[blue] $cask $fg[white]
+    brew deps $cask | awk '{printf(" %s ", $0)}'
+    echo ""
+  done
+}
+
+# restarts coreaudio
+function restart-audio() {
+  sudo kill -9 `ps ax|grep 'coreaudio[a-z]' | awk '{print $2}'`
+}
+
+# removes all ds_store files, recursively
+function rm-dsstore() {
+  find . -d -name ".DS_Store" -exec rm -v {} \;
+}
+
+# prints any git conflict lines in all files in the project
+function git-conflicts() {
+  ag -r '(>{7})|(<{7})'
+}
+
+# lists all aws ec2 instances
+function list-aws-instances() {
+  local region="$1"
+  aws ec2 describe-instances \
+    --region ${region:-`aws configure get region`} \
+    --query='Reservations[*].Instances[*].[PublicIpAddress, InstanceId, Tags[?Key==`Name`].Value | [0]]' \
+    --output table
+}

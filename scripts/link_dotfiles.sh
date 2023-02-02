@@ -6,6 +6,7 @@ REPO_DIR="$HOME/Developer/Dotfiles"
 
 dotfiles=(
   aliases
+  functions
   gemrc
   gitconfig
   inputrc
