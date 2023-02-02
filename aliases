@@ -32,10 +32,3 @@ alias commit-and-submit='lein test && git add . && git commit && git push && exe
 # alias vsync='vagrant gatling-rsync-auto'
 # alias vhalt='vagrant halt && exit'
 # alias waitsh='sleep 25 && vagrant ssh'
-# alias annotate='bundle exec annotate'
-
-# rails
-alias rails='bin/rails'
-alias rspec='bin/rspec'
-alias rake='bin/rake'
-alias annotate='bundle exec annotate'
