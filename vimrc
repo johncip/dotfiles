@@ -7,6 +7,7 @@ filetype off
 call plug#begin('~/.vim/plugged')
 
 Plug 'dense-analysis/ale'
+Plug 'AndrewRadev/bufferize.vim'
 Plug 'bkad/CamelCaseMotion'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
