@@ -1,6 +1,5 @@
 #!/usr/bin/env zsh
 
-alias cat='ccat' # syntax-highlighted cat output
 alias g='git'
 alias gvim='vimr'
 alias ll='ls -l'
@@ -8,19 +7,21 @@ alias q='exit'
 alias v='nvim'
 alias vi='nvim'
 alias vim='nvim'
+alias yt='yt-dlp --no-mtime --format 22 -o "%(uploader)s • %(title)s.%(ext)s" "`pbpaste`"' # download youtube URL on clipboard
 
-# download youtube video or playlist (assumes URL is on the clipboard)
-alias yt='yt-dlp --no-mtime --format 22 -o "%(uploader)s • %(title)s.%(ext)s" "`pbpaste`"'
-
-# default args
-alias bc='bc --mathlib --quiet'
-alias ls='ls -FG'
-
-# homebrew
+# shadowed
+alias cat='ccat' # syntax-highlighted cat output
 alias ctags="`brew --prefix`/bin/ctags"
 
+# default args/env
+alias bc='bc --mathlib --quiet'
+alias ls='ls -FG'
+alias serve='serve -c /Users/john/Developer/serve.json -l tcp://0.0.0.0:5000'
+alias ssh='TERM=xterm-256color ssh'
+alias tree='tree -C'
+
 # tools
-alias json='python -m json.tool'
+alias json='python -m json.tool' # pretty-print json
 alias showpath='echo $PATH | tr ":" "\n"'
 alias speedtest='curl -o /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip'
 alias commit-and-submit='lein test && git add . && git commit && git push && exercism submit src/*'
@@ -32,8 +33,6 @@ alias commit-and-submit='lein test && git add . && git commit && git push && exe
 # alias vhalt='vagrant halt && exit'
 # alias waitsh='sleep 25 && vagrant ssh'
 # alias annotate='bundle exec annotate'
-
-alias ssh='TERM=xterm-256color ssh'
 
 # rails
 alias rails='bin/rails'
