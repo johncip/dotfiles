@@ -34,7 +34,7 @@
   new = diff --name-only --diff-filter=A main
   shallow = clone --depth 1
   unstage = reset HEAD
-  upstream = push -u origin HEAD
+  upstream = push --set-upstream --no-verify origin HEAD
 
   gone = "!git fetch --prune && git branches | grep ': gone' | awk '{print $1}'"
   prune-all = "!git prune && git remote prune origin"
