@@ -9,37 +9,36 @@ prompt pure
 setopt correct # spelling correction for commands
 setopt auto_pushd # make cd work like pushd
 
-# Command completion, with arrow key menu
 autoload compinit
 compinit -u # -u skips permission security check (for shared systems)
-zstyle ':completion:*' menu select
+zstyle ':completion:*' menu select # command completion, with arrow key menu
+
 
 # ---------------- KEYS ----------------
 
-# Edit command in editor (emacs-style)
+# Ctrl-X Ctrl-E to edit command in editor
 autoload -z edit-command-line
 zle -N edit-command-line
 bindkey "^X^E" edit-command-line
 
-# Up/down key history is filtered
+# Up/Down key history is filtered
 bindkey '\e[A' history-search-backward
 bindkey '\e[B' history-search-forward
 
-# Move words with ctrl+arrow
-# (make sure to uncheck corresponding shortcuts in
-#    System Preferences → Keyboard → Shortcuts → Mission Control)
+# move words with Ctrl+Arrow
+# (must uncheck overlapping shortcuts in Keyboard → Shortcuts → Mission Control)
 bindkey -e
 bindkey '\e[1;5D' backward-word
 bindkey '\e[1;5C' forward-word
 
-# ---------------- HISTORY ----------------
-
-# turn off control flow stealing Ctrl-S
+# prevent control flow stealing Ctrl-S
 stty -ixoff
 stty stop undef
 stty start undef
 
-# History
+
+# ---------------- HISTORY ----------------
+
 HISTFILE=~/.zsh_history
 HISTSIZE=1000
 SAVEHIST=$HISTSIZE
@@ -49,10 +48,11 @@ setopt share_history
 setopt hist_ignore_space
 setopt hist_ignore_all_dups
 
+
 # ---------------- PATH ----------------
 
 fpath=(/usr/local/share/zsh-completions $fpath) # add completions to fpath
-path=(/usr/local/bin /usr/local/sbin $path) # add /sbin, but keep /bin ahead of it
+path=(/usr/local/bin /usr/local/sbin $path) # add /sbin, but keep /bin first
 path=(~/Applications/Scripts $path)
 
 # dedupe path
@@ -70,6 +70,7 @@ if [ -n "$PATH" ]; then
   unset old_PATH x
 fi
 
+
 # ---------------- HOMEBREW ----------------
 
 export HOMEBREW_NO_ANALYTICS=1
@@ -78,6 +79,7 @@ export HOMEBREW_NO_ANALYTICS=1
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
+
 
 # ---------------- INTEGRATIONS ----------------
 
@@ -101,5 +103,8 @@ source ~/.zsh-nvm/zsh-nvm.plugin.zsh
 # source aliases & functions
 source ~/.aliases
 source ~/.functions
+
+
+# ------------------- ETC -------------------
 
 cd ~/Developer/Ferraro/Commission/commission_app_ff
