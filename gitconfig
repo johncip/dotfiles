@@ -29,9 +29,9 @@
 
   branch-name = rev-parse --abbrev-ref HEAD
   branches = branch -avv --color
-  grandpa = merge-base HEAD master
+  grandpa = merge-base HEAD main
   ls = log --format='%C(yellow)%h   %C(blue)%<(13,trunc)%an   %Creset%s %C(red)%d' --date=short --reverse -20
-  new = diff --name-only --diff-filter=A master
+  new = diff --name-only --diff-filter=A main
   shallow = clone --depth 1
   unstage = reset HEAD
   upstream = push -u origin HEAD
@@ -39,11 +39,13 @@
   gone = "!git fetch --prune && git branches | grep ': gone' | awk '{print $1}'"
   prune-all = "!git prune && git remote prune origin"
   publish = "!git push -u origin HEAD && hub pull-request"
-  rebase-master = "!git checkout master && git pull && git ck - && git rebase master"
+  rebase-main = "!git checkout main && git pull && git k - && git rebase main"
   rebasei = "!git rebase -i `git grandpa`"
   since = "!git rids origin/`git branch-name`..`git branch-name`"
   push-all = "!git remote | xargs -L1 git push --all"
 
+[init]
+	defaultBranch = main
 [push]
   default = upstream
 [diff]
