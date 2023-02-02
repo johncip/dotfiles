@@ -1,6 +1,5 @@
 #!/usr/bin/env zsh
 
-alias be='bundle exec'
 alias cat='ccat' # syntax-highlighted cat output
 alias g='git'
 alias gvim='vimr'
