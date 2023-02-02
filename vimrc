@@ -47,14 +47,12 @@ Plug 'ecomba/vim-ruby-refactoring'
 " Plug 'clojure-vim/clj-refactor.nvim'
 
 " colorschemes
-Plug 'johncip/nord-vim'
-Plug 'jakwings/vim-colors' " moody
-Plug 'chriskempson/base16-vim' " base16-classic-dark
-Plug 'tomasr/molokai'
-Plug 'sickill/vim-monokai'
-Plug 'promisedlandt/vim-colors-ir_black'
-Plug 'jacoborus/tender'
-Plug 'maksimr/Lucius2'
+" Plug 'johncip/nord-vim'          " nord
+" Plug 'jakwings/vim-colors'       " moody
+" Plug 'chriskempson/base16-vim'   " base16-classic-dark
+Plug 'tomasr/molokai'            " molokai
+" Plug 'maksimr/Lucius2'           " lucius
+
 
 filetype plugin indent on
 syntax on
