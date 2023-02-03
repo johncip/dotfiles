@@ -136,8 +136,7 @@ endif
 " Plugin settings
 " ===================================================================================
 
-" let g:airline_symbols_ascii = 1
-let g:airline_powerline_fonts = 1
+" ale-specific
 let g:ale_lint_delay = 100
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
@@ -146,6 +145,9 @@ let g:ale_fixers = {
 \}
 let g:ale_ruby_rubocop_executable = 'bin/rubocop'
 let g:ale_ruby_reek_executable = 'bin/reek'
+
+" let g:airline_symbols_ascii = 1
+let g:airline_powerline_fonts = 1
 let g:better_whitespace_ctermcolor = 'Black'
 let g:better_whitespace_guicolor = 'Black'
 let g:colorizer_colornames_disable = 1
