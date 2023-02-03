@@ -107,4 +107,6 @@ source ~/.functions
 
 # ------------------- ETC -------------------
 
+export EDITOR=vim
+
 cd ~/Developer/Ferraro/Commission/commission_app_ff
