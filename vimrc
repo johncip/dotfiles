@@ -231,7 +231,7 @@ inoremap jk         <Esc>
 nnoremap Y          y$
 
 nnoremap <silent> <Up>    :Files<cr>
-nnoremap <silent> <Down>  :Buffers<cr>
+nnoremap <silent> <Down>  :GFiles?<cr>
 nnoremap <silent> <Left>  :bprev<cr>
 nnoremap <silent> <Right> :bnext<cr>
 
@@ -252,7 +252,6 @@ vnoremap <leader><Tab> :Tabularize /
 nnoremap <leader>a     :ALEToggle<cr>
 nnoremap <leader>A     :ALEFix<cr>
 nnoremap <leader>L     :Lines<cr>
-nnoremap <leader>m     :GFiles?<cr>
 nnoremap <leader>n     :NERDTreeFind<cr>
 nnoremap <leader>t     :Files<cr>
 nnoremap <leader>z     :ALEDetail<cr>
