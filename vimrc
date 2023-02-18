@@ -36,7 +36,7 @@ Plug 'vim-airline/vim-airline'
 
 " ruby on rails
 Plug 'ecomba/vim-ruby-refactoring'
-Plug 'thoughtbot/vim-rspec'
+Plug 'itmammoth/run-rspec.vim'
 Plug 'tpope/vim-rails'
 
 " clojure
@@ -260,11 +260,13 @@ nnoremap <F5>          :set list!<cr>
 nnoremap <F8>          :TagbarToggle<cr>
 
 " running rspec
-" nnoremap <leader>s     :call RunNearestSpec()<cr>
-" nnoremap <leader>S     :call RunCurrentSpecFile()<cr>
-nnoremap <leader>s     :vsplit \| terminal bin/rspec %<cr>
-nnoremap <leader>sa    :vsplit \| terminal bin/rspec<cr>
-nnoremap <leader>sf    :vsplit \| terminal bin/rspec --only-failures<cr>
+nnoremap <leader>S             :RunSpec<CR>
+nnoremap <leader>s             :RunSpecLine<CR>
+nnoremap <leader>sl            :RunSpecLastRun<CR>
+nnoremap <leader>sc            :RunSpecCloseResult<CR>
+nnoremap <leader><leader>s     :vsplit \| terminal bin/rspec %<cr>
+nnoremap <leader><leader>sa    :vsplit \| terminal bin/rspec<cr>
+nnoremap <leader><leader>sf    :vsplit \| terminal bin/rspec --only-failures<cr>
 
 " ===================================================================================
 " Do Last
