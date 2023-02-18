@@ -126,7 +126,7 @@ end
 
 " grep using ag
 if executable('ag')
-  set grepprg=ag\ --nogroup\ --nocolor
+  set grepprg=ag\ --nogroup\ --nocolor\ --hidden\ --ignore\ .git\ --ignore\ spec/support/data\ --ignore\ import
 endif
 
 if has('gui_running')
@@ -204,6 +204,11 @@ function! GetBufferList() " Needed for ToggleList
   return buflist
 endfunction
 
+function! Grep(term, ...) abort
+  execute 'silent! grep!' a:term join(a:000, ' ')
+  cwindow
+  redraw!
+endfunction
 
 " ===================================================================================
 " Commands
@@ -213,10 +218,10 @@ command! Bw             bprevious | bdelete# " close buffer but leave window
 command! Bd             bdelete " for fat-fingering
 command! Bda            silent! bufdo | bd
 command! Config         edit $MYVIMRC
-command! -nargs=1 Grep  silent! grep! <f-args> | :call ToggleList('Quickfix List', 'c')
 command! Wd             write | bdelete
 cmap w!!                w !sudo tee % >/dev/null
 
+command! -nargs=+ -complete=file Grep call Grep(<f-args>)
 
 " ===================================================================================
 " Mappings
