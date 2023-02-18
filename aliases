@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
 alias g='git'
+alias gd='git diff'
 alias gvim='vimr'
 alias ll='ls -l'
 alias q='exit'
