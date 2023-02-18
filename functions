@@ -37,3 +37,11 @@ function list-aws-instances() {
     --query='Reservations[*].Instances[*].[PublicIpAddress, InstanceId, Tags[?Key==`Name`].Value | [0]]' \
     --output table
 }
+
+function clean-after-pr() {
+  local name=`git rev-parse --abbrev-ref HEAD`
+  git checkout main
+  git pull
+  git push --no-verify origin :$name
+  git branch -d $name
+}
