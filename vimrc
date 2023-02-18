@@ -6,37 +6,38 @@ set nocompatible
 filetype off
 call plug#begin('~/.vim/plugged')
 
-Plug 'dense-analysis/ale'
 Plug 'AndrewRadev/bufferize.vim'
-Plug 'bkad/CamelCaseMotion'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'bkad/CamelCaseMotion'
+Plug 'dense-analysis/ale'
 Plug 'ervandew/supertab'
 Plug 'godlygeek/tabular', { 'on': 'Tabularize' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'prettier/vim-prettier', { 'on': ['Prettier', 'PrettierAsync'] }
+Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
+Plug 'sheerun/vim-polyglot'
+Plug 'terryma/vim-multiple-cursors'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/tpope-vim-abolish'
-Plug 'vim-airline/vim-airline'
-Plug 'ntpeters/vim-better-whitespace'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
-Plug 'ludovicchabant/vim-gutentags'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'prettier/vim-prettier', { 'on': ['Prettier', 'PrettierAsync'] }
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
+Plug 'vim-airline/vim-airline'
 " Plug 'fatih/vim-go'
-
-" filetype-specific
-Plug 'sheerun/vim-polyglot'
-Plug 'chrisbra/csv.vim',        { 'for': 'csv' }
-Plug 'ecomba/vim-ruby-refactoring'
-" Plug 'thoughtbot/vim-rspec'
+" Plug 'chrisbra/csv.vim',        { 'for': 'csv' }
 " Plug 'ElmCast/elm-vim',         { 'for': 'elm' }
+
+" ruby on rails
+Plug 'ecomba/vim-ruby-refactoring'
+Plug 'thoughtbot/vim-rspec'
+Plug 'tpope/vim-rails'
 
 " clojure
 " Plug 'junegunn/rainbow_parentheses.vim'
