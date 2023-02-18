@@ -49,11 +49,11 @@ Plug 'tpope/vim-rails'
 " Plug 'clojure-vim/clj-refactor.nvim'
 
 " colorschemes
-" Plug 'johncip/nord-vim'          " nord
-" Plug 'jakwings/vim-colors'       " moody
-" Plug 'chriskempson/base16-vim'   " base16-classic-dark
+Plug 'johncip/nord-vim'          " nord
+Plug 'jakwings/vim-colors'       " moody
+Plug 'chriskempson/base16-vim'   " base16-classic-dark, base16-tomorrow-night
 Plug 'tomasr/molokai'            " molokai
-" Plug 'maksimr/Lucius2'           " lucius
+Plug 'maksimr/Lucius2'           " lucius
 
 
 filetype plugin indent on
