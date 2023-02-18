@@ -143,6 +143,7 @@ let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['prettier', 'eslint'],
 \   'ruby': ['rubocop', 'reek'],
+\   'scss': ['stylelint'],
 \}
 let g:ale_ruby_rubocop_executable = 'bin/rubocop'
 let g:ale_ruby_reek_executable = 'bin/reek'
