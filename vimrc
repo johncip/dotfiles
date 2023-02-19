@@ -126,7 +126,7 @@ end
 
 " grep using ag
 if executable('ag')
-  set grepprg=ag\ --nogroup\ --nocolor\ --hidden\ --ignore\ .git\ --ignore\ spec/support/data\ --ignore\ import
+  set grepprg=ag\ --nogroup\ --nocolor\ --hidden\ --ignore\ .git\ --ignore\ \"*.csv\"\ --ignore\ \"import/*.json\"
 endif
 
 if has('gui_running')
