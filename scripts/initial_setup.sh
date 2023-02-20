@@ -3,6 +3,7 @@ set -euo pipefail
 
 # note: run directly from Dotfiles/scripts.
 
+# TODO: go through and see what I have installed now
 formulas=(
   ansible
   coreutils
@@ -34,59 +35,62 @@ formulas=(
   zsh-completions
 )
 
-applications=(
-  1password
-  alfred
-  # audacity
-  colors
-  disablemonitor
-  docker
-  # dosbox
+casks=(
+  1password6
+  audacity
+  # avibrazil-rdm
+  avidemux
+  # balenaetcher
+  cyberduck
+  discord
+  # docker
+  dosbox-x
   dropbox
-  # eclipse-java
-  fantastical
-  front
+  # fantastical
+  flux
+  fork
+  github
   github-desktop
   google-chrome
+  handbrake
+  iina
   iterm2
-  java
-  # karabiner
-  # libreoffice
-  little-snitch
-  # lunchy
   macdown
-  macvim
-  # mactex
-  # menubar-countdown
-  # ngrok
-  nosleep
+  # microsoft-teams
   nvalt
+  # obs
   # omnioutliner
-  postbox
-  # pycharm-pro
-  recordit
-  rowanj-gitx
-  # seil
-  skype
-  slack
+  # openemu
+  postico
+  qlvideo
+  # raspberry-pi-imager
+  # recordit
+  # scummvm
+  serviio
   spotify
   steam
   sublime-text
+  switchresx
+  teamviewer
   things
-  # tiled
+  # tigervnc-viewer
   transmission
-  transmit
-  vagrant
+  # ultimaker-cura
+  # vagrant
+  vimr
   virtualbox
-  vlc
+  visual-studio-code
+  # vlc
+  webpquicklook
   xquartz
+  zoom
 )
 
 fonts=(
   font-fira-code
   font-input
   font-lato
-  font-lobster
+  font-fantasque-sans-mono
 )
 
 quicklook_plugins=(
@@ -135,10 +139,10 @@ echo $(which zsh) | sudo tee -a /etc/shells
 chsh -s $(which zsh)
 
 
-# Install applications (+ vagrant-gatling-rsync)
+# Install casks
 brew cask install ${quicklook_plugins[@]}
-brew cask install ${applications[@]}
-vagrant plugin install vagrant-gatling-rsync
+brew cask install ${casks[@]}
+# vagrant plugin install vagrant-gatling-rsync
 
 
 # Install Vim plugins
