@@ -148,6 +148,38 @@ let g:ale_fixers = {
 let g:ale_ruby_rubocop_executable = 'bin/rubocop'
 let g:ale_ruby_reek_executable = 'bin/reek'
 
+" tagging
+let g:gutentags_file_list_command = 'ag -l'
+let g:gutentags_ctags_exclude = [
+\    'node_modules',
+\    'coverage',
+\    'vendor',
+\    'app/assets/builds',
+\    'app/assets/images',
+\    'import/*.json',
+\    'import/*.csv',
+\    'spec/support/data',
+\    ]
+let g:tagbar_type_ruby = {
+\    'kinds': ['m:modules',
+\              'F:singleton methods',
+\              'f:methods',
+\              'a:aliases',
+\              'd:describes',
+\              'i:its',
+\              'c:contexts',
+\              'C:contexts']
+\    }
+let g:tagbar_type_scss = {
+\    'kinds': ['P:placeholder classes',
+\              'c:classes',
+\              'f:functions',
+\              'i:identities',
+\              'm:mixins',
+\              'v:variables',
+\              'z:function parameters']
+\    }
+
 let g:airline_powerline_fonts = 1
 " let g:airline_symbols_ascii = 1
 let g:better_whitespace_ctermcolor = 'Black'
@@ -156,7 +188,6 @@ let g:colorizer_colornames_disable = 1
 let g:csv_highlight_column = 'y'
 let g:csv_no_conceal = 1
 let g:elm_setup_keybindings = 0
-let g:gutentags_file_list_command = 'ag -l'
 let g:NERDTreeDirArrows = 1
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeWinPos = "right"
