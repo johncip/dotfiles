@@ -51,7 +51,7 @@ Plug 'tpope/vim-rails'
 " colorschemes
 Plug 'johncip/nord-vim'          " nord
 Plug 'jakwings/vim-colors'       " moody
-Plug 'chriskempson/base16-vim'   " base16-classic-dark, base16-tomorrow-night
+" Plug 'chriskempson/base16-vim'   " base16-classic-dark, base16-tomorrow-night
 Plug 'tomasr/molokai'            " molokai
 Plug 'maksimr/Lucius2'           " lucius
 
