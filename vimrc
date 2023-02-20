@@ -304,3 +304,4 @@ nnoremap <leader><leader>sf    :vsplit \| terminal bin/rspec --only-failures<cr>
 " Do Last
 " ===================================================================================
 
+cd ~/Developer/Ferraro/Commission/commission_app_ff
