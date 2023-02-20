@@ -197,6 +197,7 @@ let g:prettier#config#bracket_spacing = 'true'
 let g:prettier#config#semi = 'false'
 let g:prettier#config#trailing_comma = 'none'
 let g:prettier#exec_cmd_async = 1
+let g:run_rspec_bin = 'bin/rspec'
 let g:strip_whitespace_confirm = 0
 let g:strip_whitespace_on_save = 1
 let g:vim_markdown_folding_disabled = 1
