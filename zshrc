@@ -97,7 +97,7 @@ export FZF_DEFAULT_COMMAND='ag -l -p ""'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # use nvm
-export NVM_LAZY_LOAD=true
+# export NVM_LAZY_LOAD=true
 source ~/.zsh-nvm/zsh-nvm.plugin.zsh
 
 # source aliases & functions
