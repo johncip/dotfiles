@@ -36,7 +36,6 @@ formulas=(
 )
 
 casks=(
-  1password6
   audacity
   # avibrazil-rdm
   avidemux
@@ -46,6 +45,7 @@ casks=(
   # docker
   dosbox-x
   dropbox
+  elpass
   # fantastical
   flux
   fork
