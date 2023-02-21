@@ -6,23 +6,23 @@ set -euo pipefail
 # TODO: go through and see what I have installed now
 formulas=(
   ansible
-  coreutils
-  chruby
+  # coreutils
+  # chruby
   curl
-  findutils
+  # findutils
   ghi
   git
+  github
   htop-osx
-  hub
   imagemagick
-  node
-  parallel
+  # node
+  # parallel
   postgresql
-  readline
+  # readline
   rename
-  ruby-install
-  sqlite
-  terraform
+  # ruby-install
+  # sqlite
+  # terraform
   the_silver_searcher
   tig
   trash
