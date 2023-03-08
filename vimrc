@@ -8,6 +8,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'AndrewRadev/bufferize.vim'
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'adelarsq/vim-matchit'
 Plug 'airblade/vim-gitgutter'
 Plug 'bkad/CamelCaseMotion'
 Plug 'dense-analysis/ale'
