@@ -9,16 +9,18 @@ formulas=(
   # coreutils
   # chruby
   curl
+  # exercism
   # findutils
-  ghi
   git
   github
+  # heroku
   htop-osx
   imagemagick
   # node
   # parallel
   postgresql
   # readline
+  redis
   rename
   # ruby-install
   # sqlite
@@ -30,6 +32,7 @@ formulas=(
   unrar
   vim
   wget
+  yt-dlp
   z
   zsh
   zsh-completions
@@ -38,21 +41,23 @@ formulas=(
 casks=(
   audacity
   # avibrazil-rdm
-  avidemux
+  # avidemux
   # balenaetcher
   cyberduck
+  # dbeaver-community
   discord
   # docker
-  dosbox-x
+  # dosbox-x
   dropbox
   elpass
   # fantastical
   flux
   fork
+  gamma-control
   github
   github-desktop
   google-chrome
-  handbrake
+  # handbrake
   iina
   iterm2
   macdown
@@ -63,6 +68,7 @@ casks=(
   # openemu
   postico
   qlvideo
+  qlmarkdown
   # raspberry-pi-imager
   # recordit
   # scummvm
