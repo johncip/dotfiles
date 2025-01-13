@@ -45,7 +45,7 @@
   push-all = "!git remote | xargs -L1 git push --all"
 
 [init]
-	defaultBranch = main
+  defaultBranch = main
 [push]
   default = upstream
 [diff]
