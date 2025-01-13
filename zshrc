@@ -1,20 +1,40 @@
+# -- general settings ---------------------------------------------------------
+
 # colors
 autoload -U colors
 colors
 
-# "pure" prompt
+# pure prompt
 autoload -U promptinit && promptinit
 prompt pure
 
-setopt correct # spelling correction for commands
+setopt correct # spelling correction
 setopt auto_pushd # make cd work like pushd
 
-autoload compinit
+
+# -- tab completion -----------------------------------------------------------
+
+fpath=($(brew --prefix)/share/zsh-completions $fpath)
+fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
+
+autoload -Uz compinit
 compinit -u # -u skips permission security check (for shared systems)
+
 zstyle ':completion:*' menu select # command completion, with arrow key menu
 
 
-# ---------------- KEYS ----------------
+# -- history ------------------------------------------------------------------
+
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=$HISTSIZE
+setopt append_history
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt share_history
+
+
+# -- keybindings --------------------------------------------------------------
 
 # Ctrl-X Ctrl-E to edit command in editor
 autoload -z edit-command-line
@@ -37,76 +57,31 @@ stty stop undef
 stty start undef
 
 
-# ---------------- HISTORY ----------------
+# -- path & integrations ------------------------------------------------------
 
-HISTFILE=~/.zsh_history
-HISTSIZE=1000
-SAVEHIST=$HISTSIZE
-setopt append_history
-setopt hist_ignore_dups
-setopt share_history
-setopt hist_ignore_space
-setopt hist_ignore_all_dups
+# NOTE: asdf shims are installed in .zshenv
 
+path+=(~/Applications/Scripts)
+path+=(/Applications/dsdriver/bin)
+path+=(/usr/local/sbin)
 
-# ---------------- PATH ----------------
-
-fpath=(/usr/local/share/zsh-completions $fpath) # add completions to fpath
-path=(/usr/local/bin /usr/local/sbin $path) # add /sbin, but keep /bin first
-path=(~/Applications/Scripts $path)
-
-# dedupe path
-if [ -n "$PATH" ]; then
-  old_PATH=$PATH:; PATH=
-  while [ -n "$old_PATH" ]; do
-    x=${old_PATH%%:*}       # the first remaining entry
-    case $PATH: in
-      *:"$x":*) ;;          # already there
-      *) PATH=$PATH:$x;;    # not there yet
-    esac
-    old_PATH=${old_PATH#*:}
-  done
-  PATH=${PATH#:}
-  unset old_PATH x
-fi
-
-
-# ---------------- HOMEBREW ----------------
-
-export HOMEBREW_NO_ANALYTICS=1
-
-# completion for homebrew
-if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
-fi
-
-
-# ---------------- INTEGRATIONS ----------------
-
-# use autojump
-. `brew --prefix`/etc/profile.d/z.sh
-
-# use iterm2 shell integration
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-# use rbenv
-eval "$(rbenv init -)"
-
-# use fzf
-export FZF_DEFAULT_COMMAND='ag -l -p ""'
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# use nvm
-# export NVM_LAZY_LOAD=true
-source ~/.zsh-nvm/zsh-nvm.plugin.zsh
-
-# source aliases & functions
+# aliases & functions
 source ~/.aliases
 source ~/.functions
 
+# autojump
+. `brew --prefix`/etc/profile.d/z.sh
 
-# ------------------- ETC -------------------
+# fzf
+export FZF_DEFAULT_COMMAND='ag -l -p ""'
+source <(fzf --zsh)
 
-export EDITOR=vim
+# iterm2 shell integration
+test -e "${HOME}/.iterm2_shell_integration.zsh" \
+  && source "${HOME}/.iterm2_shell_integration.zsh"
 
-cd ~/Developer/Ferraro/Commission/commission_app_ff
+# install asdf shims
+. $(brew --prefix asdf)/libexec/asdf.sh
+
+cd ~/Developer/Ferraro/PO/po_forecaster
+export PATH="/opt/homebrew/bin:$PATH"
