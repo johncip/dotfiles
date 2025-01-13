@@ -7,7 +7,7 @@ alias q='exit'
 alias yt='yt-dlp --no-mtime --format 22 -o "%(uploader)s • %(title)s.%(ext)s" "`pbpaste`"' # download youtube URL on clipboard
 
 # shadowed
-alias cat='ccat' # syntax-highlighted cat output
+alias cat='bat'
 alias ctags="`brew --prefix`/bin/ctags"
 alias gvim='open -a /Applications/Neovide.app'
 alias vi='nvim'
