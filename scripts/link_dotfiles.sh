@@ -13,7 +13,7 @@ dotfiles=(
   railsrc
   rspec
   vimrc
-  zprofile
+  zshenv
   zshrc
 )
 
