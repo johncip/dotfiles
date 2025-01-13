@@ -111,7 +111,8 @@ set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<,space:·
 autocmd FileType applescript setlocal sw=4 ts=4 sts=4 et
 autocmd FileType make set noexpandtab
 autocmd FileType python setlocal sw=4 ts=4 sts=4 et
-autocmd BufRead,BufWritePre *.html.slim setfiletype slim
+autocmd BufRead,BufNewFile *.html.slim set filetype=slim
+autocmd BufRead,BufNewFile *.pdf.erb set filetype=eruby.html
 
 " use thin cursor in iTerm
 if $TERM_PROGRAM =~ "iTerm"
