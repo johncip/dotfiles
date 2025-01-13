@@ -38,7 +38,8 @@ function list-aws-instances() {
     --output table
 }
 
-function clean-after-pr() {
+# removes local / remote / tracking for current branch & pulls main
+function nuke-merged-branch() {
   local name=`git rev-parse --abbrev-ref HEAD`
   git checkout main
   git pull
