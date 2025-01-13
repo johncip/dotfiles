@@ -13,10 +13,10 @@ Plug 'airblade/vim-gitgutter'
 Plug 'bkad/CamelCaseMotion'
 Plug 'dense-analysis/ale'
 Plug 'ervandew/supertab'
+Plug 'github/copilot.vim'
 Plug 'godlygeek/tabular', { 'on': 'Tabularize' }
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'prettier/vim-prettier', { 'on': ['Prettier', 'PrettierAsync'] }
@@ -51,7 +51,7 @@ Plug 'tpope/vim-rails'
 
 " colorschemes
 Plug 'arcticicestudio/nord-vim'  " nord
-Plug 'jakwings/vim-colors'       " moody
+Plug 'gmist/vim-palette'         " moody
 " Plug 'chriskempson/base16-vim'   " base16-classic-dark, base16-tomorrow-night
 Plug 'tomasr/molokai'            " molokai
 Plug 'maksimr/Lucius2'           " lucius
