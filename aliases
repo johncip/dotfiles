@@ -2,17 +2,17 @@
 
 alias g='git'
 alias gd='git diff'
-alias gvim='vimr'
 alias ll='ls -l'
 alias q='exit'
-alias v='nvim'
-alias vi='nvim'
-alias vim='nvim'
 alias yt='yt-dlp --no-mtime --format 22 -o "%(uploader)s • %(title)s.%(ext)s" "`pbpaste`"' # download youtube URL on clipboard
 
 # shadowed
 alias cat='ccat' # syntax-highlighted cat output
 alias ctags="`brew --prefix`/bin/ctags"
+alias gvim='open -a /Applications/Neovide.app'
+alias vi='nvim'
+alias view='nvim -M'
+alias vim='nvim'
 
 # default args/env
 alias bc='bc --mathlib --quiet'
