@@ -31,9 +31,6 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'vim-airline/vim-airline'
-" Plug 'fatih/vim-go'
-" Plug 'chrisbra/csv.vim',        { 'for': 'csv' }
-" Plug 'ElmCast/elm-vim',         { 'for': 'elm' }
 
 " ruby on rails
 Plug 'ecomba/vim-ruby-refactoring'
@@ -43,9 +40,7 @@ Plug 'tpope/vim-rails'
 " colorschemes
 Plug 'arcticicestudio/nord-vim'  " nord
 Plug 'gmist/vim-palette'         " moody
-" Plug 'chriskempson/base16-vim'   " base16-classic-dark, base16-tomorrow-night
 Plug 'tomasr/molokai'            " molokai
-Plug 'maksimr/Lucius2'           " lucius
 
 
 filetype plugin indent on
