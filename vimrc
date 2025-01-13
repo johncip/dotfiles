@@ -314,4 +314,4 @@ nnoremap <leader><leader>sf    :vsplit \| terminal bin/rspec --only-failures<cr>
 " Project Setup
 " ===================================================================================
 
-cd ~/Developer/Ferraro/Commission/commission_app_ff
+cd ~/Developer/Ferraro/PO/po_forecaster
