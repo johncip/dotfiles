@@ -191,6 +191,7 @@ let g:airline_powerline_fonts = 1
 let g:better_whitespace_ctermcolor = 'Black'
 let g:better_whitespace_guicolor = 'Black'
 let g:colorizer_colornames_disable = 1
+let g:copilot_node_command= '/Users/john/.asdf/shims/node'
 let g:csv_highlight_column = 'y'
 let g:csv_no_conceal = 1
 let g:elm_setup_keybindings = 0
