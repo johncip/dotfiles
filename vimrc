@@ -152,6 +152,7 @@ let g:ale_fixers = {
 \}
 let g:ale_ruby_rubocop_executable = 'bin/rubocop'
 let g:ale_ruby_reek_executable = 'bin/reek'
+let g:ale_scss_stylelint_executable = 'bin/stylelint'
 
 " tagging
 let g:gutentags_file_list_command = 'ag -l'
