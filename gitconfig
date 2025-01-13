@@ -2,7 +2,7 @@
   email = johnmikecip@gmail.com
   name = John Cipriano
 [core]
-  editor = vim
+  editor = nvim
   pager = less -S
   excludesfile = /Users/John/.gitignore_global
 [color]
