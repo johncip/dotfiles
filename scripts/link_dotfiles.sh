@@ -12,7 +12,6 @@ dotfiles=(
   inputrc
   railsrc
   rspec
-  vimrc
   zshenv
   zshrc
 )
@@ -21,3 +20,6 @@ for dotfile in ${dotfiles[@]}
 do
     ln -f -s "$REPO_DIR/$dotfile" "$HOME/.$dotfile"
 done
+
+
+ln -f -s "$REPO_DIR/vimrc" "$HOME/.config/nvim/init.vim"
