@@ -61,8 +61,9 @@ filetype plugin indent on
 syntax on
 call plug#end()
 
+
 " ===================================================================================
-" Settings
+" General Settings
 " ===================================================================================
 
 let mapleader = ','
@@ -223,6 +224,7 @@ let g:vim_markdown_folding_disabled = 1
 " use ag in fzf even when opened outside of a terminal session
 let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
 
+
 " ===================================================================================
 " Functions
 " ===================================================================================
@@ -261,6 +263,7 @@ function! Grep(term, ...) abort
   redraw!
 endfunction
 
+
 " ===================================================================================
 " Commands
 " ===================================================================================
@@ -273,6 +276,7 @@ command! Wd             write | bdelete
 cmap w!!                w !sudo tee % >/dev/null
 
 command! -nargs=+ -complete=file Grep call Grep(<f-args>)
+
 
 " ===================================================================================
 " Mappings
@@ -291,6 +295,7 @@ inoremap <cr>       <cr>x<BS>
 
 nnoremap <silent> <leader>l :call ToggleList("Location List", 'l')<cr>
 nnoremap <silent> <leader>c :call ToggleList("Quickfix List", 'c')<cr>
+
 
 " ===================================================================================
 " Plugin Mappings
@@ -318,8 +323,9 @@ nnoremap <leader><leader>s     :vsplit \| terminal bin/rspec %<cr>
 nnoremap <leader><leader>sa    :vsplit \| terminal bin/rspec<cr>
 nnoremap <leader><leader>sf    :vsplit \| terminal bin/rspec --only-failures<cr>
 
+
 " ===================================================================================
-" Do Last
+" Project Setup
 " ===================================================================================
 
 cd ~/Developer/Ferraro/Commission/commission_app_ff
