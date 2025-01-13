@@ -40,15 +40,6 @@ Plug 'ecomba/vim-ruby-refactoring'
 Plug 'itmammoth/run-rspec.vim'
 Plug 'tpope/vim-rails'
 
-" clojure
-" Plug 'junegunn/rainbow_parentheses.vim'
-" Plug 'guns/vim-sexp'
-" Plug 'tpope/vim-sexp-mappings-for-regular-people'
-" Plug 'tpope/vim-fireplace'
-" Plug 'tpope/vim-salve'
-" Plug 'bhurlow/vim-parinfer'
-" Plug 'clojure-vim/clj-refactor.nvim'
-
 " colorschemes
 Plug 'arcticicestudio/nord-vim'  " nord
 Plug 'gmist/vim-palette'         " moody
