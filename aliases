@@ -3,6 +3,7 @@
 alias g='git'
 alias gd='git diff'
 alias ll='ls -l'
+alias lla='ls -la'
 alias q='exit'
 alias yt='yt-dlp --no-mtime --format 22 -o "%(uploader)s • %(title)s.%(ext)s" "`pbpaste`"' # download youtube URL on clipboard
 
