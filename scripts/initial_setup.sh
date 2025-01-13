@@ -3,124 +3,127 @@ set -euo pipefail
 
 # note: run directly from Dotfiles/scripts.
 
-# TODO: go through and see what I have installed now
-formulas=(
-  ansible
-  # coreutils
-  # chruby
-  curl
-  # exercism
-  # findutils
-  git
-  github
-  # heroku
-  htop-osx
-  imagemagick
-  # node
-  # parallel
-  postgresql
-  # readline
-  redis
-  rename
-  # ruby-install
-  # sqlite
-  # terraform
-  the_silver_searcher
-  tig
-  trash
-  tree
-  unrar
-  vim
-  wget
-  yt-dlp
-  z
-  zsh
-  zsh-completions
-)
 
-casks=(
-  audacity
-  # avibrazil-rdm
-  # avidemux
-  # balenaetcher
-  cyberduck
-  # dbeaver-community
-  discord
-  # docker
-  # dosbox-x
-  dropbox
-  elpass
-  # fantastical
-  flux
+# Install XCode command-line tools
+xcode-select --install
+
+
+# Install homebrew & homebrew cask (using system ruby)
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew analytics off
+
+
+# Install app store apps
+brew install mas
+app_store_ids=(
+  824183456  # affinity photo
+  937984704  # amphetamine
+  411643860  # daisydisk
+  668208984  # giphy capture
+  462058435  # microsoft excel
+  462054704  # microsoft word
+  1123195469 # slomo
+  822514576  # sonicwall mobile connect
+  904280696  # things 3
+  409203825  # numbers
+  409201541  # pages
+)
+mas install ${app_store_ids[@]}
+
+
+# Install development casks
+dev_casks=(
+  dbvisualizer
   fork
-  gamma-control
-  github
-  github-desktop
-  google-chrome
-  # handbrake
-  iina
-  iterm2
-  macdown
-  # microsoft-teams
-  nvalt
-  # obs
-  # omnioutliner
-  # openemu
-  postico
-  qlvideo
-  qlmarkdown
-  # raspberry-pi-imager
-  # recordit
-  # scummvm
-  serviio
-  spotify
-  steam
-  sublime-text
-  switchresx
-  teamviewer
-  things
-  # tigervnc-viewer
-  transmission
-  # ultimaker-cura
-  # vagrant
-  vimr
-  virtualbox
+  neovide
   visual-studio-code
-  # vlc
-  webpquicklook
-  xquartz
-  zoom
+  wezterm
 )
+brew install ${dev_casks[@]}
 
-fonts=(
+
+# Install fonts
+font_casks=(
   font-fira-code
   font-input
   font-lato
   font-fantasque-sans-mono
 )
+brew install --cask ${font_casks[@]}
+cp /System/Applications/Utilities/Terminal.app/Contents/Resources/Fonts/SF-Mono-*.otf ~/Library/Fonts
 
-quicklook_plugins=(
-  betterzipql       # show zip contents
-  qlcolorcode       # colorize source code
-  qlmarkdown        # markdown
-  qlstephen         # files with no extension
-  quicklook-csv     # csv
-  quicklook-json    # json
+
+# Install misc casks
+casks=(
+  cyberduck
+  discord
+  dropbox
+  elpass
+  firefox
+  google-chrome
+  handbrake
+  iina
+  microsoft-teams
+  nordvpn
+  raindropio
+  serviio
+  spotify
+  steam
+  sublime-text
+  teamviewer
+  transmission
+  whatsapp
+  xquartz
 )
+brew install --cask ${casks[@]}
 
-ruby_gems=(
-  rubocop
-  listen
+
+# Install formulas
+formulas=(
+  ansible
+  bat
+  fzf
+  gh
+  git
+  mailhog
+  neovim
+  postgresql@17
+  redis
+  rename
+  the_silver_searcher
+  tree
+  universal-ctags
+  yt-dlp ffmpeg
+  z
 )
+brew install ${formulas[@]}
+brew services restart postgresql@17
 
-node_modules=(
-  eslint
-  pure-prompt
+
+# Install asdf
+asdf_formulas=(
+  coreutils
+  git
+  gawk
+  gpg
+  asdf
 )
+brew install ${asdf_formulas[@]}
+asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
+asdf plugin add python https://github.com/danhper/asdf-python.git
+asdf install nodejs latest
+asdf global nodejs latest
 
 
-# Install XCode command-line tools
-xcode-select --install
+# Install pure prompt
+asdf exec npm install -g pure-prompt
+
+
+# Install zsh & change shell
+brew install zsh zsh-completions
+echo $(which zsh) | sudo tee -a /etc/shells
+chsh -s $(which zsh)
 
 
 # Install and link dot files
@@ -132,43 +135,17 @@ sh $devdir/Dotfiles/scripts/link_dotfiles.sh
 popd
 
 
-# Install homebrew & homebrew cask (using system ruby)
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-brew analytics off
-brew update
-brew tap caskroom/fonts
-
-
-# Install libraries & CLI apps (+ set shell to zsh)
-brew install ${formulas[@]}
-echo $(which zsh) | sudo tee -a /etc/shells
-chsh -s $(which zsh)
-
-
-# Install casks
-brew cask install ${quicklook_plugins[@]}
-brew cask install ${casks[@]}
-# vagrant plugin install vagrant-gatling-rsync
-
-
-# Install Vim plugins
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+# Install plug.vim
+curl -fLo /Users/john/.config/nvim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-# vim -s ./commands.vim
+vim -s ./commands.vim
 
 
-# Install fonts
-brew cask install ${fonts[@]}
-cp /Applications/Utilities/Terminal.app/Contents/Resources/Fonts/SFMono* ~/Library/Fonts
+# Install ODBC driver for ibm db2 & odbc
+brew tap ibm/iaccess https://public.dhe.ibm.com/software/ibmi/products/odbc/macos/tap/
+brew install ibm-iaccess
+brew install unixodbc
+# NOTE: in projects with ruby-odbc gem, run:
+#   bundle config set build.ruby-odbc --with-odbc-dir=`brew --prefix unixodbc`
 
 
-# Install gems & node modules
-gem install ${ruby_gems[@]}
-npm install ${node_modules[@]}
-
-
-# Clean everything
-gem cleanup
-brew cleanup
-brew cask cleanup
-rm -rf $(brew --cache)'/*'

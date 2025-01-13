@@ -1,0 +1,50 @@
+# vim: set ft=markdown:
+
+# a/v
+audacity
+avidemux
+handbrake
+obs
+vlc
+
+# utilities
+coconutbattery
+flux
+gamma-control
+qlmarkdown
+qlvideo
+recordit
+switchresx
+usr-sse2-rdm
+
+# maker
+arduino-ide
+autodesk-fusion
+autodesk-fusion360
+balenaetcher
+prusaslicer
+raspberry-pi-imager
+ultimaker-cura
+
+# development
+coretto@21
+docker
+github
+iterm2
+macdown
+postico
+squirrelsql
+vimr
+vagrant
+virtualbox
+wkhtmltopdf
+
+# misc
+fantastical
+macfuse
+notion
+omnioutliner
+tigervnc-viewer
+zenmap
+
+-- vagrant plugin install vagrant-gatling-rsync
