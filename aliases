@@ -26,10 +26,3 @@ alias json='python -m json.tool' # pretty-print json
 alias showpath='echo $PATH | tr ":" "\n"'
 alias speedtest='curl -o /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip'
 alias commit-and-submit='lein test && git add . && git commit && git push && exercism submit src/*'
-
-# gradescope
-# alias vup='vagrant up'
-# alias vsh='vagrant ssh'
-# alias vsync='vagrant gatling-rsync-auto'
-# alias vhalt='vagrant halt && exit'
-# alias waitsh='sleep 25 && vagrant ssh'
