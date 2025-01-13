@@ -114,6 +114,16 @@ autocmd FileType python setlocal sw=4 ts=4 sts=4 et
 autocmd BufRead,BufNewFile *.html.slim set filetype=slim
 autocmd BufRead,BufNewFile *.pdf.erb set filetype=eruby.html
 
+" grep using ag
+if executable('ag')
+  set grepprg=ag\ --nogroup\ --nocolor\ --hidden\ --ignore\ .git\ --ignore\ \"*.csv\"\ --ignore\ \"import/*.json\"
+endif
+
+
+" ===================================================================================
+" GUI & Terminal settings
+" ===================================================================================
+
 " use thin cursor in iTerm
 if $TERM_PROGRAM =~ "iTerm"
   let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
@@ -126,14 +136,20 @@ if has("mouse_sgr")
   set ttymouse=sgr
 end
 
-" grep using ag
-if executable('ag')
-  set grepprg=ag\ --nogroup\ --nocolor\ --hidden\ --ignore\ .git\ --ignore\ \"*.csv\"\ --ignore\ \"import/*.json\"
-endif
-
 if has('gui_running')
   set guifont=Jetbrains\ Mono\ Light:h13
 endif
+
+if exists("g:neovide")
+  let g:neovide_position_animation_length = 0
+  let g:neovide_cursor_animation_length = 0.00
+  let g:neovide_cursor_trail_size = 0
+  let g:neovide_cursor_animate_in_insert_mode = 'false'
+  let g:neovide_cursor_animate_command_line = 'false'
+  let g:neovide_scroll_animation_far_lines = 0
+  let g:neovide_scroll_animation_length = 0.00
+endif
+
 
 " ===================================================================================
 " Plugin settings
