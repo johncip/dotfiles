@@ -23,3 +23,6 @@ done
 
 
 ln -f -s "$REPO_DIR/vimrc" "$HOME/.config/nvim/init.vim"
+
+mkdir -p "$HOME/.config/yt-dlp"
+ln -f -s "$REPO_DIR/yt-dlp" "$HOME/.config/yt-dlp/config"
