@@ -1,0 +1,32 @@
+# vim: set ft=markdown:
+
+# Back up
+- SSH keys
+- All dotfiles (inc .gitignore_global)
+- ~/Library/Fonts
+- ~/Library/FontCollections
+- ~/Library/Keychains
+- ~/Library/Application\ Support/Notational\ Data
+- Chrome bookmarks
+
+# Cloud Data
+- Things (Things Cloud)
+- Transmit (sqlite db in dropbox)
+- Raindrop.io
+- vim notes files
+
+# Licenses
+- Sublime Text (GMail)
+- OmniOutliner (Elpass)
+
+# Manually reinstall
+- SoundSource
+- ScanSnap Home
+
+# Old vagrant aliases
+- `vagrant plugin install vagrant-gatling-rsync`
+- alias vup='vagrant up'
+- alias vsh='vagrant ssh'
+- alias vsync='vagrant gatling-rsync-auto'
+- alias vhalt='vagrant halt && exit'
+- alias waitsh='sleep 25 && vagrant ssh'
