@@ -21,6 +21,7 @@
   dc = diff --cached
   k = checkout
   kb = checkout -b
+  pnv = push --no-verify
   r = reset
   rh = reset head^
   s = status
