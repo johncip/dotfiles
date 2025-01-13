@@ -132,7 +132,7 @@ if executable('ag')
 endif
 
 if has('gui_running')
-  set guifont=Dank\ Mono:h16
+  set guifont=Jetbrains\ Mono\ Light:h13
 endif
 
 " ===================================================================================
