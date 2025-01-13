@@ -1,0 +1,19 @@
+# get nebula password from ~/.netrc
+--netrc
+
+# download aac & h.264 (for LG TV)
+--audio-format "aac"
+--format-sort "vcodec:h264"
+
+# don't download 4k video
+--format "bestvideo[ext=mp4][height<=1080]+bestaudio[ext=m4a]/best[ext=mp4]/best"
+# --format "bestvideo[height<=1080]+bestaudio"
+# --format "bestvideo[height<=1440]+bestaudio"
+# --format "bestvideo[height<=780]+bestaudio"
+# --format "bestvideo+bestaudio"
+
+# don't set the modified timestamp to when the video was uploaded
+--no-mtime
+
+# set a nice output format
+--output "%(uploader)s • %(title)s.%(ext)s"
