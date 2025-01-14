@@ -69,6 +69,7 @@ casks=(
   raindropio
   serviio
   spotify
+  soundsource
   steam
   sublime-text
   teamviewer
