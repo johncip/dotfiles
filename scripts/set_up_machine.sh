@@ -44,10 +44,11 @@ brew install ${dev_casks[@]}
 
 # Install fonts
 font_casks=(
+  font-fantasque-sans-mono
   font-fira-code
   font-input
+  font-jetbrains-mono
   font-lato
-  font-fantasque-sans-mono
 )
 brew install --cask ${font_casks[@]}
 cp /System/Applications/Utilities/Terminal.app/Contents/Resources/Fonts/SF-Mono-*.otf ~/Library/Fonts
