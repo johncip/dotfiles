@@ -1,0 +1,3 @@
+---
+BUNDLE_BUILD__RUBY___ODBC: "--with-odbc-dir=/opt/homebrew/opt/unixodbc"
+BUNDLE_BUILD__PG: "--with-pg-config=/opt/homebrew/opt/postgresql@17/bin/pg_config"

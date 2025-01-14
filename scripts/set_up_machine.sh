@@ -143,13 +143,10 @@ vim -s ./commands.vim # or open vim and :PlugInstall :PlugClean
 brew tap ibm/iaccess https://public.dhe.ibm.com/software/ibmi/products/odbc/macos/tap/
 brew install ibm-iaccess
 brew install unixodbc
-# in projects with ruby-odbc gem, run:
-#    bundle config build.ruby-odbc --with-odbc-dir=$(brew --prefix unixodbc)`
+bundle config --global build.ruby-odbc --with-odbc-dir=$(brew --prefix unixodbc)
 
 
 # Install postgresql
 brew install postgresql@17
 brew services restart postgresql@17
-# in any projects using the pg gem, run:
-#    bundle config build.pg --with-pg-config=$(brew --prefix postgresql@17)/bin/pg_config
-
+bundle config --global build.pg --with-pg-config=$(brew --prefix postgresql@17)/bin/pg_config
