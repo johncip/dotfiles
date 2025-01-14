@@ -11,11 +11,10 @@ local config = wezterm.config_builder()
 config.color_scheme = 'Material Darker'
 
 config.keys = {
-  -- Clears the scrollback and viewport leaving the prompt line the new first line.
   {
-    key = 'K',
-    mods = 'CTRL|SHIFT',
-    action = act.ClearScrollback 'ScrollbackAndViewport',
+    key = 'k',
+    mods = 'CMD',
+    action = act.ClearScrollback "ScrollbackAndViewport"
   },
 }
 
