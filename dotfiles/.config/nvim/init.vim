@@ -135,6 +135,13 @@ if exists("g:neovide")
   let g:neovide_cursor_animate_command_line = 'false'
   let g:neovide_scroll_animation_far_lines = 0
   let g:neovide_scroll_animation_length = 0.00
+
+  " Allow copy paste in neovim
+  let g:neovide_input_use_logo = 1
+  map <D-v> "+p<CR>
+  map! <D-v> <C-R>+
+  tmap <D-v> <C-R>+
+  vmap <D-c> "+y<CR>
 endif
 
 
