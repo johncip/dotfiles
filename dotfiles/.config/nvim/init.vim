@@ -124,7 +124,7 @@ if has("mouse_sgr")
 end
 
 if has('gui_running')
-  set guifont=Jetbrains\ Mono\ Light:h13
+  set guifont=JetBrains\ Mono\ NL\ Light:h12
 endif
 
 if exists("g:neovide")
