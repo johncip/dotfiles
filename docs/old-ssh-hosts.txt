@@ -1,0 +1,74 @@
+# vim: set ft=sshconfig:
+
+Host aurora
+  HostName aurora.ferrarofoods.net
+  User deploy
+  IdentityFile ~/.ssh/id_rsa
+
+Host eastend
+  HostName eastend.napolifoodsinc.local
+  User root
+  IdentityFile ~/.ssh/paris_to_eastend_rsa
+
+Host pi-old
+  HostName 192.168.10.70
+  User pi
+  IdentityFile ~/.ssh/raspberry_pi_rsa
+
+Host sidekiq2
+  HostName ec2-54-201-111-39.us-west-2.compute.amazonaws.com
+  User ubuntu
+  IdentityFile ~/Developer/Gradescope/keys/gs_prod_deploy_id_rsa
+
+Host sidekiq1
+  HostName ec2-34-217-70-146.us-west-2.compute.amazonaws.com
+  User ubuntu
+  IdentityFile ~/Developer/Gradescope/keys/gs_prod_deploy_id_rsa
+
+Host prod0
+  HostName ec2-35-161-123-24.us-west-2.compute.amazonaws.com
+  User ubuntu
+  IdentityFile ~/Developer/Gradescope/keys/gs_prod_deploy_id_rsa
+
+Host prod1
+  HostName ec2-54-148-222-38.us-west-2.compute.amazonaws.com
+  User ubuntu
+  IdentityFile ~/Developer/Gradescope/keys/gs_prod_deploy_id_rsa
+
+Host staging
+  HostName 54.245.191.157
+  User deploy
+  IdentityFile ~/Developer/Gradescope/keys/gs_staging_id_rsa
+
+Host deploy
+  HostName ec2-34-212-182-77.us-west-2.compute.amazonaws.com
+  User ubuntu
+  IdentityFile ~/Developer/Gradescope/keys/jmc_gs_deploy
+
+Host github_lambda
+  HostName github.com
+
+Host canvas
+  HostName ec2-35-164-73-107.us-west-2.compute.amazonaws.com
+  User ubuntu
+  IdentityFile ~/Developer/Gradescope/keys/gradescope-canvas-key-v2.pem
+
+Host blackboard
+  HostName ec2-52-39-6-37.us-west-2.compute.amazonaws.com
+  User ubuntu
+  IdentityFile ~/Developer/Gradescope/keys/blackboard-ami-us-west-2.pem
+
+Host amazon_linux
+  HostName ec2-52-43-244-186.us-west-2.compute.amazonaws.com
+  User ec2-user
+  IdentityFile ~/Developer/Credentials/amazon-linux-lambda-build-box-keys.pem
+
+Host beast
+  HostName ec2-54-200-222-37.us-west-2.compute.amazonaws.com
+  User ec2-user
+  IdentityFile ~/.ssh/gs/jmc-az-linux-c4-box-keys.pem
+
+Host vfox
+  HostName ec2-35-161-221-51.us-west-2.compute.amazonaws.com
+  User ubuntu
+  IdentityFile ~/Developer/Gradescope/keys/john-test-instance.pem
