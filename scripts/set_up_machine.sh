@@ -126,26 +126,24 @@ echo $(which zsh) | sudo tee -a /etc/shells
 chsh -s $(which zsh)
 
 
-# Install and link dot files
-devdir=~/Developer
+# Restore dotfiles
+devdir=$HOME/Developer
 mkdir $devdir
 pushd $devdir
-git clone git@github.com:johncip/Dotfiles
-sh $devdir/Dotfiles/scripts/link_dotfiles.sh
+git clone git@github.com:johncip/dotfiles
+stow --verbose --target=/Users/john --dir=$devdir/dotfiles dotfiles # or add --simulate
 popd
 
 
 # Install plug.vim
 curl -fLo /Users/john/.config/nvim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-vim -s ./commands.vim
+vim -s ./commands.vim # or open vim and :PlugInstall :PlugClean
 
 
 # Install ODBC driver for ibm db2 & odbc
 brew tap ibm/iaccess https://public.dhe.ibm.com/software/ibmi/products/odbc/macos/tap/
 brew install ibm-iaccess
 brew install unixodbc
-# NOTE: in projects with ruby-odbc gem, run:
+# in projects with ruby-odbc gem, run:
 #   bundle config set build.ruby-odbc --with-odbc-dir=`brew --prefix unixodbc`
-
-
