@@ -67,7 +67,6 @@ casks=(
   microsoft-teams
   nordvpn
   raindropio
-  serviio
   spotify
   soundsource
   steam
