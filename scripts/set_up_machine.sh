@@ -151,3 +151,6 @@ bundle config --global build.ruby-odbc --with-odbc-dir=$(brew --prefix unixodbc)
 brew install postgresql@17
 brew services restart postgresql@17
 bundle config --global build.pg --with-pg-config=$(brew --prefix postgresql@17)/bin/pg_config
+
+
+defaults write com.apple.desktopservices DSDontWriteNetworkStores true
