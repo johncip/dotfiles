@@ -54,6 +54,8 @@ call plug#end()
 
 let mapleader = ','
 
+" good color schemes:
+" nord, moody, molokai, base16-material-darker
 colorscheme molokai
 
 highlight Comment cterm=italic gui=italic
