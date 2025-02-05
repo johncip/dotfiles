@@ -103,12 +103,6 @@ autocmd FileType python setlocal sw=4 ts=4 sts=4 et
 autocmd BufRead,BufNewFile *.html.slim set filetype=slim
 autocmd BufRead,BufNewFile *.pdf.erb set filetype=eruby.html
 
-" grep using ag
-if executable('ag')
-  set grepprg=ag\ --nogroup\ --nocolor\ --hidden\ --ignore\ .git\ --ignore\ \"*.csv\"\ --ignore\ \"import/*.json\"
-endif
-
-
 " ===================================================================================
 " GUI & Terminal settings
 " ===================================================================================
@@ -223,7 +217,22 @@ let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
 
 
 " ===================================================================================
-" Functions
+" Grep with ag & add the Grep command
+" ===================================================================================
+
+if executable('ag')
+  set grepprg=ag\ --nogroup\ --nocolor\ --hidden\ --ignore\ .git\ --ignore\ \"*.csv\"\ --ignore\ \"import/*.json\"
+endif
+
+function! Grep(term, ...) abort
+  execute 'silent! grep!' a:term join(a:000, ' ')
+  cwindow
+  redraw!
+endfunction
+
+
+" ===================================================================================
+" Show the location & quickfix list
 " ===================================================================================
 
 function! ToggleList(bufname, pfx) " Toggle the location or quickfix list
@@ -254,11 +263,20 @@ function! GetBufferList() " Needed for ToggleList
   return buflist
 endfunction
 
-function! Grep(term, ...) abort
-  execute 'silent! grep!' a:term join(a:000, ' ')
-  cwindow
-  redraw!
-endfunction
+nnoremap <silent> <leader>l :call ToggleList("Location List", 'l')<cr>
+nnoremap <silent> <leader>c :call ToggleList("Quickfix List", 'c')<cr>
+
+
+" ===================================================================================
+" Use @ in visual mode to constrain macros
+" ===================================================================================
+
+xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
+
+function! ExecuteMacroOverVisualRange()
+    echo "@".getcmdline()
+      execute ":'<,'>normal @".nr2char(getchar())
+    endfunction
 
 
 " ===================================================================================
@@ -279,39 +297,39 @@ command! -nargs=+ -complete=file Grep call Grep(<f-args>)
 " Mappings
 " ===================================================================================
 
-inoremap jk         <Esc>
-nnoremap Y          y$
-
-nnoremap <silent> <Up>    :Files<cr>
-nnoremap <silent> <Down>  :GFiles?<cr>
-nnoremap <silent> <Left>  :bprev<cr>
-nnoremap <silent> <Right> :bnext<cr>
+call camelcasemotion#CreateMotionMappings('<leader>')
 
 " keep current indentation level when previous line is blank
 inoremap <cr>       <cr>x<BS>
 
-nnoremap <silent> <leader>l :call ToggleList("Location List", 'l')<cr>
-nnoremap <silent> <leader>c :call ToggleList("Quickfix List", 'c')<cr>
+inoremap jk         <Esc>
+nnoremap Y          y$
 
+" left and right for buffers
+nnoremap <silent> <Left>  :bprev<cr>
+nnoremap <silent> <Right> :bnext<cr>
 
-" ===================================================================================
-" Plugin Mappings
-" ===================================================================================
+" up and down for fzf files
+nnoremap <silent> <Up>    :Files<cr>
+nnoremap <silent> <Down>  :GFiles?<cr>
 
-call camelcasemotion#CreateMotionMappings('<leader>')
+" leader-m for fzf within file
+nnoremap <leader>m        :Lines<cr>
 
-nnoremap <leader><Tab> {v}:Tabularize /
-vnoremap <leader><Tab> :Tabularize /
-nnoremap <leader>a     :ALEToggle<cr>
-nnoremap <leader>A     :ALEFix<cr>
-nnoremap <leader>L     :Lines<cr>
-nnoremap <leader>n     :NERDTreeFind<cr>
-nnoremap <leader>t     :Files<cr>
-nnoremap <leader>z     :ALEDetail<cr>
-nnoremap <F5>          :set list!<cr>
-nnoremap <F8>          :TagbarToggle<cr>
+" leader-tab for tabularize
+nnoremap <leader><Tab>    {v}:Tabularize /
+vnoremap <leader><Tab>    :Tabularize /
 
-" running rspec
+" ale
+nnoremap <leader>a        :ALEToggle<cr>
+nnoremap <leader>A        :ALEFix<cr>
+nnoremap <leader>z        :ALEDetail<cr>
+
+" other plugin stuff
+nnoremap <leader>n        :NERDTreeFind<cr>
+nnoremap <F8>             :TagbarToggle<cr>
+
+" rspec
 nnoremap <leader>S             :RunSpec<CR>
 nnoremap <leader>s             :RunSpecLine<CR>
 nnoremap <leader>sl            :RunSpecLastRun<CR>
