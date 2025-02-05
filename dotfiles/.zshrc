@@ -82,6 +82,3 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" \
 
 # install asdf shims
 . $(brew --prefix asdf)/libexec/asdf.sh
-
-cd ~/Developer/Ferraro/PO/po_forecaster
-export PATH="/opt/homebrew/bin:$PATH"
