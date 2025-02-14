@@ -119,11 +119,9 @@ if has("mouse_sgr")
   set ttymouse=sgr
 end
 
-if has('gui_running')
-  set guifont=JetBrains\ Mono\ NL\ Light:h12
-endif
-
 if exists("g:neovide")
+  " NOTE: more font settings in ~/.config/neovide/config.toml
+
   " Disable animations
   let g:neovide_position_animation_length = 0
   let g:neovide_cursor_animation_length = 0.00

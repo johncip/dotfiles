@@ -1,0 +1,20 @@
+[font]
+size = 14
+hinting = "slight"
+edging = "subpixelantialias"
+
+[[font.normal]]
+family = "JetBrains Mono"
+style = "Light"
+
+[[font.bold]]
+family = "JetBrains Mono"
+style = "Bold"
+
+[[font.italic]]
+family = "JetBrains Mono"
+style = "Light Italic"
+
+[[font.bolditalic]]
+family = "JetBrains Mono"
+style = "Bold Italic"
