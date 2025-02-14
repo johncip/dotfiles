@@ -124,6 +124,7 @@ if has('gui_running')
 endif
 
 if exists("g:neovide")
+  " Disable animations
   let g:neovide_position_animation_length = 0
   let g:neovide_cursor_animation_length = 0.00
   let g:neovide_cursor_trail_size = 0
@@ -138,6 +139,14 @@ if exists("g:neovide")
   map! <D-v> <C-R>+
   tmap <D-v> <C-R>+
   vmap <D-c> "+y<CR>
+
+  " Increase / decrease font size with Cmd- +/-
+  let g:neovide_scale_factor=1.0
+  function! ChangeScaleFactor(delta)
+    let g:neovide_scale_factor = g:neovide_scale_factor * a:delta
+  endfunction
+  nnoremap <expr><D-=> ChangeScaleFactor(1.1)
+  nnoremap <expr><D--> ChangeScaleFactor(1/1.1)
 endif
 
 
