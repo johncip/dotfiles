@@ -1,11 +1,11 @@
 ```bash
 cd /Users/john/Developer
 
-/opt/homebrew/bin/stow \
-  --simulate
-  --verbose
-  --target=/Users/john
-  --dir=/Users/john/Developer/Dotfiles
+stow \
+  --simulate \
+  --verbose \
+  --target=/Users/john \
+  --dir=/Users/john/Developer/Dotfiles \
   dotfiles
 ```
 
