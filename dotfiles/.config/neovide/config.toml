@@ -1,6 +1,8 @@
+srgb = true
+
 [font]
 size = 14
-hinting = "slight"
+hinting = "full"
 edging = "subpixelantialias"
 
 [[font.normal]]
