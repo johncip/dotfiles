@@ -6,17 +6,17 @@ hinting = "full"
 edging = "subpixelantialias"
 
 [[font.normal]]
-family = "JetBrains Mono"
+family = "Dank Mono"
 style = "Light"
 
 [[font.bold]]
-family = "JetBrains Mono"
+family = "Dank Mono"
 style = "Bold"
 
 [[font.italic]]
-family = "JetBrains Mono"
+family = "Dank Mono"
 style = "Light Italic"
 
 [[font.bolditalic]]
-family = "JetBrains Mono"
+family = "Dank Mono"
 style = "Bold Italic"
