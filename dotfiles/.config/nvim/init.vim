@@ -56,7 +56,7 @@ let mapleader = ','
 
 " good color schemes:
 " nord, moody, molokai, base16-material-darker
-colorscheme molokai
+colorscheme base16-material-darker
 
 highlight Comment cterm=italic gui=italic
 highlight Todo ctermbg=NONE ctermfg=yellow guibg=NONE guifg=orange
@@ -121,6 +121,7 @@ end
 
 if exists("g:neovide")
   " NOTE: more font settings in ~/.config/neovide/config.toml
+  set linespace=1
 
   " Disable animations
   let g:neovide_position_animation_length = 0
