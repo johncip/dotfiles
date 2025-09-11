@@ -12,3 +12,6 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # install asdf shims
 . $(brew --prefix asdf)/libexec/asdf.sh
+
+# add postgres client bin
+export PATH="$(brew --prefix postgresql@17)/bin:$PATH"
