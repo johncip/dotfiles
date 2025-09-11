@@ -64,6 +64,7 @@ stty start undef
 path+=(~/Applications/Scripts)
 path+=(/Applications/dsdriver/bin)
 path+=(/usr/local/sbin)
+path+=(/Users/john/Library/Python/3.9/bin)
 
 # aliases & functions
 source ~/.aliases
