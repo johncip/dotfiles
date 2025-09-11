@@ -22,7 +22,6 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'prettier/vim-prettier', { 'on': ['Prettier', 'PrettierAsync'] }
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'sheerun/vim-polyglot'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/tpope-vim-abolish'
 Plug 'tpope/vim-eunuch'
@@ -293,6 +292,7 @@ function! ExecuteMacroOverVisualRange()
 
 command! Bw             bprevious | bdelete# " close buffer but leave window
 command! Bd             bdelete " for fat-fingering
+command! Vsplit         vsplit  " for fat-fingering
 command! Bda            silent! bufdo | bd
 command! Config         edit $MYVIMRC
 command! Wd             write | bdelete
