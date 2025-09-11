@@ -39,7 +39,7 @@ Plug 'tpope/vim-rails'
 
 " colorschemes
 Plug 'arcticicestudio/nord-vim'  " nord
-Plug 'gmist/vim-palette'         " moody
+Plug 'gmist/vim-palette'         " moody, base16-*
 Plug 'tomasr/molokai'            " molokai
 
 
@@ -56,7 +56,7 @@ let mapleader = ','
 
 " good color schemes:
 " nord, moody, molokai, base16-material-darker
-colorscheme base16-material-darker
+colorscheme moody
 
 highlight Comment cterm=italic gui=italic
 highlight Todo ctermbg=NONE ctermfg=yellow guibg=NONE guifg=orange
