@@ -14,6 +14,10 @@ config.font_size = 14.0
 config.color_scheme = 'Seti UI (base16)'
 
 
+-- config.window_background_opacity = 0.3
+-- config.text_background_opacity = 0.5
+-- config.macos_window_background_blur = 40
+
 -- Remove padding between text and window edge
 config.window_padding = {
   left = 2,
