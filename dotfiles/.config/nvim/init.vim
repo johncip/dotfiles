@@ -48,21 +48,36 @@ call plug#end()
 
 
 " ===================================================================================
+" Color Settings
+" ===================================================================================
+
+" good color schemes:
+"   nord, moody, molokai, base16-material-darker
+colorscheme moody
+
+" set termguicolors
+set colorcolumn=""
+set t_Co=256
+
+" to remove background:
+"   hi! Normal ctermbg=NONE guibg=NONE
+
+" change background color of cursor line, but don't lose syntax highlighting
+set cursorline
+highlight CursorLine cterm=NONE ctermbg=236 ctermfg=NONE guibg=#2c2c2c guifg=NONE
+
+" special styling for comments and todos
+highlight Comment cterm=italic gui=italic
+highlight Todo ctermbg=NONE ctermfg=yellow guibg=NONE guifg=orange
+
+
+" ===================================================================================
 " General Settings
 " ===================================================================================
 
 let mapleader = ','
 
-" good color schemes:
-" nord, moody, molokai, base16-material-darker
-colorscheme moody
-
-highlight Comment cterm=italic gui=italic
-highlight Todo ctermbg=NONE ctermfg=yellow guibg=NONE guifg=orange
-
 set clipboard=unnamed
-set colorcolumn=""
-set cursorline
 set cmdheight=1
 set hidden
 set ignorecase
@@ -80,8 +95,6 @@ set showmatch
 set splitbelow
 set splitright
 set smartcase
-set t_Co=256
-set termguicolors
 set ttyfast
 set updatetime=100
 set wildmenu
