@@ -30,7 +30,6 @@ alias tree='LS_COLORS="" tree -C'
 alias neovide='neovide . > /dev/null 2>&1 &'
 
 # tools
-alias json='python -m json.tool' # pretty-print json
 alias showpath='echo $PATH | tr ":" "\n"'
 alias speedtest='curl -o /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip'
 # alias commit-and-submit='lein test && git add . && git commit && git push && exercism submit src/*'
