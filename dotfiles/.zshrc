@@ -22,6 +22,8 @@ setopt auto_pushd # make cd work like pushd
 # shell completions
 # -----------------------------------------------------------------------------
 
+source $BREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 zstyle ':completion:*' menu select # use arrow key menu
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # case-insensitive
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} # colorized

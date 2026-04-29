@@ -115,6 +115,7 @@ formulas=(
   webp
   yt-dlp ffmpeg
   z
+  zsh-autosuggestions
 )
 brew install ${formulas[@]}
 
