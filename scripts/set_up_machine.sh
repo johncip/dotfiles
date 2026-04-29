@@ -56,14 +56,23 @@ cp /System/Applications/Utilities/Terminal.app/Contents/Resources/Fonts/SF-Mono-
 
 # Install misc casks
 casks=(
+  audacity
+  corretto
   cyberduck
+  docker
+  dbvisualizer
   discord
   dropbox
   elpass
   firefox
+  fork
+  ghostty
   google-chrome
   handbrake
   iina
+  inkscape
+  macdown
+  medis
   microsoft-teams
   nordvpn
   raindropio
@@ -71,8 +80,10 @@ casks=(
   soundsource
   steam
   sublime-text
+  tailscale-app
   teamviewer
   transmission
+  visual-studio-code
   whatsapp
   xquartz
 )
@@ -83,16 +94,27 @@ brew install --cask ${casks[@]}
 formulas=(
   ansible
   bat
+  bfg
+  clojure
+  cloc
   fzf
   gh
   git
+  go
+  htop
+  jq
   mailhog
   neovim
+  ncdu
   redis
   rename
+  stow
+  tailscale
   the_silver_searcher
+  tig
   tree
   universal-ctags
+  webp
   yt-dlp ffmpeg
   z
 )

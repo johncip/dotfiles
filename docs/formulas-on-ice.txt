@@ -1,5 +1,0 @@
-p7zip
-telnet
-trash
-unar
-universal-ctags
