@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
+# shortcuts
+alias be='bundle exec'
 alias g='git'
 alias gd='git diff'
 alias ll='ls -l'
