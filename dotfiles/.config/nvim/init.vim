@@ -365,4 +365,7 @@ nnoremap <leader><leader>sf    :vsplit \| terminal bin/rspec --only-failures<cr>
 " Project Setup
 " ===================================================================================
 
-cd ~/Developer/Ferraro/PO/po_forecaster
+" cd ~/Developer/Ferraro/Commission/commission_reporter
+" cd ~/Developer/Super8/super8
+" cd ~/Developer/Ferraro/PO/po_forecaster
+cd ~/Developer/Sonicbids/advance-crm
