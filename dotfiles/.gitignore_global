@@ -2,3 +2,4 @@
 tags
 .vscode/*.json
 .github/copilot-instructions.md
+.secrets
