@@ -8,6 +8,11 @@
 - ~/Library/Keychains
 - ~/Library/Application\ Support/Notational\ Data
 - Chrome bookmarks
+- elpass vault
+
+# Secrets
+- ~/.odbc.secret.ini
+- ~/.netrc
 
 # Cloud Data
 - Things (Things Cloud)
@@ -22,11 +27,3 @@
 # Manually reinstall
 - SoundSource
 - ScanSnap Home
-
-# Old vagrant aliases
-- `vagrant plugin install vagrant-gatling-rsync`
-- alias vup='vagrant up'
-- alias vsh='vagrant ssh'
-- alias vsync='vagrant gatling-rsync-auto'
-- alias vhalt='vagrant halt && exit'
-- alias waitsh='sleep 25 && vagrant ssh'
