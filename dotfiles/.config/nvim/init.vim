@@ -32,16 +32,19 @@ Plug 'tpope/vim-unimpaired'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-" ruby on rails
+" ruby / rails
 Plug 'ecomba/vim-ruby-refactoring'
 Plug 'itmammoth/run-rspec.vim'
 Plug 'tpope/vim-rails'
 
-" clojure
+" " clojure
 " Plug 'junegunn/rainbow_parentheses.vim'
 " Plug 'tpope/vim-fireplace'
 " Plug 'tpope/vim-salve'
 " Plug 'bhurlow/vim-parinfer'
+" Plug 'guns/vim-sexp'
+" Plug 'tpope/vim-sexp-mappings-for-regular-people'
+" Plug 'clojure-vim/clj-refactor.nvim'
 
 " colorschemes
 Plug 'arcticicestudio/nord-vim'  " nord
