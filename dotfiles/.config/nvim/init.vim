@@ -333,19 +333,32 @@ command! -nargs=+ -complete=file Grep call Grep(<f-args>)
 " Mappings
 " ===================================================================================
 
+" jk exits insert mode
+inoremap jk         <Esc>
+
+" prefix with leader to move by individual words in camel case
 call camelcasemotion#CreateMotionMappings('<leader>')
 
 " keep current indentation level when previous line is blank
 inoremap <cr>       <cr>x<BS>
 
-inoremap jk         <Esc>
+" shift+y yanks to end of line
 nnoremap Y          y$
 
-" left and right for buffers
-nnoremap <silent> <Left>  :bprev<cr>
-nnoremap <silent> <Right> :bnext<cr>
+" tab to cycles through buffers
+"
+" previously:
+"   " left and right for buffers
+"   nnoremap <silent> <Left>  :bprev<cr>
+"   nnoremap <silent> <Right> :bnext<cr>
+nnoremap <silent> <Tab>   :bnext<CR>
+nnoremap <silent> <S-Tab> :bprev<CR>
 
-" up and down for fzf files
+" left and right for cycling through panes
+nnoremap <Left>  <C-w>W
+nnoremap <Right> <C-w>w
+
+" up and down open fzf
 nnoremap <silent> <Up>    :Files<cr>
 nnoremap <silent> <Down>  :GFiles?<cr>
 
@@ -361,7 +374,7 @@ nnoremap <leader>a        :ALEToggle<cr>
 nnoremap <leader>A        :ALEFix<cr>
 nnoremap <leader>z        :ALEDetail<cr>
 
-" other plugin stuff
+" other plugins
 nnoremap <leader>n        :NERDTreeFind<cr>
 nnoremap <F8>             :TagbarToggle<cr>
 
