@@ -37,6 +37,12 @@ Plug 'ecomba/vim-ruby-refactoring'
 Plug 'itmammoth/run-rspec.vim'
 Plug 'tpope/vim-rails'
 
+" clojure
+Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'tpope/vim-fireplace'
+Plug 'tpope/vim-salve'
+" Plug 'bhurlow/vim-parinfer'
+
 " colorschemes
 Plug 'arcticicestudio/nord-vim'  " nord
 Plug 'gmist/vim-palette'         " moody, base16-*
@@ -115,6 +121,10 @@ autocmd FileType make set noexpandtab
 autocmd FileType python setlocal sw=4 ts=4 sts=4 et
 autocmd BufRead,BufNewFile *.html.slim set filetype=slim
 autocmd BufRead,BufNewFile *.pdf.erb set filetype=eruby.html
+
+" disable copilot for doing learning exercises
+autocmd FileType clojure :Copilot disable
+
 
 " ===================================================================================
 " GUI & Terminal settings
