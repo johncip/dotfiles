@@ -7,13 +7,15 @@ My work mostly involves writing Ruby and JS/TS, on a Mac, with vim. So the most 
 I don't use oh-my-zsh, or vim frameworks, etc. I do use vim-plug.
 
 
-Big things that zsh needs to know about:
+Path management / big things that zsh needs to know about:
 
 * `asdf` and `dotenv` for managing per-project dev environments
 * homebrew for mac package management
 
 
-These are probably my most important vim keybindings:
+## Vim keybindings
+
+These are probably my most important keybindings. I recommend them.
 
 * `<Up>` to fuzzy search repo
 * `<Down>` to fuzzy only files modified in git working tree
