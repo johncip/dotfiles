@@ -34,8 +34,12 @@ mas install ${app_store_ids[@]}
 # Install development casks
 dev_casks=(
   dbvisualizer
+  docker
   fork
+  ghostty
+  medis
   neovide
+  tailscale-app
   visual-studio-code
   wezterm
 )
@@ -59,20 +63,15 @@ casks=(
   audacity
   corretto
   cyberduck
-  docker
-  dbvisualizer
   discord
   dropbox
   elpass
   firefox
-  fork
-  ghostty
   google-chrome
   handbrake
   iina
   inkscape
   macdown
-  medis
   microsoft-teams
   nordvpn
   raindropio
@@ -80,10 +79,8 @@ casks=(
   soundsource
   steam
   sublime-text
-  tailscale-app
   teamviewer
   transmission
-  visual-studio-code
   whatsapp
   xquartz
 )
@@ -114,6 +111,7 @@ formulas=(
   tig
   tree
   universal-ctags
+  vivid
   webp
   yt-dlp ffmpeg
   z
