@@ -16,7 +16,7 @@ alias vi='nvim'
 alias view='nvim -M'
 alias vim='nvim'
 
-# default args/env
+# default args
 alias bc='bc --mathlib --quiet'
 alias ls='ls -FG'
 alias serve='serve -c /Users/john/Developer/serve.json -l tcp://0.0.0.0:5000'
@@ -27,4 +27,4 @@ alias tree='tree -C'
 alias json='python -m json.tool' # pretty-print json
 alias showpath='echo $PATH | tr ":" "\n"'
 alias speedtest='curl -o /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip'
-alias commit-and-submit='lein test && git add . && git commit && git push && exercism submit src/*'
+# alias commit-and-submit='lein test && git add . && git commit && git push && exercism submit src/*'
