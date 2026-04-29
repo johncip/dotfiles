@@ -38,6 +38,11 @@ function list-aws-instances() {
     --output table
 }
 
+# fuzzy branch delete
+function delete-branch() {
+  git branch | fzf | xargs git branch -d
+}
+
 # removes local / remote / tracking for current branch & pulls main
 function nuke-merged-branch() {
   local name=`git rev-parse --abbrev-ref HEAD`
