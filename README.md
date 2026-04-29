@@ -2,9 +2,9 @@
 
 ## Overview
 
-My work mostly involves writing Ruby and JS/TS, on a Mac, with vim. So the most important things are my zsh & neovim configs.
-
-I don't use oh-my-zsh, or vim frameworks, etc. I do use vim-plug.
+* The most important things are my zsh & neovim configs.
+* My work mostly involves writing Ruby and JS/TS, on a Mac, with vim. I wrote Clojure for fun when I have time.
+* I don't use oh-my-zsh, or vim frameworks, etc. I do use vim-plug.
 
 
 Path management / big things that zsh needs to know about:
