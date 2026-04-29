@@ -6,6 +6,12 @@ alias ll='ls -la'
 alias q='exit'
 
 # shortcuts (dev tools)
+alias be='bundle exec'
+alias nd='next dev'
+alias pt='playwright test'
+alias sb='supabase'
+alias sc='soundcheck warm'
+alias tc='tsc --noEmit'
 alias vr='vitest run'
 
 # shadowed
