@@ -1,6 +1,9 @@
-# -- general settings ---------------------------------------------------------
+BREW_PREFIX=$(brew --prefix)
 
-# colors
+# -----------------------------------------------------------------------------
+# settings
+# -----------------------------------------------------------------------------
+
 autoload -U colors
 colors
 
@@ -12,22 +15,25 @@ setopt correct # spelling correction
 setopt auto_pushd # make cd work like pushd
 
 
-# -- tab completion -----------------------------------------------------------
+# -----------------------------------------------------------------------------
+# shell completions
+# -----------------------------------------------------------------------------
 
-fpath=($(brew --prefix)/share/zsh-completions $fpath)
-fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
-fpath=(/Users/john/.docker/completions $fpath)
-fpath=(/Users/john/.zsh/completions $fpath) # lefthook, supabase
+zstyle ':completion:*' menu select # use arrow key menu
+fpath=($BREW_PREFIX/share/zsh-completions $fpath)
+fpath=($BREW_PREFIX/share/zsh/site-functions $fpath)
+fpath=($HOME/.docker/completions $fpath)
+fpath=($HOME/.zsh/completions $fpath) # hand-installed. lefthook, supabase, etc
 
 autoload -Uz compinit
-compinit -u # -u skips permission security check (for shared systems)
-
-zstyle ':completion:*' menu select # command completion, with arrow key menu
+compinit -u # -u skips permission security check
 
 
-# -- history ------------------------------------------------------------------
+# -----------------------------------------------------------------------------
+# history
+# -----------------------------------------------------------------------------
 
-HISTFILE=~/.zsh_history
+HISTFILE=$HOME/.zsh_history
 HISTSIZE=10000
 SAVEHIST=$HISTSIZE
 setopt append_history
@@ -36,7 +42,9 @@ setopt hist_ignore_all_dups
 setopt share_history
 
 
-# -- keybindings --------------------------------------------------------------
+# -----------------------------------------------------------------------------
+# keybindings
+# -----------------------------------------------------------------------------
 
 # Ctrl-X Ctrl-E to edit command in editor
 autoload -z edit-command-line
@@ -59,26 +67,30 @@ stty stop undef
 stty start undef
 
 
-# -- path & integrations ------------------------------------------------------
+# -----------------------------------------------------------------------------
+# path & integrations
+# -----------------------------------------------------------------------------
+
+# my stuff
+path+=($HOME/Applications/Scripts)
 
 # vscode integration
 [[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)"
 
-path+=(~/Applications/Scripts)
-path+=(/Applications/dsdriver/bin)
-path+=(/usr/local/sbin)
-path+=(/Users/john/Library/Python/3.9/bin)
-
-# aliases & functions
-source ~/.aliases
-source ~/.functions
-
-# autojump
-. `brew --prefix`/etc/profile.d/z.sh
+# z / autojump
+. $BREW_PREFIX/etc/profile.d/z.sh
 
 # fzf
 export FZF_DEFAULT_COMMAND='ag -l -p ""'
 source <(fzf --zsh)
 
-# use direnv
+# direnv
 eval "$(direnv hook zsh)"
+
+
+# -----------------------------------------------------------------------------
+# extra commands
+# -----------------------------------------------------------------------------
+
+source ~/.aliases
+source ~/.functions
