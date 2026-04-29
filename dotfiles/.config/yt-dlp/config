@@ -1,6 +1,9 @@
 # get nebula password from ~/.netrc
 --netrc
 
+# get cookies from firefox (patreon)
+--cookies-from-browser firefox
+
 # don't set the modified timestamp to when the video was uploaded
 --no-mtime
 
