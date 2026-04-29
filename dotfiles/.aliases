@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+# vi: ft=zsh
 
 # shortcuts (mains)
 alias g='git'

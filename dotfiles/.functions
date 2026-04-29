@@ -1,4 +1,4 @@
-# vi: ft=bash
+# vi: ft=zsh
 
 # creates a directory and immediately change to it
 function mkcd() {
