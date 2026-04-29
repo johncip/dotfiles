@@ -1,20 +1,20 @@
 #!/usr/bin/env zsh
 
-# shortcuts
-alias be='bundle exec'
+# shortcuts (mains)
 alias g='git'
-alias gd='git diff'
-alias ll='ls -l'
-alias lla='ls -la'
+alias ll='ls -la'
 alias q='exit'
 
-# shadowed
+# shortcuts (dev tools)
+alias vr='vitest run'
+alias vi='nvim'
+
+# shadowed commands
 alias cat='bat'
 alias ls='gls -F --color=auto'
-# alias ctags="`brew --prefix`/bin/ctags"
-alias vi='nvim'
-alias view='nvim -M'
+alias ctags="`brew --prefix`/bin/ctags"
 alias vim='nvim'
+alias view='nvim -M'
 
 # supply some defaults
 alias bc='bc --mathlib --quiet'
