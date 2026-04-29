@@ -70,3 +70,5 @@
   helper = osxkeychain
 [advice]
   skippedCherryPicks = false
+[fetch]
+	prune = true
