@@ -30,6 +30,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " ruby on rails
 Plug 'ecomba/vim-ruby-refactoring'
@@ -52,8 +53,8 @@ call plug#end()
 " ===================================================================================
 
 " good color schemes:
-"   nord, moody, molokai, base16-material-darker
-colorscheme moody
+"   nord, moody, molokai, base16-default-dark
+colorscheme base16-default-dark
 
 " set termguicolors
 set colorcolumn=""
@@ -221,8 +222,8 @@ let g:elm_setup_keybindings = 0
 let g:NERDTreeDirArrows = 1
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeWinPos = "right"
-let g:nord_comment_brightness = 15
 let g:nord_italic = 1
+let g:nord_italic_comments = 1
 let g:prettier#config#bracket_spacing = 'true'
 let g:prettier#config#semi = 'false'
 let g:prettier#config#trailing_comma = 'none'
