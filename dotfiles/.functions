@@ -38,6 +38,11 @@ function list-aws-instances() {
     --output table
 }
 
+# fuzzy branch checkout
+function gcob() {
+  git branch | sed 's/\* //' | fzf | xargs git checkout
+}
+
 # fuzzy branch delete
 function delete-branch() {
   git branch | fzf | xargs git branch -d
