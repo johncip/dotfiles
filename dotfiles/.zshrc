@@ -4,10 +4,13 @@ BREW_PREFIX=$(brew --prefix)
 # settings
 # -----------------------------------------------------------------------------
 
+# colors
 autoload -U colors
 colors
 
-# pure prompt
+export LS_COLORS="$(vivid generate one-dark)"
+
+# prompt
 autoload -U promptinit && promptinit
 prompt pure
 
@@ -20,6 +23,9 @@ setopt auto_pushd # make cd work like pushd
 # -----------------------------------------------------------------------------
 
 zstyle ':completion:*' menu select # use arrow key menu
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # case-insensitive
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} # colorized
+
 fpath=($BREW_PREFIX/share/zsh-completions $fpath)
 fpath=($BREW_PREFIX/share/zsh/site-functions $fpath)
 fpath=($HOME/.docker/completions $fpath)
