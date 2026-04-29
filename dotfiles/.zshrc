@@ -16,6 +16,8 @@ setopt auto_pushd # make cd work like pushd
 
 fpath=($(brew --prefix)/share/zsh-completions $fpath)
 fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
+fpath=(/Users/john/.docker/completions $fpath)
+fpath=(/Users/john/.zsh/completions $fpath) # lefthook, supabase
 
 autoload -Uz compinit
 compinit -u # -u skips permission security check (for shared systems)
