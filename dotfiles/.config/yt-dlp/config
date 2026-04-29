@@ -1,4 +1,4 @@
-# get nebula password from ~/.netrc
+# get passwords from ~/.netrc (nebula)
 --netrc
 
 # get cookies from firefox (patreon)
@@ -7,19 +7,26 @@
 # don't set the modified timestamp to when the video was uploaded
 --no-mtime
 
-# set a nice output format
+# set a nice file name format
 --output "%(uploader)s • %(title)s.%(ext)s"
 
-# download h.264 unless something higher-res is available
---format-sort "res,vcodec:h264,acodec:m4a"
---format "bestvideo+bestaudio"
 
-# download aac & h.264 (for LG TV)
-# --audio-format "aac"
-# --format-sort "vcodec:h264"
-
-# don't download 4k video
-# --format "bestvideo[ext=mp4][height<=1080]+bestaudio[ext=m4a]/best[ext=mp4]/best"
-# --format "bestvideo[height<=1440]+bestaudio"
-# --format "bestvideo[height<=1080]+bestaudio"
-# --format "bestvideo[height<=780]+bestaudio"
+# Formats
+#
+# best video + best audio (assumes separate streams):
+#   --format "bestvideo+bestaudio"
+#
+# best mp4 up to 1080p (assumes separate streams):
+#   --format "bestvideo[ext=mp4][height<=1080]+bestaudio[ext=m4a]/best[ext=mp4]/best"
+#
+# limit res & get best audio (assume separate streams):
+#   --format "bestvideo[width<=1080]+bestaudio"
+#
+# h.264 unless something higher-res is available:
+#   --format-sort "res,vcodec:h264,acodec:m4a"
+#
+# h264 & aac:
+#   --format-sort "vcodec:h264"
+#   --audio-format "aac"
+#
+--format "best[width<=1080]"
