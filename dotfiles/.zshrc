@@ -64,8 +64,6 @@ stty start undef
 # vscode integration
 [[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)"
 
-# NOTE: asdf shims are installed in .zshenv
-
 path+=(~/Applications/Scripts)
 path+=(/Applications/dsdriver/bin)
 path+=(/usr/local/sbin)
@@ -81,13 +79,6 @@ source ~/.functions
 # fzf
 export FZF_DEFAULT_COMMAND='ag -l -p ""'
 source <(fzf --zsh)
-
-# iterm2 shell integration
-test -e "${HOME}/.iterm2_shell_integration.zsh" \
-  && source "${HOME}/.iterm2_shell_integration.zsh"
-
-# install asdf shims
-. $(brew --prefix asdf)/libexec/asdf.sh
 
 # use direnv
 eval "$(direnv hook zsh)"
