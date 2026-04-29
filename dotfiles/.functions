@@ -42,7 +42,18 @@ function list-aws-instances() {
 function nuke-merged-branch() {
   local name=`git rev-parse --abbrev-ref HEAD`
   git checkout main
-  git pull
+
+  # Try to pull, but capture failure
+  if ! git pull; then
+      echo "git pull failed due to divergence. Here are the commits:"
+      echo "Commits in local main not in origin/main:"
+      git log --oneline --left-right --cherry-pick origin/main...main | grep '^>'
+      echo
+      echo "Commits in origin/main not in local main:"
+      git log --oneline --left-right --cherry-pick origin/main...main | grep '^<'
+      return 1
+  fi
+
   git push --no-verify origin :$name
   git branch -d $name
 }
