@@ -38,9 +38,9 @@ Plug 'itmammoth/run-rspec.vim'
 Plug 'tpope/vim-rails'
 
 " clojure
-Plug 'junegunn/rainbow_parentheses.vim'
-Plug 'tpope/vim-fireplace'
-Plug 'tpope/vim-salve'
+" Plug 'junegunn/rainbow_parentheses.vim'
+" Plug 'tpope/vim-fireplace'
+" Plug 'tpope/vim-salve'
 " Plug 'bhurlow/vim-parinfer'
 
 " colorschemes
