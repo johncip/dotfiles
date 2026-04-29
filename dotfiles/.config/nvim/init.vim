@@ -116,6 +116,8 @@ set tabstop=2
 
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<,space:·
 
+set errorformat=%f:%l:%c:%m,%f:%l:%m
+
 autocmd FileType applescript setlocal sw=4 ts=4 sts=4 et
 autocmd FileType make set noexpandtab
 autocmd FileType python setlocal sw=4 ts=4 sts=4 et
@@ -252,10 +254,12 @@ let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
 " ===================================================================================
 
 if executable('ag')
-  set grepprg=ag\ --nogroup\ --nocolor\ --hidden\ --ignore\ .git\ --ignore\ \"*.csv\"\ --ignore\ \"import/*.json\"
+  set grepprg=ag\ --vimgrep\ --nogroup\ --nocolor\ --hidden\ --ignore\ .git\ --ignore\ \"*.csv\"\ --ignore\ \"import/*.json\"
+  " set grepprg=ag\ --vimgrep\ --nogroup\ --nocolor
 endif
 
 function! Grep(term, ...) abort
+  setlocal errorformat=%f:%l:%m
   execute 'silent! grep!' a:term join(a:000, ' ')
   cwindow
   redraw!
