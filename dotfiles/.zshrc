@@ -96,6 +96,9 @@ source <(fzf --zsh)
 # direnv
 eval "$(direnv hook zsh)"
 
+# cdpath
+cdpath=(~ ~/Developer/Ferraro ~/Developer/Sonicbids)
+
 
 # -----------------------------------------------------------------------------
 # extra commands
