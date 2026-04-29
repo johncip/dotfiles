@@ -19,7 +19,7 @@ alias view='nvim -M'
 # supply default options
 alias bc='bc --mathlib --quiet'
 alias ssh='TERM=xterm-256color ssh'
-alias tree='tree -C'
+alias tree='LS_COLORS="" tree -C'
 
 # tools
 alias json='python -m json.tool' # pretty-print json
