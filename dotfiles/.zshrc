@@ -86,3 +86,6 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" \
 
 # install asdf shims
 . $(brew --prefix asdf)/libexec/asdf.sh
+
+# use direnv
+eval "$(direnv hook zsh)"
