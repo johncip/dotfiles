@@ -59,6 +59,9 @@ stty start undef
 
 # -- path & integrations ------------------------------------------------------
 
+# vscode integration
+[[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)"
+
 # NOTE: asdf shims are installed in .zshenv
 
 path+=(~/Applications/Scripts)
