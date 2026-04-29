@@ -67,3 +67,12 @@ function nuke-merged-branch() {
   git push --no-verify origin :$name
   git branch -d $name
 }
+
+# submit clojure stuff to exercism
+function commit-and-submit() {
+  lein test || return
+  git add .
+  git commit || return
+  git push || return
+  exercism submit src/*
+}
