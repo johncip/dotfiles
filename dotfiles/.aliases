@@ -7,16 +7,16 @@ alias q='exit'
 
 # shortcuts (dev tools)
 alias vr='vitest run'
-alias vi='nvim'
 
-# shadowed commands
+# shadowed
 alias cat='bat'
 alias ls='gls -F --color=auto'
 alias ctags="`brew --prefix`/bin/ctags"
+alias vi='nvim'
 alias vim='nvim'
 alias view='nvim -M'
 
-# supply some defaults
+# supply default options
 alias bc='bc --mathlib --quiet'
 alias ssh='TERM=xterm-256color ssh'
 alias tree='tree -C'
