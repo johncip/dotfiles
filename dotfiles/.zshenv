@@ -15,3 +15,6 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # add postgres client bin
 export PATH="$(brew --prefix postgresql@17)/bin:$PATH"
+
+# warn on rubyzip deprecated API usage
+export RUBYZIP_V3_API_WARN=1
