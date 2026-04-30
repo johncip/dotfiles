@@ -18,11 +18,18 @@ export ANSIBLE_VAULT_PASSWORD_FILE=~/Applications/Scripts/vault-password
 # path additions for all shells
 # -----------------------------------------------------------------------------
 
-# add homebrew to path
+# homebrew bin dir
 [[ -z "$HOMEBREW_PREFIX" ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# install asdf shims
+# homebrew postgres client bins
+export PATH="$(brew --prefix postgresql@17)/bin:$PATH"
+
+# asdf shims
 . $(brew --prefix asdf)/libexec/asdf.sh
 
-# add postgres client bin
-export PATH="$(brew --prefix postgresql@17)/bin:$PATH"
+# global pnpm modules
+export PNPM_HOME="$HOME/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
