@@ -20,6 +20,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'majutsushi/tagbar'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'prettier/vim-prettier', { 'on': ['Prettier', 'PrettierAsync'] }
+Plug 'prisma/vim-prisma'
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'sheerun/vim-polyglot'
 Plug 'tomtom/tcomment_vim'
