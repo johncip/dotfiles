@@ -399,4 +399,5 @@ nnoremap <leader><leader>sf    :vsplit \| terminal bin/rspec --only-failures<cr>
 " cd ~/Developer/Ferraro/Commission/commission_reporter
 " cd ~/Developer/Super8/super8
 " cd ~/Developer/Ferraro/PO/po_forecaster
-cd ~/Developer/Sonicbids/advance-crm
+" cd ~/Developer/Sonicbids/patchbay
+cd ~/Developer/Sonicbids/advance-arm
