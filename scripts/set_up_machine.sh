@@ -34,14 +34,14 @@ mas install ${app_store_ids[@]}
 # Install development casks
 dev_casks=(
   dbvisualizer
-  docker
+  claude-code
   fork
   ghostty
   medis
   neovide
+  orbstack
   tailscale-app
   visual-studio-code
-  wezterm
 )
 brew install ${dev_casks[@]}
 
