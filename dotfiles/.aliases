@@ -31,3 +31,8 @@ alias neovide='neovide . > /dev/null 2>&1 &'
 # tools
 alias showpath='echo $PATH | tr ":" "\n"'
 alias speedtest='curl -o /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip'
+
+# global
+alias -g @dev_db="postgresql://postgres:postgres@127.0.0.1:54322/postgres"
+alias -g @test_db="postgresql://postgres:postgres@127.0.0.1:55322/postgres"
+alias -g @back="--workdir ../backstage"
