@@ -90,7 +90,6 @@ brew install --cask ${casks[@]}
 # Install formulas
 formulas=(
   ansible
-  bat
   bfg
   clojure
   cloc

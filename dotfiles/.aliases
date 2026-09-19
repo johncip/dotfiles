@@ -16,7 +16,6 @@ alias tc='tsc --noEmit'
 alias vr='vitest run'
 
 # shadowed
-alias cat='bat'
 alias ls='gls -F --color=auto'
 alias ctags="`brew --prefix`/bin/ctags"
 alias vi='nvim'
