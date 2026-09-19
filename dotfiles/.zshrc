@@ -13,8 +13,10 @@ colors
 export LS_COLORS="$(vivid generate one-dark)"
 
 # prompt
-autoload -U promptinit && promptinit
-prompt pure
+if [[ "$TERM_PROGRAM" != "vscode" ]]; then
+  autoload -U promptinit && promptinit
+  prompt pure
+fi
 
 setopt correct # spelling correction
 setopt auto_pushd # make cd work like pushd
