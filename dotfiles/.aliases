@@ -2,8 +2,9 @@
 
 # shortcuts (mains)
 alias g='git'
-alias ll='ls -la'
 alias q='exit'
+alias p='pnpm'
+alias ll='ls -la'
 alias neo='neovide'
 
 # shortcuts (dev tools)
@@ -11,7 +12,7 @@ alias be='bundle exec'
 alias nd='next dev'
 alias pt='playwright test'
 alias sb='supabase'
-alias sc='soundcheck warm'
+alias sc='pnpm run soundcheck'
 alias tc='tsc --noEmit'
 alias vr='vitest run'
 
