@@ -19,7 +19,6 @@ app_store_ids=(
   824183456  # affinity photo
   937984704  # amphetamine
   411643860  # daisydisk
-  668208984  # giphy capture
   462058435  # microsoft excel
   462054704  # microsoft word
   1123195469 # slomo
@@ -33,10 +32,11 @@ mas install ${app_store_ids[@]}
 
 # Install development casks
 dev_casks=(
-  dbvisualizer
   claude-code
+  dbvisualizer
   fork
   ghostty
+  kap
   medis
   neovide
   orbstack
