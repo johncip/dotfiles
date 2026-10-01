@@ -136,7 +136,7 @@ asdf set -u nodejs latest
 
 
 # Install pure prompt
-asdf exec npm install -g pure-prompt
+brew install pure
 
 
 # Install zsh & change shell
