@@ -1,6 +1,7 @@
 # vi: ft=zsh
 
 # shortcuts (mains)
+alias b='bun'
 alias g='git'
 alias q='exit'
 alias p='pnpm'
